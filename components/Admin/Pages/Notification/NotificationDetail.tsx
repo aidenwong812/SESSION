@@ -1,5 +1,6 @@
+import Link from "next/link"
 import Media from "@/shared/Media"
-import ClipSpan from "../../../ClipSpan"
+import ClipSpan from "@/components/ClipSpan"
 
 const NotificationDetail = () => (
   <div>
@@ -45,13 +46,14 @@ const NotificationDetail = () => (
         </div>
       </div>
     </div>
-    <button
-      type="button"
-      className="mt-[15px] flex h-[24px] w-[140px]
+    <Link href="/session-requests">
+      <a
+        className="mt-[15px] flex h-[24px] w-[140px]
             items-center justify-center rounded-full bg-gray_overlay_6 pb-[5px] font-urwgeometric_bold text-[12px] text-gray_2"
-    >
-      See Session Request
-    </button>
+      >
+        See Session Request
+      </a>
+    </Link>
   </div>
 )
 
