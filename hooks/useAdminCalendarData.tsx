@@ -3,12 +3,12 @@ import getStudios from "@/lib/firebase/getStudios"
 
 export const AdminCalendarViewTypes = [
   {
-    label: "Month",
-    value: "Month",
-  },
-  {
     label: "Week",
     value: "Week",
+  },
+  {
+    label: "Month",
+    value: "Month",
   },
   {
     label: "Year",
@@ -18,11 +18,11 @@ export const AdminCalendarViewTypes = [
 
 const useAdminCalendarData = () => {
   const [selectedStudio, setSelectedStudio] = useState(null)
-  const [selectedViewType, setSelectedViewType] = useState(AdminCalendarViewTypes[0])
+  const [selectedViewType, setSelectedViewType] = useState(AdminCalendarViewTypes[1])
   const [studioList, setStudioList] = useState([]) as any
 
-  const isMonthlyCalendar = selectedViewType.value === AdminCalendarViewTypes[0].value
-  const isWeeklyCalendar = selectedViewType.value === AdminCalendarViewTypes[1].value
+  const isWeeklyCalendar = selectedViewType.value === AdminCalendarViewTypes[0].value
+  const isMonthlyCalendar = selectedViewType.value === AdminCalendarViewTypes[1].value
   const isYearlyCalendar = selectedViewType.value === AdminCalendarViewTypes[2].value
 
   useEffect(() => {
