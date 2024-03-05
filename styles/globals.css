@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("./radial-chart.css");
+@import url("./radial-calendar.css");
+
+@font-face {
+  font-family: "URWGeometric";
+  src: url("/fonts/URWGeometric/URWGeometric-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "URWGeometric Regular";
+  src: url("/fonts/URWGeometric/URWGeometric.otf") format("truetype");
+}
+@font-face {
+  font-family: "URWGeometric Light";
+  src: url("/fonts/URWGeometric/URWGeometric-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "URWGeometric Medium";
+  src: url("/fonts/URWGeometric/URWGeometric-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "URWGeometric SemiBold";
+  src: url("/fonts/URWGeometric/URWGeometric-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "URWGeometric Bold";
+  src: url("/fonts/URWGeometric/URWGeometric-Bold.ttf") format("truetype");
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+:root {
+  --tw-drop-shadow-color: rgb(0, 0, 0);
+}
+
+html,
+body {
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-clip: padding-box;
+  background-color: #daeb02;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Begin Calendar Customization */
+.session-calendar {
+  width: 100% !important;
+  background-color: #12121166 !important;
+  font-family: "URWGeometric" !important;
+  overflow: hidden !important;
+  border-radius: 24px !important;
+  padding-top: 0px !important; /* remove calendar initial padding top because header background color is different with calendar bg color */
+}
+
+/* Remove Fade CSS */
+.session-calendar .Calendar__yearSelectorWrapper::after,
+.Calendar__yearSelectorWrapper::before {
+  visibility: hidden !important;
+}
+
+.session-calendar .Calendar__section.-hiddenPrevious {
+  transform: translateX(-100%);
+}
+
+.session-calendar .Calendar__section.-hiddenNext {
+  transform: translateX(100%);
+}
+
+.session-calendar .Calendar__day.-disabled {
+  color: #414040 !important;
+}
+
+.session-calendar .Calendar__day.-disabled:hover {
+  color: #414040 !important;
+  background-image: none !important;
+  cursor: not-allowed !important;
+}
+
+/* End Calendar Customizaation */
+
+* {
+  box-sizing: border-box;
+}
+
+.paypal-button-label-container > img {
+  display: none !important;
+}
+
+@import url("./calendar/index.css");
+
+textarea {
+  resize: none;
+}

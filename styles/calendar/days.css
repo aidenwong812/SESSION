@@ -1,0 +1,48 @@
+.session-calendar .Calendar__day {
+  outline: none !important;
+  border: none !important;
+  font-size: 20px !important;
+}
+
+@media screen and (max-width: 360px) {
+  .session-calendar .Calendar__day {
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .session-calendar .Calendar__day {
+    font-size: 14px !important;
+  }
+}
+
+/* calendar selected day customization */
+.session-calendar .Calendar__day.-selected,
+.Calendar__day.-selectedStart,
+.Calendar__day.-selectedEnd {
+  background-color: transparent !important;
+  background-image: url("/images/Calendar/calendar-day.png") !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center center !important;
+  border: none !important;
+  outline: none !important;
+  color: #a1ea04 !important;
+}
+
+/* calendar day hover css customization */
+.session-calendar .Calendar__day:hover {
+  background-color: transparent !important;
+  color: #a1ea04 !important;
+  border-radius: 40px !important;
+  background-image: url("/images/Calendar/calendar-number.png") !important;
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* calendar day text customization */
+.session-calendar .Calendar__day {
+  color: #d2d2d2 !important;
+  padding: 0px !important;
+}

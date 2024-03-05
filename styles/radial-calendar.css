@@ -1,0 +1,32 @@
+.calendar-radial-day {
+  position: relative;
+}
+
+.project-full-radial-day {
+  background-image: conic-gradient(rgba(255, 106, 43, 1), rgba(255, 68, 43, 1));
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+}
+
+.session-full-radial-day {
+  background-image: conic-gradient(rgba(161, 234, 4, 1), rgba(218, 235, 2, 1));
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+}
+
+.session-radial-day {
+  --ng: 180deg;
+  --thickness: 16px;
+  mask: radial-gradient(circle, #000);
+  background-image: conic-gradient(rgba(161, 234, 4, 1), rgba(218, 235, 2, 1) var(--ng), #0000 0);
+  aspect-ratio: 1;
+  width: 100%;
+  border-radius: 50%;
+  transform: rotate3d(0, 1, 0, 180deg);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 2;
+}

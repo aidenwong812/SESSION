@@ -1,0 +1,38 @@
+.session-calendar .Calendar__sectionWrapper {
+  min-height: 30.8em !important;
+}
+
+@media screen and (max-width: 768px) {
+  .session-calendar .Calendar__section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .session-calendar .Calendar__sectionWrapper {
+    min-height: 320px !important;
+  }
+
+  .Calendar {
+    min-height: 320px !important;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .session-calendar .Calendar__sectionWrapper {
+    min-height: 270px !important;
+  }
+
+  .Calendar {
+    min-height: 270px !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .Calendar {
+    min-height: 240px !important;
+  }
+  .session-calendar .Calendar__sectionWrapper {
+    min-height: 240px !important;
+    overflow: hidden !important;
+  }
+}

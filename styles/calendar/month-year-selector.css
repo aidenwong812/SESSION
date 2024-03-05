@@ -1,0 +1,28 @@
+.session-calendar .Calendar__monthSelector,
+.Calendar__yearSelector {
+  width: 100% !important;
+  background-color: #121211 !important;
+  color: #d2d2d2 !important;
+  padding: 10px !important;
+  font-size: 16px !important;
+}
+
+@media screen and (max-width: 320px) {
+  .session-calendar .Calendar__monthSelectorItem,
+  .Calendar__yearSelectorItem {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+}
+
+.session-calendar .Calendar__monthSelectorAnimationWrapper,
+.Calendar__yearSelectorAnimationWrapper {
+  height: calc(100% - 70px) !important;
+}
+
+@media screen and (max-width: 320px) {
+  .Calendar__monthSelectorAnimationWrapper,
+  .Calendar__yearSelectorAnimationWrapper {
+    height: calc(100% - 50px) !important;
+  }
+}

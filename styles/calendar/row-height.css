@@ -1,0 +1,23 @@
+@media screen and (max-width: 768px) {
+  .session-calendar .Calendar__weekDays {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .session-calendar .Calendar__weekRow {
+    height: 60px !important;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .session-calendar .Calendar__weekRow {
+    height: 50px !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .session-calendar .Calendar__weekRow {
+    height: 45px !important;
+  }
+}

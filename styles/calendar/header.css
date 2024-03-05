@@ -1,0 +1,11 @@
+.session-calendar .Calendar__header {
+  color: #d2d2d2 !important;
+  background-color: #d2d2d20f !important;
+}
+
+@media screen and (max-width: 320px) {
+  .session-calendar .Calendar__header {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+}

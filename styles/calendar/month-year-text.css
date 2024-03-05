@@ -1,0 +1,43 @@
+.session-calendar .Calendar__yearText {
+  background-color: transparent !important;
+  padding: 0px !important;
+  padding-left: 10px !important;
+  position: relative;
+}
+
+.session-calendar .Calendar__yearText:after {
+  content: ",";
+  position: absolute;
+  left: -5px;
+}
+
+.session-calendar .Calendar__yearText.-activeBackground::after {
+  content: "";
+}
+
+.session-calendar .Calendar__monthText {
+  background-color: transparent !important;
+  padding: 0px !important;
+}
+
+/* items on selector hover css customization */
+.session-calendar .Calendar__monthSelectorItemText:hover,
+.Calendar__yearSelectorText:hover {
+  background-color: #a1ea04 !important;
+  color: #121212 !important;
+  border-radius: 40px !important;
+  font-size: 16px !important;
+}
+
+/* active item on selector css customization */
+.session-calendar .Calendar__monthSelectorItemText,
+.Calendar__yearSelectorText {
+  font-size: 16px !important;
+}
+
+.session-calendar .Calendar__monthSelectorItem.-active .Calendar__monthSelectorItemText,
+.Calendar__yearSelectorItem.-active .Calendar__yearSelectorText {
+  color: #a1ea04 !important;
+  background-color: #d2d2d20f !important;
+  border-radius: 40px !important;
+}
