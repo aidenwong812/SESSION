@@ -47,12 +47,12 @@ const NotificationDetail = () => (
       </div>
     </div>
     <Link href="/session-requests">
-      <a
+      <p
         className="mt-[15px] flex h-[24px] w-[140px]
-            items-center justify-center rounded-full bg-gray_overlay_6 pb-[5px] font-urwgeometric_bold text-[12px] text-gray_2"
+            cursor-pointer items-center justify-center rounded-full bg-gray_overlay_6 pb-[5px] font-urwgeometric_bold text-[12px] text-gray_2"
       >
         See Session Request
-      </a>
+      </p>
     </Link>
   </div>
 )
