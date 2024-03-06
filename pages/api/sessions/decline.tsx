@@ -2,7 +2,7 @@ import { createHandler, Post, Body } from "next-api-decorators"
 import sendEmail from "@/lib/sendEmail"
 import { DeclineSessionDTO } from "@/DTO/declinesession.dto"
 import deleteSessionRequest from "@/lib/firebase/deleteSessionRequest"
-import { declineMail } from "@/lib/consts/mail"
+import { SESSION_EMAIL, declineMail } from "@/lib/consts/mail"
 
 class sendDeclineSession {
   @Post()
@@ -16,8 +16,6 @@ class sendDeclineSession {
         subject: "Session",
       },
     ]
-
-    const SESSION_EMAIL = "enjoy@onchainmagic.xyz"
 
     const data = {
       personalizations,

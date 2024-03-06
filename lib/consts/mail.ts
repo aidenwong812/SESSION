@@ -768,3 +768,4 @@ a[x-apple-data-detectors] {
 	</body>
 </html>
 `
+export const SESSION_EMAIL = "enjoy@onchainmagic.xyz"
