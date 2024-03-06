@@ -1,4 +1,4 @@
-export const declineMail = `
+export const declineMail = (studioNotes) => `
 <!DOCTYPE html PUBLIC "-//W3C//DTDXHTML1.0Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
 	<head><meta charset="UTF-8"><meta content="width=device-width, initial-scale=1" name="viewport"><meta name="x-apple-disable-message-reformatting"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta content="telephone=no" name="format-detection"><title>Empty template</title>
@@ -449,7 +449,7 @@ a[x-apple-data-detectors] {
 								<td align="center" bgcolor="transparent" style="padding:0;Margin:0">
 									<table class="es-content-body" cellpadding="0" cellspacing="0" bgcolor="#000000" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#000000;width:600px" role="none">
 										<tr>
-											<td align="left" bgcolor="#000000" style="Margin:0;padding-top:20px;padding-right:20px;padding-bottom:80px;padding-left:20px;background-color:#000000">
+											<td align="left" bgcolor="#000000" style="Margin:0;padding-top:20px;padding-right:20px;padding-bottom:60px;padding-left:20px;background-color:#000000">
 												<table cellpadding="0" cellspacing="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px" role="none">
 													<tr>
 														<td align="left" style="padding:0;Margin:0;width:560px">
@@ -461,232 +461,12 @@ a[x-apple-data-detectors] {
 																</tr>
 																<tr>
 																	<td align="center" class="h-auto" height="83" style="padding:20px;Margin:0">
-																		<!--[if mso]><a href="" target="_blank" hidden> <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="" style="height:71px; v-text-anchor:middle; width:516px" arcsize="34%" strokecolor="null" strokeweight="2px" fillcolor="null"> <w:anchorlock></w:anchorlock> <center style='color:#d2d2d2; font-family:arial, "helvetica neue", helvetica, sans-serif; font-size:14px; font-weight:400; line-height:14px; mso-text-raise:1px'>Hey Max! We are so happy to welcome you to our studio. Sadly the requested time slot doesnt work for us. Please choose another day!</center> </v:roundrect></a>
+																		<!--[if mso]><a href="" target="_blank" hidden> <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="" style="height:71px; v-text-anchor:middle; width:516px" arcsize="34%" strokecolor="null" strokeweight="2px" fillcolor="null"> <w:anchorlock></w:anchorlock> <center style='color:#d2d2d2; font-family:arial, "helvetica neue", helvetica, sans-serif; font-size:14px; font-weight:400; line-height:14px; mso-text-raise:1px'>${studioNotes}</center> </v:roundrect></a>
 																		<![endif]-->
 																		<!--[if !mso]><!-- -->
-																			<span class="es-button-border msohide" style="border-style:solid;border-color:#302f2f;background:#302f2f;border-width:0px 0px 2px 0px;display:inline-block;border-radius:24px;width:auto;mso-hide:all"> <a href="" class="es-button es-button-8864" target="_blank" style="mso-style-priority:100 !important;text-decoration:none !important;mso-line-height-rule:exactly;color:#d2d2d2;font-size:14px;padding:20px;display:inline-block;background:#302f2f;border-radius:24px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:17px;width:auto;text-align:center;letter-spacing:0;mso-padding-alt:0;mso-border-alt:10px solid #D2D2D2">Hey Max! We are so happy to welcome you to our studio. Sadly the requested time slot doesnt work for us. Please choose another day!</a>
+																			<span class="es-button-border msohide" style="border-style:solid;border-color:#302f2f;background:#302f2f;border-width:0px 0px 2px 0px;display:inline-block;border-radius:24px;width:100%;mso-hide:all"> <a href="" class="es-button es-button-8864" target="_blank" style="mso-style-priority:100 !important;text-decoration:none !important;mso-line-height-rule:exactly;color:#d2d2d2;font-size:14px;padding:20px;display:inline-block;background:#302f2f;border-radius:24px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:17px;width:auto;text-align:center;letter-spacing:0;mso-padding-alt:0;mso-border-alt:10px solid #D2D2D2">${studioNotes}</a>
 																		</span>
 																		<!--<![endif]-->
-																	</td>
-																</tr>
-															</table>
-														</td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
-						<table class="es-content" cellspacing="0" cellpadding="0" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:100%;table-layout:fixed !important">
-							<tr>
-								<td align="center" bgcolor="transparent" style="padding:0;Margin:0">
-									<table class="es-content-body" cellpadding="0" cellspacing="0" bgcolor="#333333" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#333333;width:600px" role="none">
-										<tr>
-											<td align="left" bgcolor="#d2d2d2" style="padding:0;Margin:0;padding-top:20px;padding-right:20px;padding-left:20px;background-color:#302f2f">
-												<table cellpadding="0" cellspacing="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-													<tr>
-														<td align="left" style="padding:0;Margin:0;width:560px">
-															<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-																<tr>
-																	<td align="left" class="es-text-1139" style="padding:0;Margin:0">
-																		<h1 style="Margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:36px;font-style:normal;font-weight:normal;line-height:54px;color:#333333">
-																			<span style="color:#D2D2D2">Other</span>
-																			<span style="color:#A1EA04">Studios</span>
-																		</h1>
-																	</td>
-																</tr>
-															</table>
-														</td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
-						<table class="es-content" cellspacing="0" cellpadding="0" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:100%;table-layout:fixed !important">
-							<tr>
-								<td align="center" bgcolor="transparent" style="padding:0;Margin:0">
-									<table class="es-content-body" cellpadding="0" cellspacing="0" bgcolor="#333333" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#333333;width:600px" role="none">
-										<tr>
-											<td align="left" bgcolor="#D2D2D2" style="padding:0;Margin:0;padding-top:20px;padding-right:20px;padding-left:20px;background-color:#302f2f">
-												<table cellpadding="0" cellspacing="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-													<tr>
-														<td align="left" style="padding:0;Margin:0;width:560px">
-															<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-																<tr>
-																	<td align="center" style="padding:0;Margin:0;font-size:0"><img src="https://eetqhqk.stripocdn.email/content/guids/CABINET_115ab3cd1420c5a45094390247b198dcd3dd09c88a9c58155b469023f89f9230/images/studio_image.png" alt="" width="560" class="adapt-img" height="273" style="display:block;font-size:14px;border:0;outline:none;text-decoration:none"></td>
-																</tr>
-															</table>
-														</td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-										<tr>
-											<td align="left" bgcolor="#d2d2d2" style="padding:0;Margin:0;padding-top:20px;padding-right:20px;padding-left:20px;background-color:#302f2f">
-												<table cellpadding="0" cellspacing="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-													<tr>
-														<td align="left" style="padding:0;Margin:0;width:560px">
-															<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-																<tr>
-																	<td align="left" style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px">
-																		<h2 style="Margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:24px;font-style:normal;font-weight:normal;line-height:29px;color:#A1EA04">Studio Name</h2>
-																	</td>
-																</tr>
-																<tr>
-																	<td align="left" style="padding:0;Margin:0">
-																		<p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#D2D2D2;font-size:14px">485 Broadway Floor 3, New York</p>
-																	</td>
-																</tr>
-															</table>
-														</td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-										<tr>
-											<td align="left" bgcolor="#d2d2d2" style="Margin:0;padding-top:12px;padding-right:12px;padding-bottom:40px;padding-left:12px;background-color:#302f2f">
-												<table cellpadding="0" cellspacing="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px" role="none">
-													<tr>
-														<td align="left" style="padding:12px;Margin:0;width:576px">
-															<table cellpadding="0" cellspacing="0" width="100%" role="presentation" bgcolor="#A1EA04" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#A1EA04;border-radius:24px">
-																<tr>
-																	<td align="left" style="padding:12px;Margin:0">
-																		<p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#1A1A18;font-size:14px" align="center">
-																			<strong>Explore Studio</strong>
-																		</p>
-																	</td>
-																</tr>
-															</table>
-														</td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
-						<table class="es-content" cellspacing="0" cellpadding="0" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:100%;table-layout:fixed !important">
-							<tr>
-								<td align="center" bgcolor="transparent" style="padding:0;Margin:0">
-									<table class="es-content-body" cellpadding="0" cellspacing="0" bgcolor="#333333" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#333333;width:600px" role="none">
-										<tr>
-											<td align="left" bgcolor="#D2D2D2" style="padding:0;Margin:0;padding-top:20px;padding-right:20px;padding-left:20px;background-color:#302f2f">
-												<table cellpadding="0" cellspacing="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-													<tr>
-														<td align="left" style="padding:0;Margin:0;width:560px">
-															<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-																<tr>
-																	<td align="center" style="padding:0;Margin:0;font-size:0"><img src="https://eetqhqk.stripocdn.email/content/guids/CABINET_115ab3cd1420c5a45094390247b198dcd3dd09c88a9c58155b469023f89f9230/images/studio_image.png" alt="" width="560" class="adapt-img" height="273" style="display:block;font-size:14px;border:0;outline:none;text-decoration:none"></td>
-																</tr>
-															</table>
-														</td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-										<tr>
-											<td align="left" bgcolor="#d2d2d2" style="padding:0;Margin:0;padding-top:20px;padding-right:20px;padding-left:20px;background-color:#302f2f">
-												<table cellpadding="0" cellspacing="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-													<tr>
-														<td align="left" style="padding:0;Margin:0;width:560px">
-															<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-																<tr>
-																	<td align="left" style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px">
-																		<h2 style="Margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:24px;font-style:normal;font-weight:normal;line-height:29px;color:#A1EA04">Studio Name</h2>
-																	</td>
-																</tr>
-																<tr>
-																	<td align="left" style="padding:0;Margin:0">
-																		<p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#D2D2D2;font-size:14px">485 Broadway Floor 3, New York</p>
-																	</td>
-																</tr>
-															</table>
-														</td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-										<tr>
-											<td align="left" bgcolor="#d2d2d2" style="Margin:0;padding-top:12px;padding-right:12px;padding-bottom:40px;padding-left:12px;background-color:#302f2f">
-												<table cellpadding="0" cellspacing="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px" role="none">
-													<tr>
-														<td align="left" style="padding:12px;Margin:0;width:576px">
-															<table cellpadding="0" cellspacing="0" width="100%" role="presentation" bgcolor="#A1EA04" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#A1EA04;border-radius:24px">
-																<tr>
-																	<td align="left" style="padding:12px;Margin:0">
-																		<p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#1A1A18;font-size:14px" align="center">
-																			<strong>Explore Studio</strong>
-																		</p>
-																	</td>
-																</tr>
-															</table>
-														</td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
-						<table class="es-content" cellspacing="0" cellpadding="0" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:100%;table-layout:fixed !important">
-							<tr>
-								<td align="center" bgcolor="transparent" style="padding:0;Margin:0">
-									<table class="es-content-body" cellpadding="0" cellspacing="0" bgcolor="#333333" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#333333;width:600px" role="none">
-										<tr>
-											<td align="left" bgcolor="#D2D2D2" style="padding:0;Margin:0;padding-top:20px;padding-right:20px;padding-left:20px;background-color:#302f2f">
-												<table cellpadding="0" cellspacing="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-													<tr>
-														<td align="left" style="padding:0;Margin:0;width:560px">
-															<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-																<tr>
-																	<td align="center" style="padding:0;Margin:0;font-size:0"><img src="https://eetqhqk.stripocdn.email/content/guids/CABINET_115ab3cd1420c5a45094390247b198dcd3dd09c88a9c58155b469023f89f9230/images/studio_image.png" alt="" width="560" class="adapt-img" height="273" style="display:block;font-size:14px;border:0;outline:none;text-decoration:none"></td>
-																</tr>
-															</table>
-														</td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-										<tr>
-											<td align="left" bgcolor="#d2d2d2" style="padding:0;Margin:0;padding-top:20px;padding-right:20px;padding-left:20px;background-color:#302f2f">
-												<table cellpadding="0" cellspacing="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-													<tr>
-														<td align="left" style="padding:0;Margin:0;width:560px">
-															<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-																<tr>
-																	<td align="left" style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px">
-																		<h2 style="Margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:24px;font-style:normal;font-weight:normal;line-height:29px;color:#A1EA04">Studio Name</h2>
-																	</td>
-																</tr>
-																<tr>
-																	<td align="left" style="padding:0;Margin:0">
-																		<p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#D2D2D2;font-size:14px">485 Broadway Floor 3, New York</p>
-																	</td>
-																</tr>
-															</table>
-														</td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-										<tr>
-											<td align="left" bgcolor="#d2d2d2" style="Margin:0;padding-top:12px;padding-right:12px;padding-bottom:40px;padding-left:12px;background-color:#302f2f">
-												<table cellpadding="0" cellspacing="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px" role="none">
-													<tr>
-														<td align="left" style="padding:12px;Margin:0;width:576px">
-															<table cellpadding="0" cellspacing="0" width="100%" role="presentation" bgcolor="#A1EA04" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#A1EA04;border-radius:24px">
-																<tr>
-																	<td align="left" style="padding:12px;Margin:0">
-																		<p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#1A1A18;font-size:14px" align="center">
-																			<strong>Explore Studio</strong>
-																		</p>
 																	</td>
 																</tr>
 															</table>
@@ -714,41 +494,6 @@ a[x-apple-data-detectors] {
 																		<p align="center" style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#A1EA04;font-size:14px">©session</p>
 																		<p align="center" style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#D2D2D2;font-size:14px">This email was sent to you because you registered
 																			<br>to our service.</p>
-																	</td>
-																</tr>
-															</table>
-														</td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
-						<table class="es-content" cellspacing="0" cellpadding="0" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:100%;table-layout:fixed !important">
-							<tr>
-								<td align="center" bgcolor="transparent" style="padding:0;Margin:0">
-									<table class="es-content-body" cellpadding="0" cellspacing="0" bgcolor="#000000" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#000000;width:600px" role="none">
-										<tr>
-											<td align="left" bgcolor="#1a1a18" style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px;background-color:#1a1a18">
-												<table cellpadding="0" cellspacing="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px" role="none">
-													<tr>
-														<td align="left" style="padding:0;Margin:0;width:600px">
-															<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;border-radius:24px;background-color:#090909" bgcolor="#090909">
-																<tr>
-																	<td align="left" style="padding:20px;Margin:0">
-																		<h4 style="Margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:24px;font-style:normal;font-weight:normal;line-height:29px;color:#d2d2d2">Studio Notes</h4>
-																	</td>
-																</tr>
-																<tr>
-																	<td align="center" class="h-auto" height="83" style="padding:20px;Margin:0">
-																		<!--[if mso]><a href="" target="_blank" hidden> <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="" style="height:71px; v-text-anchor:middle; width:556px" arcsize="34%" strokecolor="null" strokeweight="2px" fillcolor="null"> <w:anchorlock></w:anchorlock> <center style='color:#d2d2d2; font-family:arial, "helvetica neue", helvetica, sans-serif; font-size:14px; font-weight:400; line-height:14px; mso-text-raise:1px'>Hey Max! We are so happy to welcome you to our studio. Sadly the requested time slot doesnt work for us. Please choose another day!</center> </v:roundrect></a>
-																		<![endif]-->
-																		<!--[if !mso]><!-- -->
-																			<span class="es-button-border msohide" style="border-style:solid;border-color:#302f2f;background:#D2D2D2;border-width:0px 0px 2px 0px;display:inline-block;border-radius:24px;width:auto;mso-hide:all"> <a href="" class="es-button es-button-3946" target="_blank" style="mso-style-priority:100 !important;text-decoration:none !important;mso-line-height-rule:exactly;color:#d2d2d2;font-size:14px;padding:20px;display:inline-block;background:#302f2f;border-radius:24px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:17px;width:auto;text-align:center;letter-spacing:0;mso-padding-alt:0;mso-border-alt:10px solid #D2D2D2">Hey Max! We are so happy to welcome you to our studio. Sadly the requested time slot doesnt work for us. Please choose another day!</a>
-																		</span>
-																		<!--<![endif]-->
 																	</td>
 																</tr>
 															</table>

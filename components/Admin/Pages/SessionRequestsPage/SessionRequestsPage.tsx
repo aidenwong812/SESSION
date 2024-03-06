@@ -1,22 +1,21 @@
-import { useEffect, useMemo, useState } from "react"
+import { useMemo, useState } from "react"
 import { twJoin } from "tailwind-merge"
-import { toast } from "react-toastify"
 import dayjs, { Dayjs } from "dayjs"
-import getSessionRequests from "@/lib/firebase/getSessionRequests"
-import sendDeclineSession from "@/lib/sendDeclineSession"
 import Media from "@/shared/Media"
 import ClipSpan from "@/components/ClipSpan"
 import ViewSwitch, { ViewType } from "@/components/ui/ViewSwitch"
 import Search from "@/components/ui/Search"
 import DurationSelect from "@/components/ui/DurationSelect"
+import { useSessionRequest } from "@/providers/SessionRequestProvider"
 import Notification from "../Notification"
 import Layout from "../../../Layout"
 import Request from "./Request"
 
 export default function SessionRequestsPage() {
-  const [sessionRequests, setSessionRequests] = useState([])
   const [view, setView] = useState<ViewType>("list")
   const [selectedDuration, setSelectedDuration] = useState<"all" | [Dayjs, Dayjs]>("all")
+
+  const { sessionRequests } = useSessionRequest()
 
   const filteredSessionRequests = useMemo(() => {
     if (selectedDuration === "all") {
@@ -27,26 +26,6 @@ export default function SessionRequestsPage() {
       return eventStart.isAfter(selectedDuration[0]) && eventStart.isBefore(selectedDuration[1])
     })
   }, [sessionRequests, selectedDuration])
-
-  const fetchSessionRequests = async () => {
-    const newSessionRequests = await getSessionRequests()
-    if ("error" in newSessionRequests) {
-      return
-    }
-    setSessionRequests(newSessionRequests)
-  }
-
-  useEffect(() => {
-    fetchSessionRequests()
-  }, [])
-
-  const handleDecline = async (requestId) => {
-    const response: any = await sendDeclineSession(requestId)
-    if (response.status === 200) {
-      toast.success("Decline Request")
-      fetchSessionRequests()
-    }
-  }
 
   return (
     <Layout type="admin">
@@ -83,11 +62,7 @@ export default function SessionRequestsPage() {
             )}
           >
             {filteredSessionRequests.map((request) => (
-              <Request
-                key={request.id}
-                request={request}
-                handleDecline={() => handleDecline(request.id)}
-              />
+              <Request key={request.id} request={request} />
             ))}
           </div>
         </div>

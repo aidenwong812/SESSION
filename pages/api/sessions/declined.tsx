@@ -4,10 +4,10 @@ import { DeclineSessionDTO } from "@/DTO/declinesession.dto"
 import deleteSessionRequest from "@/lib/firebase/deleteSessionRequest"
 import { SESSION_EMAIL, declineMail } from "@/lib/consts/mail"
 
-class sendDeclineSession {
+class sendDeclinedSession {
   @Post()
-  async sendDeclineSession(@Body() body: DeclineSessionDTO) {
-    const { requestId } = body
+  async sendDeclinedSession(@Body() body: DeclineSessionDTO) {
+    const { requestId, studioNotes } = body
     const { request } = await deleteSessionRequest(requestId)
 
     const personalizations = [
@@ -22,7 +22,7 @@ class sendDeclineSession {
       content: [
         {
           type: "text/html",
-          value: declineMail,
+          value: declineMail(studioNotes),
         },
       ],
       from: {
@@ -44,4 +44,4 @@ class sendDeclineSession {
   }
 }
 
-export default createHandler(sendDeclineSession)
+export default createHandler(sendDeclinedSession)

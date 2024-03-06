@@ -1,10 +1,15 @@
+import { useState } from "react"
 import ClipSpan from "@/components/ClipSpan"
+import { useSessionRequest } from "@/providers/SessionRequestProvider"
 import Button from "@/shared/Button"
 import Media from "@/shared/Media"
 
-const ReasonSubmit = ({ onClose, handleDecline }) => {
+const ReasonSubmit = ({ onClose, requestId }) => {
+  const [studioNotes, setStudioNotes] = useState("")
+  const { handleDecline } = useSessionRequest()
+
   const onClickDecline = async () => {
-    handleDecline()
+    handleDecline(requestId, studioNotes)
     onClose()
   }
 
@@ -35,6 +40,8 @@ const ReasonSubmit = ({ onClose, handleDecline }) => {
           className="mt-5 w-full rounded-3xl border-x border-b-2 border-gray_overlay_6 bg-gray_overlay_6
         p-5 font-urwgeometric text-sm leading-tight text-gray_1
         focus:border-gray_overlay_6 focus:ring-transparent"
+          value={studioNotes}
+          onChange={(e) => setStudioNotes(e.target.value)}
         />
       </div>
       <div className="flex flex-col gap-y-[10px]">

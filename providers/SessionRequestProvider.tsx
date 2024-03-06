@@ -1,4 +1,7 @@
-import { createContext, useContext, useState, useMemo } from "react"
+import { createContext, useContext, useState, useMemo, useEffect } from "react"
+import { toast } from "react-toastify"
+import getSessionRequests from "@/lib/firebase/getSessionRequests"
+import sendDeclineSession from "@/lib/sendDeclineSession"
 
 export enum SESSION_REQUEST_STATUS {
   INITIAL = "INITIAL",
@@ -13,6 +16,27 @@ const SessionRequestProvider = ({ children }) => {
   const [confirmStatus, setConfirmStatus] = useState(SESSION_REQUEST_STATUS.INITIAL)
   const [sessionPrice, setSessionPrice] = useState<number>(0)
   const [engineerPrice, setEngineerPrice] = useState<number>(0)
+  const [sessionRequests, setSessionRequests] = useState([])
+
+  const fetchSessionRequests = async () => {
+    const newSessionRequests = await getSessionRequests()
+    if ("error" in newSessionRequests) {
+      return
+    }
+    setSessionRequests(newSessionRequests)
+  }
+
+  const handleDecline = async (requestId, studioNotes) => {
+    const response: any = await sendDeclineSession({ requestId, studioNotes })
+    if (response.status === 200) {
+      toast.success("Declined Request")
+      fetchSessionRequests()
+    }
+  }
+
+  useEffect(() => {
+    fetchSessionRequests()
+  }, [])
 
   const value = useMemo(
     () => ({
@@ -22,6 +46,9 @@ const SessionRequestProvider = ({ children }) => {
       setSessionPrice,
       engineerPrice,
       setEngineerPrice,
+      sessionRequests,
+      handleDecline,
+      fetchSessionRequests,
     }),
     [
       confirmStatus,
@@ -30,6 +57,9 @@ const SessionRequestProvider = ({ children }) => {
       setSessionPrice,
       engineerPrice,
       setEngineerPrice,
+      sessionRequests,
+      handleDecline,
+      fetchSessionRequests,
     ],
   )
 

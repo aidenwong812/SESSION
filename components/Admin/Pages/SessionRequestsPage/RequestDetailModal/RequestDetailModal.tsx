@@ -6,7 +6,7 @@ import DetailBody from "./DetailBody"
 import ConfirmModal from "../ConfirmModal"
 import DeclineModal from "../DeclineModal"
 
-const RequestDetailModal = ({ request, isVisible, toggleModal, handleDecline }) => {
+const RequestDetailModal = ({ request, isVisible, toggleModal }) => {
   const [isOpenConfirmModal, setIsOpenConfirmModal] = useState(false)
   const [isOpenDeclineModal, setIsOpenDeclineModal] = useState(false)
 
@@ -69,9 +69,9 @@ const RequestDetailModal = ({ request, isVisible, toggleModal, handleDecline }) 
         toggleModal={() => setIsOpenConfirmModal(!isOpenConfirmModal)}
       />
       <DeclineModal
+        requestId={request.id}
         isVisible={isOpenDeclineModal}
         toggleModal={() => setIsOpenDeclineModal(!isOpenDeclineModal)}
-        handleDecline={handleDecline}
       />
     </>
   )

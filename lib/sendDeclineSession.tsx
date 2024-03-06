@@ -3,7 +3,7 @@ import handleTxError from "./handleTxError"
 
 const sendDeclineSession = async (data) => {
   try {
-    const response = await axios.post("/api/sessions/decline", { requestId: data })
+    const response = await axios.post("/api/sessions/declined", data)
 
     return response
   } catch (error) {
