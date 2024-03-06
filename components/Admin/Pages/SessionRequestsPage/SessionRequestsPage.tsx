@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from "react"
 import { twJoin } from "tailwind-merge"
+import { toast } from "react-toastify"
 import dayjs, { Dayjs } from "dayjs"
 import getSessionRequests from "@/lib/firebase/getSessionRequests"
+import sendDeclineSession from "@/lib/sendDeclineSession"
 import Media from "@/shared/Media"
 import ClipSpan from "@/components/ClipSpan"
 import ViewSwitch, { ViewType } from "@/components/ui/ViewSwitch"
@@ -26,16 +28,25 @@ export default function SessionRequestsPage() {
     })
   }, [sessionRequests, selectedDuration])
 
-  useEffect(() => {
-    const fetchSessionRequests = async () => {
-      const newSessionRequests = await getSessionRequests()
-      if ("error" in newSessionRequests) {
-        return
-      }
-      setSessionRequests(newSessionRequests)
+  const fetchSessionRequests = async () => {
+    const newSessionRequests = await getSessionRequests()
+    if ("error" in newSessionRequests) {
+      return
     }
+    setSessionRequests(newSessionRequests)
+  }
+
+  useEffect(() => {
     fetchSessionRequests()
   }, [])
+
+  const handleDecline = async (requestId) => {
+    const response: any = await sendDeclineSession(requestId)
+    if (response.status === 200) {
+      toast.success("Decline Request")
+      fetchSessionRequests()
+    }
+  }
 
   return (
     <Layout type="admin">
@@ -72,7 +83,11 @@ export default function SessionRequestsPage() {
             )}
           >
             {filteredSessionRequests.map((request) => (
-              <Request key={request.id} request={request} />
+              <Request
+                key={request.id}
+                request={request}
+                handleDecline={() => handleDecline(request.id)}
+              />
             ))}
           </div>
         </div>

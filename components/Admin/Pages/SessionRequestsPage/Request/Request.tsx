@@ -7,7 +7,7 @@ import convertTimeFormat from "@/lib/convertTimeFormat"
 import getWeekDay from "@/lib/getWeekDay"
 import RequestDetailModal from "../RequestDetailModal"
 
-const Request = ({ request }) => {
+const Request = ({ request, handleDecline }) => {
   const [isOpenDetailModal, setIsOpenDetailModal] = useState(false)
 
   return (
@@ -95,6 +95,7 @@ const Request = ({ request }) => {
         request={request}
         isVisible={isOpenDetailModal}
         toggleModal={() => setIsOpenDetailModal(!isOpenDetailModal)}
+        handleDecline={handleDecline}
       />
     </>
   )

@@ -6,16 +6,16 @@ import DetailBody from "./DetailBody"
 import ConfirmModal from "../ConfirmModal"
 import DeclineModal from "../DeclineModal"
 
-const RequestDetailModal = ({ request, isVisible, toggleModal }) => {
+const RequestDetailModal = ({ request, isVisible, toggleModal, handleDecline }) => {
   const [isOpenConfirmModal, setIsOpenConfirmModal] = useState(false)
   const [isOpenDeclineModal, setIsOpenDeclineModal] = useState(false)
 
-  const handleConfirm = () => {
+  const onClickConfirm = () => {
     toggleModal()
     setIsOpenConfirmModal(true)
   }
 
-  const handleDecline = () => {
+  const onClickDecline = () => {
     toggleModal()
     setIsOpenDeclineModal(true)
   }
@@ -40,7 +40,7 @@ const RequestDetailModal = ({ request, isVisible, toggleModal }) => {
             type="button"
             className="flex size-[64px] items-center justify-center rounded-full
           border-x-[1px] border-b-[2px] border-gray_overlay_6 bg-black_8"
-            onClick={handleDecline}
+            onClick={onClickDecline}
           >
             <Media
               type="image"
@@ -53,7 +53,7 @@ const RequestDetailModal = ({ request, isVisible, toggleModal }) => {
             type="button"
             className="flex size-[64px] items-center justify-center rounded-full
           border-x-[1px] border-b-[2px] border-gray_overlay_6 bg-gradient_s_1"
-            onClick={handleConfirm}
+            onClick={onClickConfirm}
           >
             <Media
               type="image"
@@ -71,6 +71,7 @@ const RequestDetailModal = ({ request, isVisible, toggleModal }) => {
       <DeclineModal
         isVisible={isOpenDeclineModal}
         toggleModal={() => setIsOpenDeclineModal(!isOpenDeclineModal)}
+        handleDecline={handleDecline}
       />
     </>
   )
