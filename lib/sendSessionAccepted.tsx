@@ -1,11 +1,9 @@
 import axios from "axios"
 import handleTxError from "./handleTxError"
-import { auth } from "./firebase/db"
 
 const sendSessionAccepted = async (data) => {
   try {
-    const accessToken = await auth.currentUser.getIdToken()
-    const response = await axios.post("/api/sessions/accepted", { ...data, accessToken })
+    const response = await axios.post("/api/sessions/accepted", data)
 
     return response
   } catch (error) {

@@ -3,12 +3,11 @@ import sendEmail from "@/lib/sendEmail"
 import { AccpetSessionDTO } from "@/DTO/acceptsession.dto"
 import { SESSION_EMAIL, acceptMail } from "@/lib/consts/mail"
 import getSessionByRequestId from "@/lib/firebase/getSessionByRequestId"
-import sendInvite from "@/lib/sendInvite"
 
 class sendAcceptedSession {
   @Post()
   async sendAcceptedSession(@Body() body: AccpetSessionDTO) {
-    const { requestId, studioNotes, accessToken } = body
+    const { requestId, studioNotes } = body
     const request: any = await getSessionByRequestId(requestId)
 
     const personalizations = [
@@ -37,7 +36,6 @@ class sendAcceptedSession {
     }
 
     try {
-      sendInvite(accessToken, request.email)
       const response = await sendEmail(data)
       return response.data
     } catch (err) {

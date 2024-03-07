@@ -6,7 +6,4 @@ export class AccpetSessionDTO {
 
   @IsString()
   studioNotes: string
-
-  @IsString()
-  accessToken: string
 }
