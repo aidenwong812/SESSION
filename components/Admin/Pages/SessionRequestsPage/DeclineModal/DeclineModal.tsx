@@ -1,9 +1,9 @@
 import SideModal from "@/components/SideModal"
 import ReasonSubmit from "./ReasonSubmit"
 
-const DeclineModal = ({ isVisible, toggleModal, requestId }) => (
+const DeclineModal = ({ isVisible, toggleModal }) => (
   <SideModal isVisible={isVisible} toggleModal={toggleModal}>
-    <ReasonSubmit onClose={toggleModal} requestId={requestId} />
+    <ReasonSubmit onClose={toggleModal} />
   </SideModal>
 )
 

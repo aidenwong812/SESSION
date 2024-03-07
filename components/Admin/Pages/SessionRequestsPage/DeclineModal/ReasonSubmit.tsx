@@ -1,15 +1,13 @@
-import { useState } from "react"
 import ClipSpan from "@/components/ClipSpan"
 import { useSessionRequest } from "@/providers/SessionRequestProvider"
 import Button from "@/shared/Button"
 import Media from "@/shared/Media"
 
-const ReasonSubmit = ({ onClose, requestId }) => {
-  const [studioNotes, setStudioNotes] = useState("")
-  const { handleDecline } = useSessionRequest()
+const ReasonSubmit = ({ onClose }) => {
+  const { selectedRequest, studioNotes, setStudioNotes, handleDecline } = useSessionRequest()
 
   const onClickDecline = async () => {
-    handleDecline(requestId, studioNotes)
+    handleDecline({ requestId: selectedRequest, studioNotes })
     onClose()
   }
 

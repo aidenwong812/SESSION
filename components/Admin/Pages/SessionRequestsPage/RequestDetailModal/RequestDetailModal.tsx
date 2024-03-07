@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useSessionRequest } from "@/providers/SessionRequestProvider"
 import Modal from "@/shared/Modal"
 import Media from "@/shared/Media"
 import DetailHeader from "./DetailHeader"
@@ -9,15 +10,18 @@ import DeclineModal from "../DeclineModal"
 const RequestDetailModal = ({ request, isVisible, toggleModal }) => {
   const [isOpenConfirmModal, setIsOpenConfirmModal] = useState(false)
   const [isOpenDeclineModal, setIsOpenDeclineModal] = useState(false)
+  const { setSelectedRequest } = useSessionRequest()
 
   const onClickConfirm = () => {
     toggleModal()
     setIsOpenConfirmModal(true)
+    setSelectedRequest(request.id)
   }
 
   const onClickDecline = () => {
     toggleModal()
     setIsOpenDeclineModal(true)
+    setSelectedRequest(request.id)
   }
 
   return (
@@ -69,7 +73,6 @@ const RequestDetailModal = ({ request, isVisible, toggleModal }) => {
         toggleModal={() => setIsOpenConfirmModal(!isOpenConfirmModal)}
       />
       <DeclineModal
-        requestId={request.id}
         isVisible={isOpenDeclineModal}
         toggleModal={() => setIsOpenDeclineModal(!isOpenDeclineModal)}
       />

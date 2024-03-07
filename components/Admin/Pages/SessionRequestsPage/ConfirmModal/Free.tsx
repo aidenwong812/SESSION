@@ -1,11 +1,17 @@
 import BackwardButton from "@/components/BackwardButton"
 import Button from "@/shared/Button"
 import { SESSION_REQUEST_STATUS, useSessionRequest } from "@/providers/SessionRequestProvider"
+import sendSessionAccepted from "@/lib/sendSessionAccepted"
 import FreeDescription from "./FreeDescription"
 import StudioNotes from "./StudioNotes"
 
 const Free = () => {
-  const { setConfirmStatus } = useSessionRequest()
+  const { selectedRequest, setConfirmStatus, studioNotes } = useSessionRequest()
+
+  const onClickConfirm = () => {
+    sendSessionAccepted({ requestId: selectedRequest, studioNotes })
+    setConfirmStatus(SESSION_REQUEST_STATUS.SUCCESS)
+  }
 
   return (
     <div className="w-full">
@@ -21,7 +27,7 @@ const Free = () => {
                           !shadow-session_shadow"
           pulseColor="white"
           bgVariant="radial"
-          onClick={() => setConfirmStatus(SESSION_REQUEST_STATUS.SUCCESS)}
+          onClick={onClickConfirm}
         >
           <p className="font-urwgeometric_semibold text-[20px] leading-[20px] text-black_0">
             Confirm Session

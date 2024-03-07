@@ -1,7 +1,7 @@
 import axios from "axios"
 import handleTxError from "./handleTxError"
 
-const sendDeclineSession = async (data) => {
+const sendSessionDeclined = async (data) => {
   try {
     const response = await axios.post("/api/sessions/declined", data)
 
@@ -12,4 +12,4 @@ const sendDeclineSession = async (data) => {
   }
 }
 
-export default sendDeclineSession
+export default sendSessionDeclined

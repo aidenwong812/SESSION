@@ -2,6 +2,7 @@ import BackwardButton from "@/components/BackwardButton"
 import ClipSpan from "@/components/ClipSpan"
 import Button from "@/shared/Button"
 import { SESSION_REQUEST_STATUS, useSessionRequest } from "@/providers/SessionRequestProvider"
+import sendSessionAccepted from "@/lib/sendSessionAccepted"
 import PaidDescription from "./PaidDescription"
 import StudioDetail from "./StudioDetail"
 import UserInfo from "./UserInfo"
@@ -9,8 +10,20 @@ import StudioNotes from "./StudioNotes"
 import PriceInput from "./PriceInput"
 
 export default function ConfirmPricing() {
-  const { setConfirmStatus, sessionPrice, setSessionPrice, engineerPrice, setEngineerPrice } =
-    useSessionRequest()
+  const {
+    selectedRequest,
+    setConfirmStatus,
+    sessionPrice,
+    setSessionPrice,
+    engineerPrice,
+    setEngineerPrice,
+    studioNotes,
+  } = useSessionRequest()
+
+  const onClickConfirm = () => {
+    sendSessionAccepted({ requestId: selectedRequest, studioNotes })
+    setConfirmStatus(SESSION_REQUEST_STATUS.SUCCESS)
+  }
 
   return (
     <div className="w-full">
@@ -45,7 +58,7 @@ export default function ConfirmPricing() {
                           !shadow-session_shadow"
           pulseColor="white"
           bgVariant="radial"
-          onClick={() => setConfirmStatus(SESSION_REQUEST_STATUS.SUCCESS)}
+          onClick={onClickConfirm}
         >
           <p className="font-urwgeometric_semibold text-[20px] leading-[20px] text-black_0">
             Confirm Session
