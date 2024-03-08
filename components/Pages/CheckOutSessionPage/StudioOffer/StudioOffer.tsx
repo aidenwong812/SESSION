@@ -1,8 +1,10 @@
 import useIsMobile from "@/hooks/useIsMobile"
+import { useCheckOutSession } from "@/providers/CheckOutSessionProvider"
 import Media from "@/shared/Media"
 
 const StudioOffer = () => {
   const isMobile = useIsMobile()
+  const { sessionData } = useCheckOutSession()
 
   return (
     <div
@@ -19,7 +21,7 @@ const StudioOffer = () => {
         className="py-[20px] font-urwgeometric_medium text-[64px] leading-[100%] text-[#a1ea04] drop-shadow-xl 
       drop-shadow-session md:py-0 md:text-[40px] lg:text-[50px] xl:text-[64px]"
       >
-        $1,130.00
+        {`$${sessionData.sessionPrice + sessionData.engineerPrice + sessionData.studio.initPrice}`}
       </p>
       <div
         className="my-[5px] flex w-full items-center rounded-full 

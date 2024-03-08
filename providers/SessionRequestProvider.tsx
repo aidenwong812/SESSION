@@ -3,6 +3,7 @@ import { toast } from "react-toastify"
 import getSessionRequests from "@/lib/firebase/getSessionRequests"
 import sendSessionDeclined from "@/lib/sendSessionDeclined"
 import addToSessionCalendar from "@/lib/addToSessionCalendar"
+import updateSessionRequest from "@/lib/firebase/updateSessionRequest"
 
 export enum SESSION_REQUEST_STATUS {
   INITIAL = "INITIAL",
@@ -38,6 +39,12 @@ const SessionRequestProvider = ({ children }) => {
   }
 
   const handleAccept = async (request) => {
+    updateSessionRequest({
+      id: request.id,
+      sessionPrice,
+      engineerPrice,
+      studioNotes,
+    })
     const startDateTime = request.event.start.dateTime
     const endDateTime = request.event.end.dateTime
     const response = await Promise.all([

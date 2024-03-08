@@ -38,7 +38,9 @@ const StripeDetail = () => {
           className="py-[10px] font-urwgeometric_medium text-[24px] leading-[100%] text-[#a1ea04] drop-shadow-xl
           drop-shadow-session md:py-[20px] md:text-[19px] lg:text-[25px] xl:text-[32px]"
         >
-          $1,130.00
+          {`$${
+            sessionData.studio.initPrice + sessionData.engineerPrice + sessionData.sessionPrice
+          }`}
         </p>
         <p
           className="pb-[20px] font-urwgeometric text-[16px] leading-[100%]

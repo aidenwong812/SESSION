@@ -1305,7 +1305,8 @@ export const acceptFreeMail = ({
 	</v:roundrect></a>
 <![endif]--><!--[if !mso]><!-- --><span class="es-button-border es-fw msohide"
                                     style="border-style:solid;border-color:#2CB543;background:#a1ea04;border-width:0px 0px 2px 0px;display:block;border-radius:30px;width:auto;mso-hide:all"><a
-                                      href="https://calendar.google.com/calendar/u/0/r" class="es-button es-button-9371" target="_blank"
+                                      href="https://calendar.google.com/calendar/u/0/r" class="es-button es-button-9371"
+                                      target="_blank"
                                       style="mso-style-priority:100 !important;text-decoration:none !important;mso-line-height-rule:exactly;color:#000000;font-size:18px;padding:15px;display:block;background:#a1ea04;border-radius:30px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:bold;font-style:normal;line-height:22px;width:auto;text-align:center;letter-spacing:0;mso-padding-alt:0;mso-border-alt:10px solid #a1ea04">Add
                                       to Calendar</a></span><!--<![endif]--></td>
                               </tr>
@@ -1387,7 +1388,7 @@ export const acceptFreeMail = ({
                                 <td align="left" style="padding:0;Margin:0">
                                   <div style="display:flex;width:100%;border-radius:32px;overflow:hidden">
                                     <div
-                                      style="height:100%;overflow:hidden;border-top-left-radius:32px;border-bottom-left-radius:32px;border-right:2px solid #a1ea04;">
+                                      style="height:100%;overflow:hidden;border-top-left-radius:32px;border-bottom-left-radius:32px;border-top-right-radius:24px;border-right:2px solid #a1ea04;">
                                       <div style="position:relative;width:160px;height:160px">
                                         <span
                                           style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0px;margin:0px;padding:0px;position:absolute;inset:0px"><img
@@ -1398,91 +1399,94 @@ export const acceptFreeMail = ({
                                           <noscript></noscript></span>
                                       </div>
                                     </div>
-                                    <div
-                                      style="position:relative;display:flex;height:140px;flex-grow:1;flex-direction:column;padding-bottom:10px;padding-right:15px">
-                                      <div style="position:absolute;width:100%;height:100%;top:0px;left:0px;z-index:1">
-                                        <span
-                                          style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:160px;background:none;opacity:1;border:0px;margin:0px;padding:0px;position:absolute;inset:0px"><img
-                                            alt="not found image" decoding="async" data-nimg="fill"
-                                            data-xblocker="passed"
-                                            style="display:block;font-size:14px;border:none;outline:none;text-decoration:none;position:absolute;width:0px;object-fit:cover;inset:0px;box-sizing:border-box;padding:0px;margin:auto;height:0px;min-width:100%;max-width:100%;min-height:100%;max-height:100%;visibility:visible;opacity:0.6"
-                                            src="https://s3-alpha-sig.figma.com/img/2564/3a05/5e03093500901c57e382fb7f4ac5bcf3?Expires=1710720000&amp;Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&amp;Signature=a97zRjZk83yyh7OuqVdRU5KQvTtPAsZdRkXBj~n3jU1gQf-c7mSC6-l4xYaBXy1r0YdnU87FzW8xNJqqe4zOKca-gftl71AifWDXOpjHn-qPF-aa-ckgDSB1mKwuvgIHLicGZlO9EsGalX0dwzaHxFTtUrprjvXA7R2~xhLBWeAgPIrQKCL8zsMJtKLsjaXyJ72eA~Rvrn7J9ICdyueioP35IaYirMsEsutIaJsY88vGDzVM7LE2d8LNf~fDIhPr6dZ6XIt5cfOM9LTy-MWdO4QXoUM0ExoiYWhoZ123e4Iw~rNxLlY5RLCTsLAFw-YaickleT9IjyCVaOkfMIHjhA__"
-                                            lass="absolute !w-full object-cover undefined">
-                                          <noscript></noscript></span>
-                                      </div>
+                                    <div style="position:relative;display:flex;height:160px;flex-grow:1;flex-direction:column;
+                                      background-image:url(https://s3-alpha-sig.figma.com/img/2564/3a05/5e03093500901c57e382fb7f4ac5bcf3?Expires=1710720000&amp;Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&amp;Signature=a97zRjZk83yyh7OuqVdRU5KQvTtPAsZdRkXBj~n3jU1gQf-c7mSC6-l4xYaBXy1r0YdnU87FzW8xNJqqe4zOKca-gftl71AifWDXOpjHn-qPF-aa-ckgDSB1mKwuvgIHLicGZlO9EsGalX0dwzaHxFTtUrprjvXA7R2~xhLBWeAgPIrQKCL8zsMJtKLsjaXyJ72eA~Rvrn7J9ICdyueioP35IaYirMsEsutIaJsY88vGDzVM7LE2d8LNf~fDIhPr6dZ6XIt5cfOM9LTy-MWdO4QXoUM0ExoiYWhoZ123e4Iw~rNxLlY5RLCTsLAFw-YaickleT9IjyCVaOkfMIHjhA__);
+                                      background-position:center;background-size: cover;opacity: 0.6;z-index:1;flex-grow:1">
+                                      <table style="padding: 13px 20px;z-index: 20; width:100%" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                          <tr>
+                                            <td>
+                                              <table style="width: 100%; padding-bottom: 5px" cellpadding="0"
+                                                cellspacing="0">
+                                                <tr>
+                                                  <td>
+                                                    <p class="font-urwgeometric_bold text-[16px] text-gray_2"
+                                                      style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;letter-spacing:0;color:#8c8c8c;font-size:16px">
+                                                      ${month}, <span
+                                                        style="color:#a1ea04;padding-top:0px;padding-bottom:0px">${day}</span>
+                                                    </p>
+                                                  </td>
+                                                  <td align="right">
+                                                    <table cellpadding="0" cellspacing="0">
+                                                      <tr>
+                                                        <td align="right">
+                                                          <p class="text-[14px] text-gray_2"
+                                                            style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#8c8c8c;font-size:14px">
+                                                            ${weekDay},</p>
+                                                        </td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td align="right">
+                                                          <div>
+                                                            <span
+                                                              style="color:#a1ea04;padding-top:0px;padding-bottom:0px;font-size:16px">${time}</span>
+                                                          </div>
+                                                        </td>
+                                                      </tr>
+                                                    </table>
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>
+                                              <div style="height:1px;background-color: #2a2a29;margin: 8px 0px;"></div>
+                                              </tdtyle=>
+                                          </tr>
+                                          <tr>
+                                            <td>
+                                              <table cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                  <td>
+                                                    <p style="color:#a1ea04;font-size:16px;line-height:18px;margin:0px">Sound Studios</p>
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>
+                                                    <p
+                                                      style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:28px;letter-spacing:0;color:#d2d2d2;font-size:24px;margin-top:-5px">
+                                                      ${studioName}</p>
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>
+                                                    <table cellpadding="0" cellspacing="0">
+                                                      <tbody>
+                                                        <tr>
+                                                          <td>
+                                                            <img
+                                                              style="margin-left: -5px;"
+                                                              src="https://fevfxwt.stripocdn.email/content/guids/CABINET_3eafbd7013160b7acee776b568c221146474957213164399565f63d701652eed/images/capacity.png"
+                                                              alt="" width="24px" height="20px" class="adapt-img">
+                                                          </td>
+                                                          <td>
+                                                            <p class="font-urwgeometric_medium text-[12px] text-gray_1"
+                                                              style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#d2d2d2;font-size:14px">
+                                                              ${comingPeople}</p>
+                                                          </td>
+                                                        </tr>
+                                                      </tbody>
+                                                    </table>
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
                                       <div
                                         style="position:relative;z-index:2;align-items:center;justify-content:space-between;border-bottom-width:2px;border-bottom-color:#d2d2d2">
-                                        <p class="font-urwgeometric_bold text-[16px] text-gray_2"
-                                          style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;letter-spacing:0;color:#8c8c8c;font-size:16px">
-                                          ${month}, <span
-                                            class="bg-gradient_s_1 bg-clip-text text-[#00000000] leading-[130%] overflow-visible py-[10px] !py-0"
-                                            style="color:#a1ea04;padding-top:0px;padding-bottom:0px">${day}</span></p>
-                                        <div
-                                          style="display:flex;flex-direction:column;align-items:flex-end">
-                                          <p class="text-[14px] text-gray_2"
-                                            style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#8c8c8c;font-size:14px">
-                                            ${weekDay},</p>
-                                          <div>
-                                            <span
-                                              style="color:#a1ea04;padding-top:0px;padding-bottom:0px;font-size:16px">${time}</span>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div
-                                        style="position:relative;z-index:2;display:flex;flex-grow:1;flex-direction:column;justify-content:flex-end">
-                                        <span style="color:#a1ea04;padding-top:0px;padding-bottom:0px;font-size:16px"
-                                          lass="bg-gradient_s_1 bg-clip-text text-[#00000000] overflow-visible py-[10px] !py-0 font-urwgeometric text-[14px]">Sound
-                                          Studios</span>
-                                        <p
-                                          style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:36px;letter-spacing:0;color:#d2d2d2;font-size:24px;margin-top:-5px">
-                                          ${studioName}</p>
-                                        <div class="ml-[-5px] mt-[-5px] flex items-center"
-                                          style="margin-left:-5px;margin-top:-5px;display:flex;align-items:center">
-                                          <div style="position:relative;width:24px;height:23px">
-                                            <span
-                                              style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0px;margin:0px;padding:0px;position:absolute;inset:0px">
-                                              <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <g filter="url(#filter0_d_3036_500)">
-                                                <path d="M11.8297 14.0163C13.358 14.0163 14.5969 12.7814 14.5969 11.2581C14.5969 9.73486 13.358 8.5 11.8297 8.5C10.3014 8.5 9.0625 9.73486 9.0625 11.2581C9.0625 12.7814 10.3014 14.0163 11.8297 14.0163Z" fill="url(#paint0_linear_3036_500)"/>
-                                                <path d="M11.8297 14.0163C13.358 14.0163 14.5969 12.7814 14.5969 11.2581C14.5969 9.73486 13.358 8.5 11.8297 8.5C10.3014 8.5 9.0625 9.73486 9.0625 11.2581C9.0625 12.7814 10.3014 14.0163 11.8297 14.0163Z" stroke="url(#paint1_linear_3036_500)" stroke-miterlimit="10"/>
-                                                </g>
-                                                <path d="M8 16C8.43208 15.3872 9.00578 14.887 9.67266 14.5417C10.3395 14.1964 11.08 14.0161 11.8315 14.0161C12.583 14.0161 13.3234 14.1964 13.9903 14.5417C14.6572 14.887 15.2309 15.3872 15.663 16" stroke="url(#paint2_linear_3036_500)" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1684 8L16.1669 8C15.8699 8.00091 15.5743 8.04061 15.2876 8.11811C15.021 8.19017 14.8634 8.46469 14.9354 8.73126C15.0075 8.99784 15.282 9.15552 15.5486 9.08345C15.7509 9.02876 15.9595 9.0007 16.1692 9C16.7707 9.0002 17.3473 9.23849 17.7721 9.66197C18.1971 10.0856 18.4356 10.6598 18.4356 11.2581C18.4356 11.8565 18.1971 12.4307 17.7721 12.8543C17.3471 13.278 16.7702 13.5163 16.1684 13.5163C16.027 13.5163 15.8994 13.575 15.8084 13.6693C15.7216 13.7593 15.6683 13.8818 15.6683 14.0167C15.6685 14.2928 15.8925 14.5165 16.1686 14.5164C16.8402 14.5159 17.5018 14.6768 18.0976 14.9853C18.6933 15.2937 19.2055 15.7406 19.591 16.288C19.75 16.5138 20.0619 16.5679 20.2877 16.4089C20.5135 16.2499 20.5676 15.938 20.4086 15.7122C19.9305 15.0333 19.2955 14.4794 18.5573 14.0972C18.4075 14.0196 18.2542 13.9496 18.0982 13.8872C18.2322 13.7894 18.3592 13.681 18.4781 13.5626C19.091 12.9517 19.4356 12.1228 19.4356 11.2581C19.4356 10.3935 19.091 9.5646 18.4781 8.95371C17.8653 8.34287 17.0344 8 16.1684 8Z" fill="url(#paint3_linear_3036_500)"/>
-                                                <defs>
-                                                <filter id="filter0_d_3036_500" x="0.5625" y="0" width="22.5352" height="22.5162" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                                                <feOffset/>
-                                                <feGaussianBlur stdDeviation="4"/>
-                                                <feComposite in2="hardAlpha" operator="out"/>
-                                                <feColorMatrix type="matrix" values="0 0 0 0 0.631373 0 0 0 0 0.917647 0 0 0 0 0.0156863 0 0 0 0.4 0"/>
-                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3036_500"/>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3036_500" result="shape"/>
-                                                </filter>
-                                                <linearGradient id="paint0_linear_3036_500" x1="14.598" y1="11.2558" x2="9.06193" y2="11.2558" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#A1EA04"/>
-                                                <stop offset="1" stop-color="#DAEB02"/>
-                                                </linearGradient>
-                                                <linearGradient id="paint1_linear_3036_500" x1="14.598" y1="11.2558" x2="9.06193" y2="11.2558" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#A1EA04"/>
-                                                <stop offset="1" stop-color="#DAEB02"/>
-                                                </linearGradient>
-                                                <linearGradient id="paint2_linear_3036_500" x1="15.6645" y1="15.0073" x2="7.99921" y2="15.0073" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#A1EA04"/>
-                                                <stop offset="1" stop-color="#DAEB02"/>
-                                                </linearGradient>
-                                                <linearGradient id="paint3_linear_3036_500" x1="20.501" y1="12.2465" x2="14.9174" y2="12.2465" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#A1EA04"/>
-                                                <stop offset="1" stop-color="#DAEB02"/>
-                                                </linearGradient>
-                                                </defs>
-                                                </svg>                                                
-                                              <noscript></noscript></span>
-                                          </div>
-                                          <p class="font-urwgeometric_medium text-[12px] text-gray_1"
-                                            style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
-                                            ${comingPeople}</p>
-                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -1538,7 +1542,6 @@ export const acceptFreeMail = ({
     </table>
   </div>
 </body>
-
 </html>
 `
 
@@ -2282,7 +2285,7 @@ export const acceptPaidMail = ({
                                 <td align="left" class="es-text-9811" style="padding:0;Margin:0">
                                   <h1
                                     style="Margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:50px;font-style:normal;font-weight:normal;line-height:75px;color:#d2d2d2">
-                                    Congratulations! <span style="color:#a1ea04">Session</span> accepted.</h1>
+                                    Congratulations! <span style="color:#a1ea04">Session</span> booked.</h1>
                                 </td>
                               </tr>
                             </table>
@@ -2416,7 +2419,7 @@ export const acceptPaidMail = ({
                                 <td align="left" style="padding:0;Margin:0">
                                   <div style="display:flex;width:100%;border-radius:32px;overflow:hidden">
                                     <div
-                                      style="height:100%;overflow:hidden;border-top-left-radius:32px;border-bottom-left-radius:32px;border-right:2px solid #a1ea04;">
+                                      style="height:100%;overflow:hidden;border-top-left-radius:32px;border-bottom-left-radius:32px;border-top-right-radius:24px;border-right:2px solid #a1ea04;">
                                       <div style="position:relative;width:160px;height:160px">
                                         <span
                                           style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0px;margin:0px;padding:0px;position:absolute;inset:0px"><img
@@ -2427,91 +2430,92 @@ export const acceptPaidMail = ({
                                           <noscript></noscript></span>
                                       </div>
                                     </div>
-                                    <div
-                                      style="position:relative;display:flex;height:140px;flex-grow:1;flex-direction:column;padding-bottom:10px;padding-right:15px">
-                                      <div style="position:absolute;width:100%;height:100%;top:0px;left:0px;z-index:1">
-                                        <span
-                                          style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:160px;background:none;opacity:1;border:0px;margin:0px;padding:0px;position:absolute;inset:0px"><img
-                                            alt="not found image" decoding="async" data-nimg="fill"
-                                            data-xblocker="passed"
-                                            style="display:block;font-size:14px;border:none;outline:none;text-decoration:none;position:absolute;width:0px;object-fit:cover;inset:0px;box-sizing:border-box;padding:0px;margin:auto;height:0px;min-width:100%;max-width:100%;min-height:100%;max-height:100%;visibility:visible;opacity:0.6"
-                                            src="https://s3-alpha-sig.figma.com/img/2564/3a05/5e03093500901c57e382fb7f4ac5bcf3?Expires=1710720000&amp;Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&amp;Signature=a97zRjZk83yyh7OuqVdRU5KQvTtPAsZdRkXBj~n3jU1gQf-c7mSC6-l4xYaBXy1r0YdnU87FzW8xNJqqe4zOKca-gftl71AifWDXOpjHn-qPF-aa-ckgDSB1mKwuvgIHLicGZlO9EsGalX0dwzaHxFTtUrprjvXA7R2~xhLBWeAgPIrQKCL8zsMJtKLsjaXyJ72eA~Rvrn7J9ICdyueioP35IaYirMsEsutIaJsY88vGDzVM7LE2d8LNf~fDIhPr6dZ6XIt5cfOM9LTy-MWdO4QXoUM0ExoiYWhoZ123e4Iw~rNxLlY5RLCTsLAFw-YaickleT9IjyCVaOkfMIHjhA__"
-                                            lass="absolute !w-full object-cover undefined">
-                                          <noscript></noscript></span>
-                                      </div>
+                                    <div style="position:relative;display:flex;height:160px;flex-grow:1;flex-direction:column;
+                                      background-image:url(https://s3-alpha-sig.figma.com/img/2564/3a05/5e03093500901c57e382fb7f4ac5bcf3?Expires=1710720000&amp;Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&amp;Signature=a97zRjZk83yyh7OuqVdRU5KQvTtPAsZdRkXBj~n3jU1gQf-c7mSC6-l4xYaBXy1r0YdnU87FzW8xNJqqe4zOKca-gftl71AifWDXOpjHn-qPF-aa-ckgDSB1mKwuvgIHLicGZlO9EsGalX0dwzaHxFTtUrprjvXA7R2~xhLBWeAgPIrQKCL8zsMJtKLsjaXyJ72eA~Rvrn7J9ICdyueioP35IaYirMsEsutIaJsY88vGDzVM7LE2d8LNf~fDIhPr6dZ6XIt5cfOM9LTy-MWdO4QXoUM0ExoiYWhoZ123e4Iw~rNxLlY5RLCTsLAFw-YaickleT9IjyCVaOkfMIHjhA__);
+                                      background-position:center;background-size: cover;opacity: 0.6;z-index:1;flex-grow:1;">
+                                      <table style="padding: 13px 20px;z-index: 20;width:100%" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                          <tr>
+                                            <td>
+                                              <table style="width: 100%; padding-bottom: 5px" cellpadding="0"
+                                                cellspacing="0">
+                                                <tr>
+                                                  <td>
+                                                    <p class="font-urwgeometric_bold text-[16px] text-gray_2"
+                                                      style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;letter-spacing:0;color:#8c8c8c;font-size:16px">
+                                                      ${month}, <span
+                                                        class="bg-gradient_s_1 bg-clip-text text-[#00000000] leading-[130%] overflow-visible py-[10px] !py-0"
+                                                        style="color:#a1ea04;padding-top:0px;padding-bottom:0px">${day}</span>
+                                                    </p>
+                                                  </td>
+                                                  <td align="right">
+                                                    <table cellpadding="0" cellspacing="0">
+                                                      <tr>
+                                                        <td align="right">
+                                                          <p class="text-[14px] text-gray_2"
+                                                            style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#8c8c8c;font-size:14px">
+                                                            ${weekDay},</p>
+                                                        </td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td align="right">
+                                                          <div>
+                                                            <span
+                                                              style="color:#a1ea04;padding-top:0px;padding-bottom:0px;font-size:16px">${time}</span>
+                                                          </div>
+                                                        </td>
+                                                      </tr>
+                                                    </table>
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>
+                                              <div style="height:1px;background-color: #2a2a29;margin: 8px 0px;"></div>
+                                              </tdtyle=>
+                                          </tr>
+                                          <tr>
+                                            <td>
+                                              <table cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                  <td>
+                                                    <p style="color:#a1ea04;font-size:16px;line-height:18px;margin:0px">Sound Studios</p>
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>
+                                                    <p
+                                                      style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:28px;letter-spacing:0;color:#d2d2d2;font-size:24px;margin-top:-5px">
+                                                      ${studioName}</p>
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>
+                                                    <table cellpadding="0" cellspacing="0">
+                                                      <tbody>
+                                                        <tr>
+                                                          <td>
+                                                          <img src="https://fevfxwt.stripocdn.email/content/guids/CABINET_3eafbd7013160b7acee776b568c221146474957213164399565f63d701652eed/images/icon.png" alt="" width="20" class="adapt-img">
+                                                          </td>
+                                                          <td>
+                                                            <p class="font-urwgeometric_medium text-[12px] text-gray_1"
+                                                              style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#d2d2d2;font-size:14px">
+                                                              ${comingPeople}</p>
+                                                          </td>
+                                                        </tr>
+                                                      </tbody>
+                                                    </table>
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
                                       <div
                                         style="position:relative;z-index:2;align-items:center;justify-content:space-between;border-bottom-width:2px;border-bottom-color:#d2d2d2">
-                                        <p class="font-urwgeometric_bold text-[16px] text-gray_2"
-                                          style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;letter-spacing:0;color:#8c8c8c;font-size:16px">
-                                          ${month}, <span
-                                            class="bg-gradient_s_1 bg-clip-text text-[#00000000] leading-[130%] overflow-visible py-[10px] !py-0"
-                                            style="color:#a1ea04;padding-top:0px;padding-bottom:0px">${day}</span></p>
-                                        <div class="flex flex-col items-end"
-                                          style="display:flex;flex-direction:column;align-items:flex-end">
-                                          <p class="text-[14px] text-gray_2"
-                                            style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#8c8c8c;font-size:14px">
-                                            ${weekDay},</p>
-                                          <div>
-                                            <span
-                                              style="color:#a1ea04;padding-top:0px;padding-bottom:0px;font-size:16px">${time}</span>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div
-                                        style="position:relative;z-index:2;display:flex;flex-grow:1;flex-direction:column;justify-content:flex-end">
-                                        <span style="color:#a1ea04;padding-top:0px;padding-bottom:0px;font-size:16px"
-                                          lass="bg-gradient_s_1 bg-clip-text text-[#00000000] overflow-visible py-[10px] !py-0 font-urwgeometric text-[14px]">Sound
-                                          Studios</span>
-                                        <p
-                                          style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:36px;letter-spacing:0;color:#d2d2d2;font-size:24px;margin-top:-5px">
-                                          ${studioName}</p>
-                                        <div class="ml-[-5px] mt-[-5px] flex items-center"
-                                          style="margin-left:-5px;margin-top:-5px;display:flex;align-items:center">
-                                          <div style="position:relative;width:24px;height:23px">
-                                            <span
-                                              style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0px;margin:0px;padding:0px;position:absolute;inset:0px">
-                                              <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <g filter="url(#filter0_d_3036_500)">
-                                                <path d="M11.8297 14.0163C13.358 14.0163 14.5969 12.7814 14.5969 11.2581C14.5969 9.73486 13.358 8.5 11.8297 8.5C10.3014 8.5 9.0625 9.73486 9.0625 11.2581C9.0625 12.7814 10.3014 14.0163 11.8297 14.0163Z" fill="url(#paint0_linear_3036_500)"/>
-                                                <path d="M11.8297 14.0163C13.358 14.0163 14.5969 12.7814 14.5969 11.2581C14.5969 9.73486 13.358 8.5 11.8297 8.5C10.3014 8.5 9.0625 9.73486 9.0625 11.2581C9.0625 12.7814 10.3014 14.0163 11.8297 14.0163Z" stroke="url(#paint1_linear_3036_500)" stroke-miterlimit="10"/>
-                                                </g>
-                                                <path d="M8 16C8.43208 15.3872 9.00578 14.887 9.67266 14.5417C10.3395 14.1964 11.08 14.0161 11.8315 14.0161C12.583 14.0161 13.3234 14.1964 13.9903 14.5417C14.6572 14.887 15.2309 15.3872 15.663 16" stroke="url(#paint2_linear_3036_500)" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1684 8L16.1669 8C15.8699 8.00091 15.5743 8.04061 15.2876 8.11811C15.021 8.19017 14.8634 8.46469 14.9354 8.73126C15.0075 8.99784 15.282 9.15552 15.5486 9.08345C15.7509 9.02876 15.9595 9.0007 16.1692 9C16.7707 9.0002 17.3473 9.23849 17.7721 9.66197C18.1971 10.0856 18.4356 10.6598 18.4356 11.2581C18.4356 11.8565 18.1971 12.4307 17.7721 12.8543C17.3471 13.278 16.7702 13.5163 16.1684 13.5163C16.027 13.5163 15.8994 13.575 15.8084 13.6693C15.7216 13.7593 15.6683 13.8818 15.6683 14.0167C15.6685 14.2928 15.8925 14.5165 16.1686 14.5164C16.8402 14.5159 17.5018 14.6768 18.0976 14.9853C18.6933 15.2937 19.2055 15.7406 19.591 16.288C19.75 16.5138 20.0619 16.5679 20.2877 16.4089C20.5135 16.2499 20.5676 15.938 20.4086 15.7122C19.9305 15.0333 19.2955 14.4794 18.5573 14.0972C18.4075 14.0196 18.2542 13.9496 18.0982 13.8872C18.2322 13.7894 18.3592 13.681 18.4781 13.5626C19.091 12.9517 19.4356 12.1228 19.4356 11.2581C19.4356 10.3935 19.091 9.5646 18.4781 8.95371C17.8653 8.34287 17.0344 8 16.1684 8Z" fill="url(#paint3_linear_3036_500)"/>
-                                                <defs>
-                                                <filter id="filter0_d_3036_500" x="0.5625" y="0" width="22.5352" height="22.5162" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                                                <feOffset/>
-                                                <feGaussianBlur stdDeviation="4"/>
-                                                <feComposite in2="hardAlpha" operator="out"/>
-                                                <feColorMatrix type="matrix" values="0 0 0 0 0.631373 0 0 0 0 0.917647 0 0 0 0 0.0156863 0 0 0 0.4 0"/>
-                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3036_500"/>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3036_500" result="shape"/>
-                                                </filter>
-                                                <linearGradient id="paint0_linear_3036_500" x1="14.598" y1="11.2558" x2="9.06193" y2="11.2558" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#A1EA04"/>
-                                                <stop offset="1" stop-color="#DAEB02"/>
-                                                </linearGradient>
-                                                <linearGradient id="paint1_linear_3036_500" x1="14.598" y1="11.2558" x2="9.06193" y2="11.2558" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#A1EA04"/>
-                                                <stop offset="1" stop-color="#DAEB02"/>
-                                                </linearGradient>
-                                                <linearGradient id="paint2_linear_3036_500" x1="15.6645" y1="15.0073" x2="7.99921" y2="15.0073" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#A1EA04"/>
-                                                <stop offset="1" stop-color="#DAEB02"/>
-                                                </linearGradient>
-                                                <linearGradient id="paint3_linear_3036_500" x1="20.501" y1="12.2465" x2="14.9174" y2="12.2465" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#A1EA04"/>
-                                                <stop offset="1" stop-color="#DAEB02"/>
-                                                </linearGradient>
-                                                </defs>
-                                                </svg>                                                
-                                              <noscript></noscript></span>
-                                          </div>
-                                          <p class="font-urwgeometric_medium text-[12px] text-gray_1"
-                                            style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">
-                                            ${comingPeople}</p>
-                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -2567,7 +2571,6 @@ export const acceptPaidMail = ({
     </table>
   </div>
 </body>
-
 </html>
 `
 

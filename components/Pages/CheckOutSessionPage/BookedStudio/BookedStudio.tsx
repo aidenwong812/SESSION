@@ -74,6 +74,9 @@ const BookedStudio = ({ className = "" }) => {
           >
             Sound Studios
           </p>
+          <p className="mt-[-5px] font-urwgeometric_semibold text-[18px] text-gray_1">
+            {sessionData.studio.name}
+          </p>
           <div className="flex items-center gap-x-[5px]">
             <Media
               type="image"
