@@ -7,8 +7,7 @@ import { SESSION_EMAIL, declineMail } from "@/lib/consts/mail"
 class sendDeclinedSession {
   @Post()
   async sendDeclinedSession(@Body() body: DeclineSessionDTO) {
-    const { requestId, studioNotes } = body
-    const { request } = await deleteSessionRequest(requestId)
+    const { request, studioNotes } = body
 
     const personalizations = [
       {
@@ -36,6 +35,7 @@ class sendDeclinedSession {
     }
 
     try {
+      await deleteSessionRequest(request.id)
       const response = await sendEmail(data)
       return response.data
     } catch (err) {

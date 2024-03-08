@@ -1298,14 +1298,14 @@ export const acceptFreeMail = ({
                               style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                               <tr>
                                 <td align="center" style="padding:0;Margin:0"><!--[if mso]><a href="https://calendar.google.com/calendar/u/0/r" target="_blank" hidden>
-	<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="" 
+	<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="https://calendar.google.com/calendar/u/0/r" 
                 style="height:49px; v-text-anchor:middle; width:556px" arcsize="50%" strokecolor="#2cb543" strokeweight="2px" fillcolor="#a1ea04">
 		<w:anchorlock></w:anchorlock>
 		<center style='color:#000000; font-family:arial, "helvetica neue", helvetica, sans-serif; font-size:18px; font-weight:700; line-height:18px;  mso-text-raise:1px'>Add to Calendar</center>
 	</v:roundrect></a>
 <![endif]--><!--[if !mso]><!-- --><span class="es-button-border es-fw msohide"
                                     style="border-style:solid;border-color:#2CB543;background:#a1ea04;border-width:0px 0px 2px 0px;display:block;border-radius:30px;width:auto;mso-hide:all"><a
-                                      href="" class="es-button es-button-9371" target="_blank"
+                                      href="https://calendar.google.com/calendar/u/0/r" class="es-button es-button-9371" target="_blank"
                                       style="mso-style-priority:100 !important;text-decoration:none !important;mso-line-height-rule:exactly;color:#000000;font-size:18px;padding:15px;display:block;background:#a1ea04;border-radius:30px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:bold;font-style:normal;line-height:22px;width:auto;text-align:center;letter-spacing:0;mso-padding-alt:0;mso-border-alt:10px solid #a1ea04">Add
                                       to Calendar</a></span><!--<![endif]--></td>
                               </tr>
@@ -2334,7 +2334,7 @@ export const acceptPaidMail = ({
 	</v:roundrect></a>
 <![endif]--><!--[if !mso]><!-- --><span class="es-button-border es-fw msohide"
                                     style="border-style:solid;border-color:#2CB543;background:#a1ea04;border-width:0px 0px 2px 0px;display:block;border-radius:30px;width:auto;mso-hide:all"><a
-                                      href="" class="es-button es-button-9371" target="_blank"
+                                      href="https://session-pied.vercel.app/checkout-session/${requestId}" class="es-button es-button-9371" target="_blank"
                                       style="mso-style-priority:100 !important;text-decoration:none !important;mso-line-height-rule:exactly;color:#000000;font-size:18px;padding:15px;display:block;background:#a1ea04;border-radius:30px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:bold;font-style:normal;line-height:22px;width:auto;text-align:center;letter-spacing:0;mso-padding-alt:0;mso-border-alt:10px solid #a1ea04">Go
                                       to Session</a></span><!--<![endif]--></td>
                               </tr>

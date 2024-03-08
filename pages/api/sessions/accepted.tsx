@@ -2,7 +2,6 @@ import { createHandler, Post, Body } from "next-api-decorators"
 import sendEmail from "@/lib/sendEmail"
 import { AccpetSessionDTO } from "@/DTO/acceptsession.dto"
 import { SESSION_EMAIL, acceptFreeMail, acceptPaidMail } from "@/lib/consts/mail"
-import getSessionByRequestId from "@/lib/firebase/getSessionByRequestId"
 import getMonthName from "@/lib/getMonthName"
 import getWeekDay from "@/lib/getWeekDay"
 import convertTimeFormat from "@/lib/convertTimeFormat"
@@ -10,11 +9,10 @@ import convertTimeFormat from "@/lib/convertTimeFormat"
 class sendAcceptedSession {
   @Post()
   async sendAcceptedSession(@Body() body: AccpetSessionDTO) {
-    const { requestId, studioNotes, type } = body
-    const request: any = await getSessionByRequestId(requestId)
+    const { request, studioNotes, type } = body
 
     const emailData = {
-      requestId,
+      requestId: request.id,
       month: getMonthName(request.selectedDay.month),
       day: request.selectedDay.day,
       weekDay: getWeekDay(request.selectedDay),

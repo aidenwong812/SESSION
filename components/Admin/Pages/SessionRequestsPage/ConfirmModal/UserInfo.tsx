@@ -2,8 +2,7 @@ import { useSessionRequest } from "@/providers/SessionRequestProvider"
 import Media from "@/shared/Media"
 
 const UserInfo = () => {
-  const { sessionRequests, selectedRequest: selectedRequestId } = useSessionRequest()
-  const selectedRequest = sessionRequests.find((request) => request.id === selectedRequestId)
+  const { selectedRequest } = useSessionRequest()
 
   return (
     <div className="relative z-[2] flex items-center gap-x-[10px]">

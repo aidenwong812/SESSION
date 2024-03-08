@@ -3,7 +3,6 @@ import { toast } from "react-toastify"
 import getSessionRequests from "@/lib/firebase/getSessionRequests"
 import sendSessionDeclined from "@/lib/sendSessionDeclined"
 import addToSessionCalendar from "@/lib/addToSessionCalendar"
-import getSessionByRequestId from "@/lib/firebase/getSessionByRequestId"
 
 export enum SESSION_REQUEST_STATUS {
   INITIAL = "INITIAL",
@@ -30,25 +29,26 @@ const SessionRequestProvider = ({ children }) => {
     setSessionRequests(newSessionRequests)
   }
 
-  const handleDecline = async (requestId) => {
-    const response: any = await sendSessionDeclined({ requestId, studioNotes })
+  const handleDecline = async (request) => {
+    const response: any = await sendSessionDeclined({ request, studioNotes })
     if (response.status === 200) {
       toast.success("Declined Request")
       fetchSessionRequests()
     }
   }
 
-  const handleAccept = async (requestId) => {
-    const sessionData: any = await getSessionByRequestId(requestId)
-    const startDateTime = sessionData.event.start.dateTime
-    const endDateTime = sessionData.event.end.dateTime
+  const handleAccept = async (request) => {
+    const startDateTime = request.event.start.dateTime
+    const endDateTime = request.event.end.dateTime
     const response = await Promise.all([
-      await addToSessionCalendar(startDateTime, endDateTime, sessionData.studio.calendarEmail),
-      await addToSessionCalendar(startDateTime, endDateTime, sessionData.email),
+      await addToSessionCalendar(startDateTime, endDateTime, request.studio.calendarEmail),
+      await addToSessionCalendar(startDateTime, endDateTime, request.email),
     ])
 
     if (response[0].error || response[1].error) {
       toast.error("add event to calendar failed")
+    } else {
+      toast.success("Accepted Request")
     }
   }
 

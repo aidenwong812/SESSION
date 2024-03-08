@@ -15,13 +15,13 @@ const RequestDetailModal = ({ request, isVisible, toggleModal }) => {
   const onClickConfirm = () => {
     toggleModal()
     setIsOpenConfirmModal(true)
-    setSelectedRequest(request.id)
+    setSelectedRequest(request)
   }
 
   const onClickDecline = () => {
     toggleModal()
     setIsOpenDeclineModal(true)
-    setSelectedRequest(request.id)
+    setSelectedRequest(request)
   }
 
   return (

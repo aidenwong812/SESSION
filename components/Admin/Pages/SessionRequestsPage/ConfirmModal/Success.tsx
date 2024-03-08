@@ -4,12 +4,7 @@ import { SESSION_REQUEST_STATUS, useSessionRequest } from "@/providers/SessionRe
 import StudioDetail from "../RequestDetailModal/StudioDetail"
 
 const Success = ({ onClose }) => {
-  const {
-    setConfirmStatus,
-    sessionRequests,
-    selectedRequest: selectedRequestId,
-  } = useSessionRequest()
-  const selectedRequest = sessionRequests.find((request) => request.id === selectedRequestId)
+  const { setConfirmStatus, selectedRequest } = useSessionRequest()
 
   const handleClose = () => {
     setConfirmStatus(SESSION_REQUEST_STATUS.INITIAL)

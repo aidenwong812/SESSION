@@ -1,8 +1,7 @@
 import { IsString } from "class-validator"
 
 export class AccpetSessionDTO {
-  @IsString()
-  requestId: string
+  request: any
 
   @IsString()
   studioNotes: string

@@ -3,11 +3,11 @@ import CalendarProvider from "@/providers/CalendarProvider"
 import SessionRequestProvider from "@/providers/SessionRequestProvider"
 
 const SessionRequests = () => (
-  <SessionRequestProvider>
-    <CalendarProvider>
+  <CalendarProvider>
+    <SessionRequestProvider>
       <SessionRequestsPage />
-    </CalendarProvider>
-  </SessionRequestProvider>
+    </SessionRequestProvider>
+  </CalendarProvider>
 )
 
 export default SessionRequests

@@ -7,7 +7,7 @@ const ReasonSubmit = ({ onClose }) => {
   const { selectedRequest, studioNotes, setStudioNotes, handleDecline } = useSessionRequest()
 
   const onClickDecline = async () => {
-    handleDecline({ requestId: selectedRequest, studioNotes })
+    handleDecline(selectedRequest)
     onClose()
   }
 

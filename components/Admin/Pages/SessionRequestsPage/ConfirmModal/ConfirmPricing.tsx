@@ -11,7 +11,7 @@ import StudioDetail from "../RequestDetailModal/StudioDetail"
 
 export default function ConfirmPricing() {
   const {
-    selectedRequest: selectedRequestId,
+    selectedRequest,
     setConfirmStatus,
     sessionPrice,
     setSessionPrice,
@@ -19,13 +19,11 @@ export default function ConfirmPricing() {
     setEngineerPrice,
     studioNotes,
     handleAccept,
-    sessionRequests,
   } = useSessionRequest()
-  const selectedRequest = sessionRequests.find((request) => request.id === selectedRequestId)
 
   const onClickConfirm = () => {
-    sendSessionAccepted({ requestId: selectedRequest, studioNotes, type: "paid" })
-    handleAccept(selectedRequestId)
+    sendSessionAccepted({ request: selectedRequest, studioNotes, type: "paid" })
+    handleAccept(selectedRequest)
     setConfirmStatus(SESSION_REQUEST_STATUS.SUCCESS)
   }
 
