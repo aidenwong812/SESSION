@@ -1379,120 +1379,111 @@ export const acceptFreeMail = ({
                     <td align="left" bgcolor="#1a1a18"
                       style="Margin:0;padding-right:30px;padding-left:30px;padding-bottom:20px;padding-top:30px;background-color:#1a1a18">
                       <table cellpadding="0" cellspacing="0" role="none"
-                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                        <tr>
-                          <td align="left" style="padding:0;Margin:0;width:540px">
-                            <table cellpadding="0" cellspacing="0" width="100%" role="presentation"
-                              style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                              <tr>
-                                <td align="left" style="padding:0;Margin:0">
-                                  <div style="display:flex;width:100%;border-radius:32px;overflow:hidden">
-                                    <div
-                                      style="height:100%;overflow:hidden;border-top-left-radius:32px;border-bottom-left-radius:32px;border-top-right-radius:24px;border-right:2px solid #a1ea04;">
-                                      <div style="position:relative;width:160px;height:160px">
-                                        <span
-                                          style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0px;margin:0px;padding:0px;position:absolute;inset:0px"><img
-                                            alt="not found image" decoding="async" data-nimg="fill"
-                                            data-xblocker="passed"
-                                            style="display:block;font-size:14px;border:none;outline:none;text-decoration:none;position:absolute;width:0px;object-fit:cover;inset:0px;box-sizing:border-box;padding:0px;margin:auto;height:0px;min-width:100%;max-width:100%;min-height:100%;max-height:100%;visibility:visible;height:160px"
-                                            src="https://fevfxwt.stripocdn.email/content/guids/CABINET_497691cd56a8d78d114ed1241dc99e05a19d8e02cc6c94cb4380b52412481bae/images/image_1.png">
-                                          <noscript></noscript></span>
-                                      </div>
-                                    </div>
-                                    <div style="position:relative;display:flex;height:160px;flex-grow:1;flex-direction:column;
-                                      background-image:url(https://s3-alpha-sig.figma.com/img/2564/3a05/5e03093500901c57e382fb7f4ac5bcf3?Expires=1710720000&amp;Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&amp;Signature=a97zRjZk83yyh7OuqVdRU5KQvTtPAsZdRkXBj~n3jU1gQf-c7mSC6-l4xYaBXy1r0YdnU87FzW8xNJqqe4zOKca-gftl71AifWDXOpjHn-qPF-aa-ckgDSB1mKwuvgIHLicGZlO9EsGalX0dwzaHxFTtUrprjvXA7R2~xhLBWeAgPIrQKCL8zsMJtKLsjaXyJ72eA~Rvrn7J9ICdyueioP35IaYirMsEsutIaJsY88vGDzVM7LE2d8LNf~fDIhPr6dZ6XIt5cfOM9LTy-MWdO4QXoUM0ExoiYWhoZ123e4Iw~rNxLlY5RLCTsLAFw-YaickleT9IjyCVaOkfMIHjhA__);
-                                      background-position:center;background-size: cover;opacity: 0.6;z-index:1;flex-grow:1">
-                                      <table style="padding: 13px 20px;z-index: 20; width:100%" cellpadding="0" cellspacing="0">
-                                        <tbody>
-                                          <tr>
-                                            <td>
-                                              <table style="width: 100%; padding-bottom: 5px" cellpadding="0"
-                                                cellspacing="0">
-                                                <tr>
-                                                  <td>
-                                                    <p class="font-urwgeometric_bold text-[16px] text-gray_2"
-                                                      style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;letter-spacing:0;color:#8c8c8c;font-size:16px">
-                                                      ${month}, <span
-                                                        style="color:#a1ea04;padding-top:0px;padding-bottom:0px">${day}</span>
-                                                    </p>
-                                                  </td>
-                                                  <td align="right">
-                                                    <table cellpadding="0" cellspacing="0">
-                                                      <tr>
-                                                        <td align="right">
-                                                          <p class="text-[14px] text-gray_2"
-                                                            style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#8c8c8c;font-size:14px">
-                                                            ${weekDay},</p>
-                                                        </td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td align="right">
-                                                          <div>
-                                                            <span
-                                                              style="color:#a1ea04;padding-top:0px;padding-bottom:0px;font-size:16px">${time}</span>
-                                                          </div>
-                                                        </td>
-                                                      </tr>
-                                                    </table>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </td>
-                                          </tr>
-                                          <tr>
-                                            <td>
-                                              <div style="height:1px;background-color: #2a2a29;margin: 8px 0px;"></div>
-                                              </tdtyle=>
-                                          </tr>
-                                          <tr>
-                                            <td>
-                                              <table cellpadding="0" cellspacing="0">
-                                                <tr>
-                                                  <td>
-                                                    <p style="color:#a1ea04;font-size:16px;line-height:18px;margin:0px">Sound Studios</p>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td>
-                                                    <p
-                                                      style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:28px;letter-spacing:0;color:#d2d2d2;font-size:24px;margin-top:-5px">
-                                                      ${studioName}</p>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td>
-                                                    <table cellpadding="0" cellspacing="0">
-                                                      <tbody>
-                                                        <tr>
-                                                          <td>
-                                                            <img
-                                                              style="margin-left: -5px;"
-                                                              src="https://fevfxwt.stripocdn.email/content/guids/CABINET_22097a937fc7983fb5a8666230a0b91e7ed59251d20db30a1663129e70c9e304/images/comingpeople.png"
-                                                              alt="" width="24px" height="20px" class="adapt-img">
-                                                          </td>
-                                                          <td>
-                                                            <p class="font-urwgeometric_medium text-[12px] text-gray_1"
-                                                              style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#d2d2d2;font-size:14px">
-                                                              ${comingPeople}</p>
-                                                          </td>
-                                                        </tr>
-                                                      </tbody>
-                                                    </table>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </td>
-                                          </tr>
-                                        </tbody>
+                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:100%">
+                        <tr style="border-radius: 32px;">
+                          <td align="left" style="width: 160px;">
+                            <div
+                              style="height:100%;width:160px;overflow:hidden;border-top-left-radius:32px;border-bottom-left-radius:32px;border-top-right-radius:24px;border-right:3px solid #a1ea04;z-index: 30;position: relative;">
+                              <div style="width:160px;height:160px;">
+                                <span
+                                  style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0px;margin:0px;padding:0px;inset:0px"><img
+                                    alt="not found image" decoding="async" data-nimg="fill" data-xblocker="passed"
+                                    style="display:block;font-size:14px;border:none;outline:none;text-decoration:none;object-fit:cover;inset:0px;box-sizing:border-box;padding:0px;margin:auto;height:0px;min-width:100%;max-width:100%;min-height:100%;max-height:100%;visibility:visible;height:160px;"
+                                    src="https://fevfxwt.stripocdn.email/content/guids/CABINET_497691cd56a8d78d114ed1241dc99e05a19d8e02cc6c94cb4380b52412481bae/images/image_1.png">
+                                  <noscript></noscript></span>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div style="display:flex;height:160px;flex-direction:column;margin-left: -10px;border-top-right-radius: 32px;border-bottom-right-radius: 32px;position: relative;
+                                background-image:url(https://fevfxwt.stripocdn.email/content/guids/CABINET_22097a937fc7983fb5a8666230a0b91e7ed59251d20db30a1663129e70c9e304/images/bg_subtle_studio_pic.png);
+                                background-position:center;background-size: cover;">
+                              <table style="padding: 13px 20px;width:100%;height: 100%;" cellpadding="0"
+                                cellspacing="0">
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                      <table style="width: 100%; padding-bottom: 5px" cellpadding="0"
+                                        cellspacing="0">
+                                        <tr>
+                                          <td>
+                                            <p class="font-urwgeometric_bold text-[16px] text-gray_2"
+                                              style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;letter-spacing:0;color:#8c8c8c;font-size:16px">
+                                              ${month}, <span
+                                                class="bg-gradient_s_1 bg-clip-text text-[#00000000] leading-[130%] overflow-visible py-[10px] !py-0"
+                                                style="color:#a1ea04;padding-top:0px;padding-bottom:0px">${day}</span>
+                                            </p>
+                                          </td>
+                                          <td align="right">
+                                            <table cellpadding="0" cellspacing="0">
+                                              <tr>
+                                                <td align="right">
+                                                  <p class="text-[14px] text-gray_2"
+                                                    style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#8c8c8c;font-size:14px">
+                                                    ${weekDay},</p>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td align="right">
+                                                  <div>
+                                                    <span
+                                                      style="color:#a1ea04;padding-top:0px;padding-bottom:0px;font-size:16px">${time}</span>
+                                                  </div>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
                                       </table>
-                                      <div
-                                        style="position:relative;z-index:2;align-items:center;justify-content:space-between;border-bottom-width:2px;border-bottom-color:#d2d2d2">
-                                      </div>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                            </table>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div style="height:1px;background-color: #2a2a29;margin: 8px 0px;"></div>
+                                      </tdtyle=>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <table cellpadding="0" cellspacing="0">
+                                        <tr>
+                                          <td>
+                                            <p style="color:#a1ea04;font-size:16px;line-height:18px;margin:0px">
+                                              Sound Studios</p>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td>
+                                            <p
+                                              style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:28px;letter-spacing:0;color:#d2d2d2;font-size:24px;margin-top:-5px">
+                                              ${studioName}</p>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td>
+                                            <table cellpadding="0" cellspacing="0">
+                                              <tbody>
+                                                <tr>
+                                                  <td>
+                                                    <img
+                                                      src="https://fevfxwt.stripocdn.email/content/guids/CABINET_22097a937fc7983fb5a8666230a0b91e7ed59251d20db30a1663129e70c9e304/images/comingpeople.png"
+                                                      alt="" width="20" class="adapt-img">
+                                                  </td>
+                                                  <td>
+                                                    <p class="font-urwgeometric_medium text-[12px] text-gray_1"
+                                                      style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#d2d2d2;font-size:14px">
+                                                      ${comingPeople}</p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
                           </td>
                         </tr>
                       </table>
@@ -2337,7 +2328,8 @@ export const acceptPaidMail = ({
 	</v:roundrect></a>
 <![endif]--><!--[if !mso]><!-- --><span class="es-button-border es-fw msohide"
                                     style="border-style:solid;border-color:#2CB543;background:#a1ea04;border-width:0px 0px 2px 0px;display:block;border-radius:30px;width:auto;mso-hide:all"><a
-                                      href="https://session-pied.vercel.app/checkout-session/${requestId}" class="es-button es-button-9371" target="_blank"
+                                      href="https://session-pied.vercel.app/checkout-session/${requestId}"
+                                      class="es-button es-button-9371" target="_blank"
                                       style="mso-style-priority:100 !important;text-decoration:none !important;mso-line-height-rule:exactly;color:#000000;font-size:18px;padding:15px;display:block;background:#a1ea04;border-radius:30px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:bold;font-style:normal;line-height:22px;width:auto;text-align:center;letter-spacing:0;mso-padding-alt:0;mso-border-alt:10px solid #a1ea04">Go
                                       to Session</a></span><!--<![endif]--></td>
                               </tr>
@@ -2415,109 +2407,109 @@ export const acceptPaidMail = ({
                           <td align="left" style="padding:0;Margin:0;width:540px">
                             <table cellpadding="0" cellspacing="0" width="100%" role="presentation"
                               style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                              <tr>
-                                <td align="left" style="padding:0;Margin:0">
-                                  <div style="display:flex;width:100%;border-radius:32px;overflow:hidden">
-                                    <div
-                                      style="height:100%;overflow:hidden;border-top-left-radius:32px;border-bottom-left-radius:32px;border-top-right-radius:24px;border-right:2px solid #a1ea04;">
-                                      <div style="position:relative;width:160px;height:160px">
-                                        <span
-                                          style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0px;margin:0px;padding:0px;position:absolute;inset:0px"><img
-                                            alt="not found image" decoding="async" data-nimg="fill"
-                                            data-xblocker="passed"
-                                            style="display:block;font-size:14px;border:none;outline:none;text-decoration:none;position:absolute;width:0px;object-fit:cover;inset:0px;box-sizing:border-box;padding:0px;margin:auto;height:0px;min-width:100%;max-width:100%;min-height:100%;max-height:100%;visibility:visible;height:160px"
-                                            src="https://fevfxwt.stripocdn.email/content/guids/CABINET_497691cd56a8d78d114ed1241dc99e05a19d8e02cc6c94cb4380b52412481bae/images/image_1.png">
-                                          <noscript></noscript></span>
-                                      </div>
+                              <tr style="border-radius: 32px;">
+                                <td align="left" style="width: 160px;">
+                                  <div
+                                    style="height:100%;width:160px;overflow:hidden;border-top-left-radius:32px;border-bottom-left-radius:32px;border-top-right-radius:24px;border-right:3px solid #a1ea04;z-index: 30;position: relative;">
+                                    <div style="width:160px;height:160px;">
+                                      <span
+                                        style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0px;margin:0px;padding:0px;inset:0px"><img
+                                          alt="not found image" decoding="async" data-nimg="fill" data-xblocker="passed"
+                                          style="display:block;font-size:14px;border:none;outline:none;text-decoration:none;object-fit:cover;inset:0px;box-sizing:border-box;padding:0px;margin:auto;height:0px;min-width:100%;max-width:100%;min-height:100%;max-height:100%;visibility:visible;height:160px;"
+                                          src="https://fevfxwt.stripocdn.email/content/guids/CABINET_497691cd56a8d78d114ed1241dc99e05a19d8e02cc6c94cb4380b52412481bae/images/image_1.png">
+                                        <noscript></noscript></span>
                                     </div>
-                                    <div style="position:relative;display:flex;height:160px;flex-grow:1;flex-direction:column;
-                                      background-image:url(https://s3-alpha-sig.figma.com/img/2564/3a05/5e03093500901c57e382fb7f4ac5bcf3?Expires=1710720000&amp;Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&amp;Signature=a97zRjZk83yyh7OuqVdRU5KQvTtPAsZdRkXBj~n3jU1gQf-c7mSC6-l4xYaBXy1r0YdnU87FzW8xNJqqe4zOKca-gftl71AifWDXOpjHn-qPF-aa-ckgDSB1mKwuvgIHLicGZlO9EsGalX0dwzaHxFTtUrprjvXA7R2~xhLBWeAgPIrQKCL8zsMJtKLsjaXyJ72eA~Rvrn7J9ICdyueioP35IaYirMsEsutIaJsY88vGDzVM7LE2d8LNf~fDIhPr6dZ6XIt5cfOM9LTy-MWdO4QXoUM0ExoiYWhoZ123e4Iw~rNxLlY5RLCTsLAFw-YaickleT9IjyCVaOkfMIHjhA__);
-                                      background-position:center;background-size: cover;opacity: 0.6;z-index:1;flex-grow:1;">
-                                      <table style="padding: 13px 20px;z-index: 20;width:100%" cellpadding="0" cellspacing="0">
-                                        <tbody>
-                                          <tr>
-                                            <td>
-                                              <table style="width: 100%; padding-bottom: 5px" cellpadding="0"
-                                                cellspacing="0">
-                                                <tr>
-                                                  <td>
-                                                    <p class="font-urwgeometric_bold text-[16px] text-gray_2"
-                                                      style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;letter-spacing:0;color:#8c8c8c;font-size:16px">
-                                                      ${month}, <span
-                                                        class="bg-gradient_s_1 bg-clip-text text-[#00000000] leading-[130%] overflow-visible py-[10px] !py-0"
-                                                        style="color:#a1ea04;padding-top:0px;padding-bottom:0px">${day}</span>
-                                                    </p>
-                                                  </td>
-                                                  <td align="right">
-                                                    <table cellpadding="0" cellspacing="0">
+                                  </div>
+                                </td>
+                                <td>
+                                  <div style="display:flex;height:160px;flex-direction:column;margin-left: -10px;border-top-right-radius: 32px;border-bottom-right-radius: 32px;position: relative;
+                                      background-image:url(https://fevfxwt.stripocdn.email/content/guids/CABINET_22097a937fc7983fb5a8666230a0b91e7ed59251d20db30a1663129e70c9e304/images/bg_subtle_studio_pic.png);
+                                      background-position:center;background-size: cover;">
+                                    <table style="padding: 13px 20px;width:100%;height: 100%;" cellpadding="0"
+                                      cellspacing="0">
+                                      <tbody>
+                                        <tr>
+                                          <td>
+                                            <table style="width: 100%; padding-bottom: 5px" cellpadding="0"
+                                              cellspacing="0">
+                                              <tr>
+                                                <td>
+                                                  <p class="font-urwgeometric_bold text-[16px] text-gray_2"
+                                                    style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;letter-spacing:0;color:#8c8c8c;font-size:16px">
+                                                    ${month}, <span
+                                                      class="bg-gradient_s_1 bg-clip-text text-[#00000000] leading-[130%] overflow-visible py-[10px] !py-0"
+                                                      style="color:#a1ea04;padding-top:0px;padding-bottom:0px">${day}</span>
+                                                  </p>
+                                                </td>
+                                                <td align="right">
+                                                  <table cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td align="right">
+                                                        <p class="text-[14px] text-gray_2"
+                                                          style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#8c8c8c;font-size:14px">
+                                                          ${weekDay},</p>
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td align="right">
+                                                        <div>
+                                                          <span
+                                                            style="color:#a1ea04;padding-top:0px;padding-bottom:0px;font-size:16px">${time}</span>
+                                                        </div>
+                                                      </td>
+                                                    </tr>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td>
+                                            <div style="height:1px;background-color: #2a2a29;margin: 8px 0px;"></div>
+                                            </tdtyle=>
+                                        </tr>
+                                        <tr>
+                                          <td>
+                                            <table cellpadding="0" cellspacing="0">
+                                              <tr>
+                                                <td>
+                                                  <p style="color:#a1ea04;font-size:16px;line-height:18px;margin:0px">
+                                                    Sound Studios</p>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td>
+                                                  <p
+                                                    style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:28px;letter-spacing:0;color:#d2d2d2;font-size:24px;margin-top:-5px">
+                                                    ${studioName}</p>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td>
+                                                  <table cellpadding="0" cellspacing="0">
+                                                    <tbody>
                                                       <tr>
-                                                        <td align="right">
-                                                          <p class="text-[14px] text-gray_2"
-                                                            style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#8c8c8c;font-size:14px">
-                                                            ${weekDay},</p>
+                                                        <td>
+                                                          <img
+                                                            src="https://fevfxwt.stripocdn.email/content/guids/CABINET_22097a937fc7983fb5a8666230a0b91e7ed59251d20db30a1663129e70c9e304/images/comingpeople.png"
+                                                            alt="" width="20" class="adapt-img">
+                                                        </td>
+                                                        <td>
+                                                          <p class="font-urwgeometric_medium text-[12px] text-gray_1"
+                                                            style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#d2d2d2;font-size:14px">
+                                                            ${comingPeople}</p>
                                                         </td>
                                                       </tr>
-                                                      <tr>
-                                                        <td align="right">
-                                                          <div>
-                                                            <span
-                                                              style="color:#a1ea04;padding-top:0px;padding-bottom:0px;font-size:16px">${time}</span>
-                                                          </div>
-                                                        </td>
-                                                      </tr>
-                                                    </table>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </td>
-                                          </tr>
-                                          <tr>
-                                            <td>
-                                              <div style="height:1px;background-color: #2a2a29;margin: 8px 0px;"></div>
-                                              </tdtyle=>
-                                          </tr>
-                                          <tr>
-                                            <td>
-                                              <table cellpadding="0" cellspacing="0">
-                                                <tr>
-                                                  <td>
-                                                    <p style="color:#a1ea04;font-size:16px;line-height:18px;margin:0px">Sound Studios</p>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td>
-                                                    <p
-                                                      style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:28px;letter-spacing:0;color:#d2d2d2;font-size:24px;margin-top:-5px">
-                                                      ${studioName}</p>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td>
-                                                    <table cellpadding="0" cellspacing="0">
-                                                      <tbody>
-                                                        <tr>
-                                                          <td>
-                                                          <img src="https://fevfxwt.stripocdn.email/content/guids/CABINET_22097a937fc7983fb5a8666230a0b91e7ed59251d20db30a1663129e70c9e304/images/comingpeople.png" alt="" width="20" class="adapt-img">
-                                                          </td>
-                                                          <td>
-                                                            <p class="font-urwgeometric_medium text-[12px] text-gray_1"
-                                                              style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#d2d2d2;font-size:14px">
-                                                              ${comingPeople}</p>
-                                                          </td>
-                                                        </tr>
-                                                      </tbody>
-                                                    </table>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                      <div
-                                        style="position:relative;z-index:2;align-items:center;justify-content:space-between;border-bottom-width:2px;border-bottom-color:#d2d2d2">
-                                      </div>
-                                    </div>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
                                   </div>
                                 </td>
                               </tr>
