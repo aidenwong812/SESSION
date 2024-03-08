@@ -8,9 +8,9 @@ import FadeIn from "../../../FadeIn"
 import PriceDetails from "../PriceDetails"
 import PaymentSelector from "../../../PaymentSelector/PaymentSelector"
 import CheckOutTitle from "../CheckOutTitle"
-import StudioNotes from "../../../StudioNotes"
 import RemainingAmount from "../RemainingAmount"
 import SingleStudio from "../../../SingleStudio"
+import StudioNotes from "../StudioNotes"
 
 const ProjectCheckOut = () => {
   const isMobile = useIsMobile()

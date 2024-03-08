@@ -7,10 +7,10 @@ import PaymentSelector from "../../../PaymentSelector/PaymentSelector"
 import StudioLocation from "../../../StudioLocation"
 import EquipmentDetail from "../../../EquipmentDetail"
 import CheckOutTitle from "../CheckOutTitle"
-import StudioNotes from "../../../StudioNotes"
 import StudioOffer from "../StudioOffer"
 import BookedStudio from "../BookedStudio"
 import CTAButtons from "../CTAButtons"
+import StudioNotes from "../StudioNotes"
 
 const CheckDetail = () => {
   const isMobile = useIsMobile()

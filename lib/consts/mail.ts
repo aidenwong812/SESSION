@@ -1467,7 +1467,7 @@ export const acceptFreeMail = ({
                                                           <td>
                                                             <img
                                                               style="margin-left: -5px;"
-                                                              src="https://fevfxwt.stripocdn.email/content/guids/CABINET_3eafbd7013160b7acee776b568c221146474957213164399565f63d701652eed/images/capacity.png"
+                                                              src="https://fevfxwt.stripocdn.email/content/guids/CABINET_22097a937fc7983fb5a8666230a0b91e7ed59251d20db30a1663129e70c9e304/images/comingpeople.png"
                                                               alt="" width="24px" height="20px" class="adapt-img">
                                                           </td>
                                                           <td>
@@ -2497,7 +2497,7 @@ export const acceptPaidMail = ({
                                                       <tbody>
                                                         <tr>
                                                           <td>
-                                                          <img src="https://fevfxwt.stripocdn.email/content/guids/CABINET_3eafbd7013160b7acee776b568c221146474957213164399565f63d701652eed/images/icon.png" alt="" width="20" class="adapt-img">
+                                                          <img src="https://fevfxwt.stripocdn.email/content/guids/CABINET_22097a937fc7983fb5a8666230a0b91e7ed59251d20db30a1663129e70c9e304/images/comingpeople.png" alt="" width="20" class="adapt-img">
                                                           </td>
                                                           <td>
                                                             <p class="font-urwgeometric_medium text-[12px] text-gray_1"
