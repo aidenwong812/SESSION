@@ -1,10 +1,15 @@
 import Button from "@/shared/Button"
 import Media from "@/shared/Media"
 import { SESSION_REQUEST_STATUS, useSessionRequest } from "@/providers/SessionRequestProvider"
-import StudioDetail from "./StudioDetail"
+import StudioDetail from "../RequestDetailModal/StudioDetail"
 
 const Success = ({ onClose }) => {
-  const { setConfirmStatus } = useSessionRequest()
+  const {
+    setConfirmStatus,
+    sessionRequests,
+    selectedRequest: selectedRequestId,
+  } = useSessionRequest()
+  const selectedRequest = sessionRequests.find((request) => request.id === selectedRequestId)
 
   const handleClose = () => {
     setConfirmStatus(SESSION_REQUEST_STATUS.INITIAL)
@@ -29,7 +34,7 @@ const Success = ({ onClose }) => {
           </p>
         </div>
         <div className="mt-[-50px]">
-          <StudioDetail />
+          <StudioDetail request={selectedRequest} />
         </div>
       </div>
       <div className="flex grow flex-col justify-end gap-y-[10px]">

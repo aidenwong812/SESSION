@@ -2,9 +2,10 @@ import { useRouter } from "next/router"
 import Media from "@/shared/Media"
 import { useAuth } from "@/providers/AuthProvider"
 import useSelectClickoutside from "@/hooks/useSelectClickoutside"
+import HeaderDropdown from "./HeaderDropdown"
 
-const LogoutButton = () => {
-  const { logout, userData } = useAuth()
+const PFPDropdown = () => {
+  const { userData } = useAuth()
   const router = useRouter()
   const { pathname } = router
 
@@ -30,29 +31,9 @@ const LogoutButton = () => {
           />
         </button>
       )}
-      {isVisibleSelect && (
-        <button
-          type="button"
-          className="absolute right-0 top-full flex w-[100px] items-center
-          gap-x-[10px] rounded-full bg-black_8 p-[10px]"
-          onClick={logout}
-        >
-          <div
-            className="flex size-[24px] items-center justify-center
-          rounded-full bg-gray_overlay_3"
-          >
-            <Media
-              type="image"
-              link="/images/Admin/logout.svg"
-              blurLink="/images/Admin/logout.png"
-              containerClasses="w-[16px] h-[16px]"
-            />
-          </div>
-          <p className="pb-[3px] font-urwgeometric text-[12px] text-s_error">Log Out</p>
-        </button>
-      )}
+      {isVisibleSelect && <HeaderDropdown />}
     </div>
   )
 }
 
-export default LogoutButton
+export default PFPDropdown

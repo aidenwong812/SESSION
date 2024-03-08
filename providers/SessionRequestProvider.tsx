@@ -2,6 +2,8 @@ import { createContext, useContext, useState, useMemo, useEffect } from "react"
 import { toast } from "react-toastify"
 import getSessionRequests from "@/lib/firebase/getSessionRequests"
 import sendSessionDeclined from "@/lib/sendSessionDeclined"
+import addToSessionCalendar from "@/lib/addToSessionCalendar"
+import getSessionByRequestId from "@/lib/firebase/getSessionByRequestId"
 
 export enum SESSION_REQUEST_STATUS {
   INITIAL = "INITIAL",
@@ -36,6 +38,20 @@ const SessionRequestProvider = ({ children }) => {
     }
   }
 
+  const handleAccept = async (requestId) => {
+    const sessionData: any = await getSessionByRequestId(requestId)
+    const startDateTime = sessionData.event.start.dateTime
+    const endDateTime = sessionData.event.end.dateTime
+    const response = await Promise.all([
+      await addToSessionCalendar(startDateTime, endDateTime, sessionData.studio.calendarEmail),
+      await addToSessionCalendar(startDateTime, endDateTime, sessionData.email),
+    ])
+
+    if (response[0].error || response[1].error) {
+      toast.error("add event to calendar failed")
+    }
+  }
+
   useEffect(() => {
     fetchSessionRequests()
   }, [])
@@ -54,6 +70,7 @@ const SessionRequestProvider = ({ children }) => {
       setSelectedRequest,
       sessionRequests,
       handleDecline,
+      handleAccept,
       fetchSessionRequests,
     }),
     [
@@ -69,6 +86,7 @@ const SessionRequestProvider = ({ children }) => {
       setSelectedRequest,
       sessionRequests,
       handleDecline,
+      handleAccept,
       fetchSessionRequests,
     ],
   )

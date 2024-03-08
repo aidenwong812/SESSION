@@ -64,8 +64,8 @@ const Request = ({ request }) => {
                 <Media
                   type="image"
                   containerClasses="w-4 h-4 rounded-full !overflow-hidden"
-                  link="/images/Admin/session-requests-avatar.svg"
-                  blurLink="/blurLink/Admin/session-requests-avatar.png"
+                  link={request?.pfp || "/images/Admin/session-requests-avatar.svg"}
+                  blurLink={request?.pfp || "/blurLink/Admin/session-requests-avatar.png"}
                 />
                 <p className="font-urwgeometric text-base leading-none text-gray_1">
                   {request.bandName}

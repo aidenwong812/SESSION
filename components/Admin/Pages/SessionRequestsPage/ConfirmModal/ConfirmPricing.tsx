@@ -4,24 +4,28 @@ import Button from "@/shared/Button"
 import { SESSION_REQUEST_STATUS, useSessionRequest } from "@/providers/SessionRequestProvider"
 import sendSessionAccepted from "@/lib/sendSessionAccepted"
 import PaidDescription from "./PaidDescription"
-import StudioDetail from "./StudioDetail"
 import UserInfo from "./UserInfo"
 import StudioNotes from "./StudioNotes"
 import PriceInput from "./PriceInput"
+import StudioDetail from "../RequestDetailModal/StudioDetail"
 
 export default function ConfirmPricing() {
   const {
-    selectedRequest,
+    selectedRequest: selectedRequestId,
     setConfirmStatus,
     sessionPrice,
     setSessionPrice,
     engineerPrice,
     setEngineerPrice,
     studioNotes,
+    handleAccept,
+    sessionRequests,
   } = useSessionRequest()
+  const selectedRequest = sessionRequests.find((request) => request.id === selectedRequestId)
 
   const onClickConfirm = () => {
-    sendSessionAccepted({ requestId: selectedRequest, studioNotes })
+    sendSessionAccepted({ requestId: selectedRequest, studioNotes, type: "paid" })
+    handleAccept(selectedRequestId)
     setConfirmStatus(SESSION_REQUEST_STATUS.SUCCESS)
   }
 
@@ -33,7 +37,7 @@ export default function ConfirmPricing() {
           <PaidDescription />
         </div>
         <div className="col-span-6">
-          <StudioDetail />
+          <StudioDetail request={selectedRequest} />
         </div>
       </div>
       <div className="mt-[40px] grid grid-cols-12 gap-x-[40px]">

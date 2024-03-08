@@ -14,7 +14,6 @@ const StudiosMenu = () => {
     navClasses,
     studioActive,
     studioInfoActive,
-    reviewsActive,
   } = useSideMenu()
   const { push } = useRouter()
 
@@ -80,13 +79,6 @@ const StudiosMenu = () => {
             >
               Studio Information
               {studioInfoActive && <MenuItemActive />}
-            </button>
-            <button
-              type="button"
-              className="relative py-[12px] pl-[58px] text-left font-urwgeometric text-[12px] leading-[14px] text-gray_2"
-            >
-              Reviews
-              {reviewsActive && <MenuItemActive />}
             </button>
           </motion.div>
         )}

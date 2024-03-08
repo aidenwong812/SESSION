@@ -56,17 +56,18 @@ const BookSessionProvider = ({ children }) => {
       },
     }
 
-    const response: any = await requestSession(
-      userData.email,
+    const response: any = await requestSession({
+      email: userData.email,
       bandName,
-      instruments.instruments,
+      instruments: instruments.instruments,
       sessionDetail,
       comingPeople,
       isEngineerNeeded,
       selectedDay,
-      eventDetails,
+      event: eventDetails,
       studioId,
-    )
+      pfp: userData?.photoURL,
+    })
 
     if (response.error) {
       toast.error("add session failed")

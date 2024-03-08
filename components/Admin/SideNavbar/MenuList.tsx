@@ -75,17 +75,6 @@ const MenuList = () => {
         <p className={navClasses}>Active Projects</p>
         {activeProjectsActive && <MenuItemActive project />}
       </button>
-      <button type="button" className={navContainerClasses}>
-        <div className={iconClasses}>
-          <Media
-            type="image"
-            link="/images/Admin/recent.svg"
-            blurLink="/images/Admin/recent.png"
-            containerClasses="w-[20px] h-[20px]"
-          />
-        </div>
-        <p className={navClasses}>History</p>
-      </button>
     </div>
   )
 }

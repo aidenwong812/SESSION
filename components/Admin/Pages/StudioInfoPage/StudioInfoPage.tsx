@@ -8,7 +8,7 @@ import Card from "@/components/ui/Card"
 import StudioRoomCard from "@/components/StudioRoomCard"
 import Button from "@/shared/Button"
 import StudioRoomPopup from "@/components/StudioRoomPopup"
-import { address, openingHours, reviewData, roomData, services } from "./data"
+import { address, openingHours, roomData, services } from "./data"
 
 export default function StudioInfoPage() {
   const [roomDetailsId, setRoomDetailsId] = useState(null)
@@ -87,24 +87,6 @@ export default function StudioInfoPage() {
                       </li>
                     ))}
                   </ul>
-                </Card>
-
-                <Card heading="Reviews">
-                  <div className="flex items-center">
-                    <h1 className="font-urwgeometric_medium text-3xl text-gray_1">
-                      {reviewData.avgRating}
-                    </h1>
-                    <Icon name="StarFour" className="mx-1" size={32} active glow />
-                    <span className="font-urwgeometric_light text-gray_2">
-                      ({reviewData.reviewCount})
-                    </span>
-                  </div>
-                  <Button
-                    id="seeAllReviewsButton"
-                    className="mt-3 w-full py-1 text-center text-xs text-black"
-                  >
-                    See All Reviews
-                  </Button>
                 </Card>
               </div>
 

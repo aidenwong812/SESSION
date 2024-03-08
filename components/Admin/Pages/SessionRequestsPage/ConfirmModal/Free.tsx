@@ -6,10 +6,11 @@ import FreeDescription from "./FreeDescription"
 import StudioNotes from "./StudioNotes"
 
 const Free = () => {
-  const { selectedRequest, setConfirmStatus, studioNotes } = useSessionRequest()
+  const { selectedRequest, setConfirmStatus, studioNotes, handleAccept } = useSessionRequest()
 
   const onClickConfirm = () => {
-    sendSessionAccepted({ requestId: selectedRequest, studioNotes })
+    sendSessionAccepted({ requestId: selectedRequest, studioNotes, type: "free" })
+    handleAccept(selectedRequest)
     setConfirmStatus(SESSION_REQUEST_STATUS.SUCCESS)
   }
 

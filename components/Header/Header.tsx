@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Media from "@/shared/Media"
 import Button from "@/shared/Button"
-import LogoutButton from "./LogoutButton"
+import PFPDropdown from "./PFPDropdown"
 
 const Header = () => (
   <>
@@ -31,7 +31,7 @@ const Header = () => (
       >
         <p className="drop-shadow-xl drop-shadow-session">Sound Studios</p>
       </Button>
-      <LogoutButton />
+      <PFPDropdown />
     </div>
   </>
 )

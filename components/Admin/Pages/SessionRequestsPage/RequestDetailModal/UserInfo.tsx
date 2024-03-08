@@ -6,8 +6,8 @@ export default function UserInfo({ request }) {
       <Media
         type="image"
         containerClasses="w-[40px] h-[40px] rounded-full !overflow-hidden"
-        link="/images/Admin/session-requests-avatar.svg"
-        blurLink="/blurLink/Admin/session-requests-avatar.png"
+        link={request?.pfp || "/images/Admin/session-requests-avatar.svg"}
+        blurLink={request?.pfp || "/blurLink/Admin/session-requests-avatar.png"}
       />
       <div className="flex flex-col gap-x-[5px]">
         <p className="text-left font-urwgeometric text-[14px] leading-[14px] text-gray_2">

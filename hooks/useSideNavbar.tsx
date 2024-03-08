@@ -21,8 +21,7 @@ const useSideNavbar = () => {
   const dashboardActive = pathname.includes("/dashboard")
   const calendarActive = pathname.includes("/calendar")
   const studioInfoActive = pathname.includes("/studio-info")
-  const reviewsActive = pathname.includes("/reviews")
-  const studioActive = studioInfoActive || reviewsActive
+  const studioActive = studioInfoActive
   const sessionRequestsActive = pathname.includes("/session-requests")
   const projectRequestsActive = pathname.includes("/project-requests")
   const requestActive = sessionRequestsActive || projectRequestsActive
@@ -42,7 +41,6 @@ const useSideNavbar = () => {
     calendarActive,
     studioActive,
     studioInfoActive,
-    reviewsActive,
     requestActive,
     sessionRequestsActive,
     projectRequestsActive,

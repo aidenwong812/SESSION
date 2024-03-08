@@ -31,11 +31,6 @@ export const openingHours = [
   },
 ]
 
-export const reviewData = {
-  avgRating: 4.9,
-  reviewCount: 483,
-}
-
 const equipment = [
   {
     category: "Outboard",

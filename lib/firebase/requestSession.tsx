@@ -1,7 +1,7 @@
 import { addDoc, collection } from "firebase/firestore"
 import { db } from "./db"
 
-const requestSession = async (
+const requestSession = async ({
   email,
   bandName,
   instruments,
@@ -11,7 +11,8 @@ const requestSession = async (
   selectedDay,
   event,
   studioId,
-) => {
+  pfp,
+}) => {
   try {
     const sessionDocRef = await addDoc(collection(db, "requests"), {
       email,
@@ -26,6 +27,7 @@ const requestSession = async (
       type: "session",
       createdAt: Date.now(),
       booked: false,
+      pfp,
     })
 
     return sessionDocRef
