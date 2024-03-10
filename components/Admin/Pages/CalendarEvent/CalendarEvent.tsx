@@ -2,7 +2,7 @@ import { useState } from "react"
 import Media from "@/shared/Media"
 import RequestDetailModal from "../CalendarPage/RequestDetailModal"
 
-const CalendarEvent = ({ event, className = "", onClick = () => {} }) => {
+const CalendarEvent = ({ event = null, className = "", onClick = () => {} }) => {
   const [isOpenDetailModal, setIsOpenDetailModal] = useState(false)
   const isSession = event.type === "session"
 

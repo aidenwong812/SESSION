@@ -10,12 +10,12 @@ const CalendarSchedule = ({ demo1 = false, demo2 = false, demo3 = false }) => (
       </>
     )}
 
-    {demo2 && <EventItem startTimeIndex={2} timePeriod={10} isSession={false} />}
+    {demo2 && <EventItem startTimeIndex={2} timePeriod={10} />}
 
     {demo3 && (
       <>
         <EventItem startTimeIndex={1} timePeriod={4} />
-        <EventItem startTimeIndex={6} timePeriod={8} isSession={false} />
+        <EventItem startTimeIndex={6} timePeriod={8} />
       </>
     )}
   </div>
