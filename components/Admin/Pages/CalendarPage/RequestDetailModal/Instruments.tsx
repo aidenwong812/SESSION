@@ -4,8 +4,8 @@ const Instruments = ({ event }) => (
       Instruments you will be recording
     </p>
     <div className="flex items-center gap-x-[10px]">
-      {event.instruments?.length > 0 &&
-        event.instruments.map((instrument) => (
+      {event?.instruments?.length > 0 &&
+        event?.instruments.map((instrument) => (
           <div
             key={instrument.value}
             className="rounded-full bg-gradient_s_1 px-[16px] py-[4px] font-urwgeometric_semibold"

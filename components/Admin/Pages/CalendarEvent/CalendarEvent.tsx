@@ -4,7 +4,7 @@ import RequestDetailModal from "../CalendarPage/RequestDetailModal"
 
 const CalendarEvent = ({ event = null, className = "", onClick = () => {} }) => {
   const [isOpenDetailModal, setIsOpenDetailModal] = useState(false)
-  const isSession = event.type === "session"
+  const isSession = event?.type === "session"
 
   const handleCloseModal = () => {
     setIsOpenDetailModal(false)

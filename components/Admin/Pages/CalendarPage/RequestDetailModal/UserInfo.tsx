@@ -12,7 +12,7 @@ const UserInfo = ({ event }) => (
       <p className="text-left font-urwgeometric text-[14px] leading-[14px] text-gray_2">
         Artist/Band
       </p>
-      <p className="font-urwgeometric text-[32px] leading-[32px] text-gray_1">{event.bandName}</p>
+      <p className="font-urwgeometric text-[32px] leading-[32px] text-gray_1">{event?.bandName}</p>
     </div>
   </div>
 )

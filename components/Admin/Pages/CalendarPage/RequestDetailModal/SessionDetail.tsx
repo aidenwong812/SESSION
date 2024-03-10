@@ -13,7 +13,7 @@ const SessionDetail = ({ event }) => (
                     !border-none  !bg-transparent
                     font-urwgeometric text-gray_1 focus:!outline-none
                     focus:!ring-0"
-        defaultValue={event.sessionDetail}
+        defaultValue={event?.sessionDetail}
       />
     </div>
   </div>
