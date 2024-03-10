@@ -16,13 +16,13 @@ const CalendarDay = ({ date }) => {
   return (
     <div
       className={`border border-gray_overlay_6 ${
-        isToday ? "bg-gray_overlay_6 backdrop-blur-[20px]" : "bg-gray_overlay_3"
+        isToday ? "relative bg-gray_overlay_6 before:absolute before:blur-[14px] before:bg-gray_overlay_6 before:bg-[#292929] before:inset-0" : "bg-gray_overlay_3"
       }
       flex flex-col items-center gap-y-[12px] p-[12px]`}
     >
       <div
         className={`flex size-[24px] items-center
-        justify-center rounded-full ${isToday ? "bg-gradient_s_1" : "bg-gray_overlay_6"}`}
+        justify-center rounded-full ${isToday ? "bg-gradient_s_1 z-10" : "bg-gray_overlay_6"}`}
       >
         <p
           className={`${
