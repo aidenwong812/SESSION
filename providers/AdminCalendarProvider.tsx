@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo } from "react"
+import { createContext, useContext, useMemo, useState } from "react"
 import useMonthlyCalendar from "@/hooks/useMonthlyCalendar"
 import useAdminCalendarData from "@/hooks/useAdminCalendarData"
 import useWeeklyCalendar from "@/hooks/useWeeklyCalendar"
@@ -11,6 +11,7 @@ const AdminCalendarProvider = ({ children }) => {
   const adminCalendarData = useAdminCalendarData()
   const weeklyCalendarData = useWeeklyCalendar()
   const yearlyCalendarData = useYearlyCalendar()
+  const [selectedEvent, setSelectedEvent] = useState({})
 
   const value = useMemo(
     () => ({
@@ -18,8 +19,17 @@ const AdminCalendarProvider = ({ children }) => {
       ...adminCalendarData,
       ...weeklyCalendarData,
       ...yearlyCalendarData,
+      selectedEvent,
+      setSelectedEvent,
     }),
-    [monthCalendarData, adminCalendarData, weeklyCalendarData, yearlyCalendarData],
+    [
+      monthCalendarData,
+      adminCalendarData,
+      weeklyCalendarData,
+      yearlyCalendarData,
+      selectedEvent,
+      setSelectedEvent,
+    ],
   )
 
   return <AdminCalendarContext.Provider value={value}>{children}</AdminCalendarContext.Provider>

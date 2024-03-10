@@ -1,6 +1,6 @@
 import Media from "@/shared/Media"
 
-const ComingPeople = () => (
+const ComingPeople = ({ event }) => (
   <div className="mt-[50px] w-full">
     <p
       className="pb-[10px] pl-[20px] font-urwgeometric
@@ -31,7 +31,9 @@ const ComingPeople = () => (
           blurLink="/images/BookSession/coming-people.png"
           containerClasses="w-[29px] aspect-[29/27]"
         />
-        <p className="font-urwgeometric text-[16px] leading-[16px] text-gray_2">1</p>
+        <p className="font-urwgeometric text-[16px] leading-[16px] text-gray_2">
+          {event.comingPeople}
+        </p>
       </div>
     </div>
   </div>

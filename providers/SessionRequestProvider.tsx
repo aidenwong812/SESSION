@@ -20,7 +20,7 @@ const SessionRequestProvider = ({ children }) => {
   const [engineerPrice, setEngineerPrice] = useState<number>(0)
   const [sessionRequests, setSessionRequests] = useState([])
   const [studioNotes, setStudioNotes] = useState("")
-  const [selectedRequest, setSelectedRequest] = useState("")
+  const [selectedRequest, setSelectedRequest] = useState(null)
 
   const fetchSessionRequests = async () => {
     const newSessionRequests = await getSessionRequests()

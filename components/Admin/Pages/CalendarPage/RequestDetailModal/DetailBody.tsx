@@ -7,20 +7,20 @@ import SessionDetail from "./SessionDetail"
 import StudioDetail from "./StudioDetail"
 import UserInfo from "./UserInfo"
 
-const DetailBody = ({ onClose }) => (
+const DetailBody = ({ event, onClose }) => (
   <div
     className="relative grid w-full grid-cols-2 gap-x-[30px]
         rounded-[48px] bg-black_0 px-[40px] pb-[24px] pt-[60px]"
   >
     <div>
-      <StudioDetail />
-      <SessionDetail />
+      <StudioDetail event={event} />
+      <SessionDetail event={event} />
     </div>
     <div>
-      <UserInfo />
-      <Instruments />
-      <ComingPeople />
-      <EngineerNeed />
+      <UserInfo event={event} />
+      <Instruments event={event} />
+      <ComingPeople event={event} />
+      <EngineerNeed event={event} />
     </div>
     <Button
       id="room-detail-close-btn"

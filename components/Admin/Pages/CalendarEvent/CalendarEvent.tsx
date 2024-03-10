@@ -2,8 +2,9 @@ import { useState } from "react"
 import Media from "@/shared/Media"
 import RequestDetailModal from "../CalendarPage/RequestDetailModal"
 
-const CalendarEvent = ({ isSession = true, className = "", onClick = () => {} }) => {
+const CalendarEvent = ({ event, className = "", onClick = () => {} }) => {
   const [isOpenDetailModal, setIsOpenDetailModal] = useState(false)
+  const isSession = event.type === "session"
 
   const handleCloseModal = () => {
     setIsOpenDetailModal(false)
@@ -54,7 +55,11 @@ const CalendarEvent = ({ isSession = true, className = "", onClick = () => {} })
           />
         </div>
       </button>
-      <RequestDetailModal isVisible={isOpenDetailModal} toggleModal={handleCloseModal} />
+      <RequestDetailModal
+        isVisible={isOpenDetailModal}
+        toggleModal={handleCloseModal}
+        event={event}
+      />
     </>
   )
 }

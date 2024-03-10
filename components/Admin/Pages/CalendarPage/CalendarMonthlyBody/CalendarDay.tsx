@@ -35,7 +35,7 @@ const CalendarDay = ({ date }) => {
       <div className="h-[70px] w-full overflow-y-auto pr-[5px]">
         {events.map((event) => (
           <div className="mb-[5px] h-[32px] w-full" key={event.id}>
-            <CalendarEvent isSession={event.type === "session"} className="!p-[1px]" />
+            <CalendarEvent event={event} className="!p-[1px]" />
           </div>
         ))}
       </div>
