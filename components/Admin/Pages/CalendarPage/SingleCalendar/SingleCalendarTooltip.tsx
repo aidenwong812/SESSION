@@ -24,7 +24,7 @@ const SingleCalendarToolTip = ({ date, events, onClose = () => {} }) => {
       <div className="w-full">
         {events.map((event) => (
           <div className="mt-[6px] h-[32px] w-full" key={event.id}>
-            <CalendarEvent isSession={event.type === "session"} onClick={onClose} />
+            <CalendarEvent event={event} onClick={onClose} />
           </div>
         ))}
       </div>

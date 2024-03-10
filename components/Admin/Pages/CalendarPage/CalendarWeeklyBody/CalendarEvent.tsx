@@ -9,7 +9,7 @@ const CalendarEvent = ({ date }) => {
   return (
     <div className="relative h-[40px] w-full">
       {events.map((event) => (
-        <EventItem key={event.id} isSession={event.type === "session"} data={event} />
+        <EventItem key={event.id} event={event} />
       ))}
     </div>
   )
