@@ -5,8 +5,12 @@ import { PAYMENTS } from "@/lib/consts/global"
 import { STEPS } from "@/lib/consts/checkout"
 
 const BookSessionButton = () => {
-  const { setCurStep, loading, setLoading } = useCheckOutSession()
+  const { sessionData, setCurStep, loading, setLoading } = useCheckOutSession()
   const { selectedPayment, createStripePaymentIntent } = usePayment()
+  const sessionFee = parseFloat(
+    ((sessionData.sessionPrice + sessionData.engineerPrice) * 0.05).toFixed(2),
+  )
+  const totalPrice = sessionData.engineerPrice + sessionData.sessionPrice + sessionFee
 
   const handleClick = async () => {
     setLoading(true)
@@ -15,7 +19,7 @@ const BookSessionButton = () => {
       return
     }
 
-    const response = await createStripePaymentIntent()
+    const response = await createStripePaymentIntent(totalPrice)
 
     setLoading(false)
     if (response) setCurStep(STEPS.STRIPE_DETAIL)

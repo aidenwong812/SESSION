@@ -26,8 +26,8 @@ const PaymentProvider = ({ children }) => {
     },
   }
 
-  const createStripePaymentIntent = async () => {
-    const response = await createPaymentIntent(1130)
+  const createStripePaymentIntent = async (amount) => {
+    const response = await createPaymentIntent(amount)
 
     if (response.error) {
       toast.error("create payment failed")

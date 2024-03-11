@@ -5,6 +5,7 @@ const PriceDetails = () => {
   const sessionFee = parseFloat(
     ((sessionData.sessionPrice + sessionData.engineerPrice) * 0.05).toFixed(2),
   )
+
   return (
     <div
       className="rounded-[24px]

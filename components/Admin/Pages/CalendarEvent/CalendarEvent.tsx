@@ -1,8 +1,10 @@
 import { useState } from "react"
+import { useAdminCalendar } from "@/providers/AdminCalendarProvider"
 import Media from "@/shared/Media"
 import RequestDetailModal from "../CalendarPage/RequestDetailModal"
 
 const CalendarEvent = ({ event = null, className = "", onClick = () => {} }) => {
+  const { setSelectedEvent } = useAdminCalendar()
   const [isOpenDetailModal, setIsOpenDetailModal] = useState(false)
   const isSession = event?.type === "session"
 
@@ -11,11 +13,16 @@ const CalendarEvent = ({ event = null, className = "", onClick = () => {} }) => 
     onClick()
   }
 
+  const handleClick = () => {
+    setSelectedEvent(event)
+    setIsOpenDetailModal(true)
+  }
+
   return (
     <>
       <button
         type="button"
-        onClick={() => setIsOpenDetailModal(true)}
+        onClick={handleClick}
         className={`${
           isSession ? "bg-gradient_s_1" : "bg-gradient_p_1"
         } relative z-[2] flex  size-full justify-between rounded-full p-[3px] ${className}`}
@@ -55,11 +62,7 @@ const CalendarEvent = ({ event = null, className = "", onClick = () => {} }) => 
           />
         </div>
       </button>
-      <RequestDetailModal
-        isVisible={isOpenDetailModal}
-        toggleModal={handleCloseModal}
-        event={event}
-      />
+      <RequestDetailModal isVisible={isOpenDetailModal} toggleModal={handleCloseModal} />
     </>
   )
 }

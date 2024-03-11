@@ -4,8 +4,8 @@ import convertTimeFormat from "@/lib/convertTimeFormat"
 import getMonthName from "@/lib/getMonthName"
 import { useAdminCalendar } from "@/providers/AdminCalendarProvider"
 
-const StudioDetail = ({ event }) => {
-  const { selectedStudio } = useAdminCalendar()
+const StudioDetail = () => {
+  const { selectedEvent, selectedStudio } = useAdminCalendar()
   return (
     <div className="relative">
       <Media
@@ -32,15 +32,15 @@ const StudioDetail = ({ event }) => {
           />
           <div className="relative z-[2] flex items-center justify-between border-b-[2px] border-b-gray_overlay_6">
             <p className="font-urwgeometric_bold text-[16px] text-gray_2">
-              {getMonthName(event?.selectedDay.month)},{" "}
-              <ClipSpan className="!py-0">{event?.selectedDay.day}</ClipSpan>
+              {getMonthName(selectedEvent?.selectedDay.month)},{" "}
+              <ClipSpan className="!py-0">{selectedEvent?.selectedDay.day}</ClipSpan>
             </p>
             <div className="flex flex-col items-end">
               <p className="text-[14px] text-gray_2">Tuesday,</p>
               <div>
                 <ClipSpan className="!py-0 text-[16px]">
-                  {convertTimeFormat(event?.event.start.dateTime)} –{" "}
-                  {convertTimeFormat(event?.event.end.dateTime)}
+                  {convertTimeFormat(selectedEvent?.event.start.dateTime)} –{" "}
+                  {convertTimeFormat(selectedEvent?.event.end.dateTime)}
                 </ClipSpan>
               </div>
             </div>

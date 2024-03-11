@@ -1,7 +1,7 @@
 import Modal from "@/shared/Modal"
 import DetailBody from "./DetailBody"
 
-const RequestDetailModal = ({ event, isVisible, toggleModal }) => (
+const RequestDetailModal = ({ isVisible, toggleModal }) => (
   <Modal
     isVisible={isVisible}
     onClose={toggleModal}
@@ -12,7 +12,7 @@ const RequestDetailModal = ({ event, isVisible, toggleModal }) => (
       className="no-scrollbar w-full overflow-y-auto overflow-x-hidden rounded-[48px] bg-black_8
         shadow-session_shadow_120 md:w-[768px] lg:w-[1024px] xl:w-[1280px]"
     >
-      <DetailBody event={event} onClose={toggleModal} />
+      <DetailBody onClose={toggleModal} />
     </div>
   </Modal>
 )
