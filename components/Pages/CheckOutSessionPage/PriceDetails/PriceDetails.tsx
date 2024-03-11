@@ -2,7 +2,9 @@ import { useCheckOutSession } from "@/providers/CheckOutSessionProvider"
 
 const PriceDetails = () => {
   const { sessionData } = useCheckOutSession()
-
+  const sessionFee = parseFloat(
+    ((sessionData.sessionPrice + sessionData.engineerPrice) * 0.05).toFixed(2),
+  )
   return (
     <div
       className="rounded-[24px]
@@ -11,7 +13,7 @@ const PriceDetails = () => {
     >
       <p
         className="font-urwgeometric_bold
-                text-[24px] 
+                text-[24px]
                 text-gray_1 md:text-[14.4px] lg:text-[19.2px] xl:text-[24px]"
       >
         Price Details
@@ -24,11 +26,11 @@ const PriceDetails = () => {
                 lg:pt-[12.8px] lg:text-[11.2px] xl:pt-[16px] xl:text-[14px]"
       >
         <p>{sessionData.studio.name} – 4 Hours</p>
-        <p className="text-right">{`$${sessionData.studio.initPrice}`}</p>
+        <p className="text-right">{`$${sessionData.sessionPrice}`}</p>
         <p>Engineer Fee</p>
         <p className="text-right">{`$${sessionData.engineerPrice}`}</p>
         <p>Session Fee</p>
-        <p className="text-right">{`$${sessionData.sessionPrice}`}</p>
+        <p className="text-right">{`$${sessionFee}`}</p>
       </div>
       <div className="my-[6px] h-[2px] w-full bg-gray_overlay_6" />
       <div
@@ -37,12 +39,9 @@ const PriceDetails = () => {
                  text-gray_1 md:text-[8.4px] lg:text-[11.2px] xl:text-[14px]"
       >
         <p>Total Price Estimate (USD)</p>
-        <p>{`$${
-          sessionData.studio.initPrice + sessionData.engineerPrice + sessionData.sessionPrice
-        }`}</p>
+        <p>{`$${sessionData.engineerPrice + sessionData.sessionPrice + sessionFee}`}</p>
       </div>
     </div>
   )
 }
-
 export default PriceDetails

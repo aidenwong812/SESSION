@@ -5,6 +5,9 @@ import Media from "@/shared/Media"
 const StudioOffer = () => {
   const isMobile = useIsMobile()
   const { sessionData } = useCheckOutSession()
+  const sessionFee = parseFloat(
+    ((sessionData.sessionPrice + sessionData.engineerPrice) * 0.05).toFixed(2),
+  )
 
   return (
     <div
@@ -21,7 +24,7 @@ const StudioOffer = () => {
         className="py-[20px] font-urwgeometric_medium text-[64px] leading-[100%] text-[#a1ea04] drop-shadow-xl 
       drop-shadow-session md:py-0 md:text-[40px] lg:text-[50px] xl:text-[64px]"
       >
-        {`$${sessionData.sessionPrice + sessionData.engineerPrice + sessionData.studio.initPrice}`}
+        {`$${sessionData.engineerPrice + sessionData.sessionPrice + sessionFee}`}
       </p>
       <div
         className="my-[5px] flex w-full items-center rounded-full 
