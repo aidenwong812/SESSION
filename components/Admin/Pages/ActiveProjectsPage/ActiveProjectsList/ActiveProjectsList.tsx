@@ -1,6 +1,6 @@
 import { useState } from "react"
 import ProjectInfoCard from "@/components/ProjectInfoCard"
-import SessionDurationSelect from "@/components/ui/SessionDurationSelect"
+import ProjectDurationSelect from "@/components/ui/ProjectDurationSelect"
 
 const activeProjects = [
   {
@@ -50,7 +50,7 @@ export default function ActiveProjectsList() {
 
   return (
     <div className="mt-10 w-full rounded-t-3xl bg-black_8">
-      <DurationSelect selected={selectedDuration} onChange={setSelectedDuration} />
+      <ProjectDurationSelect selected={selectedDuration} onChange={setSelectedDuration} />
       <div className="h-[600px] w-full overflow-y-auto overflow-x-hidden px-7 pb-7 pt-2.5">
         {activeProjects.map((project) => (
           <ProjectInfoCard key={project.id} project={project} />

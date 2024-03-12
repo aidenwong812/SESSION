@@ -1,9 +1,10 @@
 import Button from "@/shared/Button"
 import Media from "@/shared/Media"
 import { PROJECT_REQUEST_STATUS, useProjectRequest } from "@/providers/ProjectRequestProvider"
+import ProjectDetail from "../ProjectDetailModal/ProjectDetail"
 
 const Success = ({ onClose }) => {
-  const { setConfirmStatus, selectedRequest } = useProjectRequest()
+  const { setConfirmStatus } = useProjectRequest()
 
   const handleClose = () => {
     setConfirmStatus(PROJECT_REQUEST_STATUS.INITIAL)
@@ -28,7 +29,7 @@ const Success = ({ onClose }) => {
           </p>
         </div>
         <div className="mt-[-50px]">
-          {/* <StudioDetail request={selectedRequest} /> */}
+          <ProjectDetail />
         </div>
       </div>
       <div className="flex grow flex-col justify-end gap-y-[10px]">
