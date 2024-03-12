@@ -1,10 +1,7 @@
 import { createHandler, Post, Body } from "next-api-decorators"
 import sendEmail from "@/lib/sendEmail"
 import { AccpetProjectDTO } from "@/DTO/acceptproject.dto"
-import { SESSION_EMAIL, acceptFreeMail } from "@/lib/consts/mail"
-import getMonthName from "@/lib/getMonthName"
-import getWeekDay from "@/lib/getWeekDay"
-import convertTimeFormat from "@/lib/convertTimeFormat"
+import { SESSION_EMAIL, acceptProjectMail } from "@/lib/consts/mail"
 
 class sendAcceptedProject {
   @Post()
@@ -13,15 +10,8 @@ class sendAcceptedProject {
     console.log(request)
 
     const emailData = {
-      requestId: request.id,
-      month: getMonthName(request.selectedDay.month),
-      day: request.selectedDay.day,
-      weekDay: getWeekDay(request.selectedDay),
-      time: `${convertTimeFormat(request.event.start.dateTime)} - ${convertTimeFormat(
-        request.event.end.dateTime,
-      )}`,
-      studioName: request.studio.name,
-      comingPeople: request.comingPeople,
+      projectName: request.projectName,
+      tracks: request.tracks,
       studioNotes,
     }
 
@@ -37,7 +27,7 @@ class sendAcceptedProject {
       content: [
         {
           type: "text/html",
-          value: acceptFreeMail(emailData),
+          value: acceptProjectMail(emailData),
         },
       ],
       from: {

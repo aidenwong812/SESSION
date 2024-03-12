@@ -1,8 +1,7 @@
 import { twMerge } from "tailwind-merge"
-import Button from "@/shared/Button"
 
 const ProjectDurationButton = ({ children, active = false, onClick }) => (
-  <Button
+  <button
     id="project-duration-button"
     type="button"
     onClick={onClick}
@@ -12,7 +11,7 @@ const ProjectDurationButton = ({ children, active = false, onClick }) => (
     )}
   >
     <p>{children}</p>
-  </Button>
+  </button>
 )
 
 export default ProjectDurationButton

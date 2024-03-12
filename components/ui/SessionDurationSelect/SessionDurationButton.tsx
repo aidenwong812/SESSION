@@ -1,8 +1,7 @@
 import { twMerge } from "tailwind-merge"
-import Button from "@/shared/Button"
 
 const SessionDurationButton = ({ children, active = false, onClick }) => (
-  <Button
+  <button
     id="session-duration-button"
     type="button"
     onClick={onClick}
@@ -12,7 +11,7 @@ const SessionDurationButton = ({ children, active = false, onClick }) => (
     )}
   >
     <p>{children}</p>
-  </Button>
+  </button>
 )
 
 export default SessionDurationButton
