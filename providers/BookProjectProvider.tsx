@@ -5,6 +5,7 @@ import { STEPS, validation, genreOptions, timeframeOptions } from "@/lib/consts/
 import { instrumentsOptions } from "@/lib/consts/global"
 import requestProject from "@/lib/firebase/requestProject"
 import useInstruments from "../hooks/useInstruments"
+import { useAuth } from "./AuthProvider"
 
 const BookProjectContext = createContext(null)
 
@@ -24,10 +25,12 @@ const BookProjectProvider = ({ children }) => {
   const [selectedTrackNo, setSelectedTrackNo] = useState(-1)
   const instruments = useInstruments()
   const [loading, setLoading] = useState(false)
+  const { userData } = useAuth()
 
   const request = async () => {
     setLoading(true)
     const response: any = await requestProject(
+      userData.email,
       bandName,
       links,
       projectName,
