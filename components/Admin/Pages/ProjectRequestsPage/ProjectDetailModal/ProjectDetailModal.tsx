@@ -1,27 +1,23 @@
 import { useState } from "react"
-import { useProjectRequest } from "@/providers/ProjectRequestProvider"
 import Modal from "@/shared/Modal"
 import Media from "@/shared/Media"
 import DetailHeader from "./DetailHeader"
-// import DetailBody from "./DetailBody"
-// import ConfirmModal from "../ConfirmModal"
-// import DeclineModal from "../DeclineModal"
+import DetailBody from "./DetailBody"
+import DeclineModal from "../DeclineModal"
+import ConfirmModal from "../ConfirmModal"
 
-const ProjectDetailModal = ({ project, isVisible, toggleModal }) => {
+const ProjectDetailModal = ({ isVisible, toggleModal }) => {
   const [isOpenConfirmModal, setIsOpenConfirmModal] = useState(false)
   const [isOpenDeclineModal, setIsOpenDeclineModal] = useState(false)
-  const { setSelectedRequest } = useProjectRequest()
 
   const onClickConfirm = () => {
     toggleModal()
     setIsOpenConfirmModal(true)
-    setSelectedRequest(project)
   }
 
   const onClickDecline = () => {
     toggleModal()
     setIsOpenDeclineModal(true)
-    setSelectedRequest(project)
   }
 
   return (
@@ -37,7 +33,7 @@ const ProjectDetailModal = ({ project, isVisible, toggleModal }) => {
           shadow-session_shadow_120 md:w-[768px] lg:w-[1024px] xl:w-[1280px]"
         >
           <DetailHeader onClose={toggleModal} />
-          {/* <DetailBody request={request} /> */}
+          <DetailBody />
         </div>
         <div className="flex gap-x-[20px] rounded-full bg-black_8_24 p-[12px]">
           <button
@@ -68,14 +64,14 @@ const ProjectDetailModal = ({ project, isVisible, toggleModal }) => {
           </button>
         </div>
       </Modal>
-      {/* <ConfirmModal
+      <ConfirmModal
         isVisible={isOpenConfirmModal}
         toggleModal={() => setIsOpenConfirmModal(!isOpenConfirmModal)}
       />
       <DeclineModal
         isVisible={isOpenDeclineModal}
         toggleModal={() => setIsOpenDeclineModal(!isOpenDeclineModal)}
-      /> */}
+      />
     </>
   )
 }

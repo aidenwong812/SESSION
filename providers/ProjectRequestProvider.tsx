@@ -1,14 +1,12 @@
 import { createContext, useContext, useState, useMemo, useEffect } from "react"
 import { toast } from "react-toastify"
 import getProjectRequests from "@/lib/firebase/getProjectRequests"
+import updateProjectRequest from "@/lib/firebase/updateProjectRequest"
 import sendSessionDeclined from "@/lib/sendSessionDeclined"
 import addToSessionCalendar from "@/lib/addToSessionCalendar"
-import updateSessionRequest from "@/lib/firebase/updateSessionRequest"
 
 export enum PROJECT_REQUEST_STATUS {
   INITIAL = "INITIAL",
-  INPUT_PRICE = "INPUT_PRICE",
-  FREE = "FREE",
   SUCCESS = "SUCCESS",
 }
 
@@ -16,8 +14,7 @@ const ProjectRequestContext = createContext(null)
 
 const ProjectRequestProvider = ({ children }) => {
   const [confirmStatus, setConfirmStatus] = useState(PROJECT_REQUEST_STATUS.INITIAL)
-  const [sessionPrice, setSessionPrice] = useState<number>(0)
-  const [engineerPrice, setEngineerPrice] = useState<number>(0)
+  const [projectPrice, setProjectPrice] = useState<number>(0)
   const [projectRequests, setProjectRequests] = useState([])
   const [studioNotes, setStudioNotes] = useState("")
   const [selectedRequest, setSelectedRequest] = useState(null)
@@ -39,10 +36,9 @@ const ProjectRequestProvider = ({ children }) => {
   }
 
   const handleAccept = async (request) => {
-    updateSessionRequest({
+    updateProjectRequest({
       id: request.id,
-      sessionPrice,
-      engineerPrice,
+      projectPrice,
       studioNotes,
     })
     const startDateTime = request.event.start.dateTime
@@ -67,10 +63,8 @@ const ProjectRequestProvider = ({ children }) => {
     () => ({
       confirmStatus,
       setConfirmStatus,
-      sessionPrice,
-      setSessionPrice,
-      engineerPrice,
-      setEngineerPrice,
+      projectPrice,
+      setProjectPrice,
       studioNotes,
       setStudioNotes,
       selectedRequest,
@@ -82,10 +76,8 @@ const ProjectRequestProvider = ({ children }) => {
     [
       confirmStatus,
       setConfirmStatus,
-      sessionPrice,
-      setSessionPrice,
-      engineerPrice,
-      setEngineerPrice,
+      projectPrice,
+      setProjectPrice,
       studioNotes,
       setStudioNotes,
       selectedRequest,
