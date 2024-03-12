@@ -4,7 +4,7 @@ import ProjectRequestProvider from "@/providers/ProjectRequestProvider"
 const ProjectRequests = () => (
   <ProjectRequestProvider>
     <ProjectRequestsPage />
-  </ProjectRequestProvider >
+  </ProjectRequestProvider>
 )
 
 export default ProjectRequests
