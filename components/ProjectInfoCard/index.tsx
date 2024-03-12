@@ -1,10 +1,12 @@
 import { useState } from "react"
 import Button from "@/shared/Button"
 import Media from "@/shared/Media"
+import { useProjectRequest } from "@/providers/ProjectRequestProvider"
 import ProjectDetailModal from "../Admin/Pages/ProjectRequestsPage/ProjectDetailModal"
 
 export default function ProjectInfoCard({ project }) {
   const [isOpenDetailModal, setIsOpenDetailModal] = useState(false)
+  const { setSelectedRequest } = useProjectRequest()
 
   return (
     <>
@@ -47,14 +49,16 @@ export default function ProjectInfoCard({ project }) {
             className="!h-7 w-full !p-0 !shadow-session_shadow"
             pulseColor="white"
             bgVariant="radial"
-            onClick={() => setIsOpenDetailModal(!isOpenDetailModal)}
+            onClick={() => {
+              setIsOpenDetailModal(!isOpenDetailModal)
+              setSelectedRequest(project)
+            }}
           >
             <p className="font-urwgeometric_semibold text-xs leading-4 text-black_0">See Details</p>
           </Button>
         </div>
       </div>
       <ProjectDetailModal
-        project={project}
         isVisible={isOpenDetailModal}
         toggleModal={() => setIsOpenDetailModal(!isOpenDetailModal)}
       />
