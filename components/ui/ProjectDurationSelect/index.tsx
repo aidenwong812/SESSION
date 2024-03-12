@@ -25,7 +25,8 @@ export default function ProjectDurationSelect({ selected, onChange }) {
       { label: "Within 6 month", value: "6-months" },
       { label: "Within a year", value: "a-year" },
     ],
-    [])
+    [],
+  )
 
   useEffect(() => {
     onChange(options[0].value)
