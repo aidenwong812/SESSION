@@ -19,7 +19,6 @@ class sendAcceptedProject {
       numberOfTracks: request.tracks.length,
       studioNotes,
     }
-    console.log(emailData)
 
     const personalizations = [
       {
