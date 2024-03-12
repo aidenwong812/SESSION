@@ -3,13 +3,12 @@ import { usePayment } from "@/providers/PaymentProvider"
 import Button from "@/shared/Button"
 import { PAYMENTS } from "@/lib/consts/global"
 import { STEPS } from "@/lib/consts/checkout"
+import getSessionFee from "@/lib/getSessionFee"
 
 const BookSessionButton = () => {
   const { sessionData, setCurStep, loading, setLoading } = useCheckOutSession()
   const { selectedPayment, createStripePaymentIntent } = usePayment()
-  const sessionFee = parseFloat(
-    ((sessionData.sessionPrice + sessionData.engineerPrice) * 0.05).toFixed(2),
-  )
+  const sessionFee = getSessionFee(sessionData.sessionPrice, sessionData.engineerPrice)
   const totalPrice = sessionData.engineerPrice + sessionData.sessionPrice + sessionFee
 
   const handleClick = async () => {

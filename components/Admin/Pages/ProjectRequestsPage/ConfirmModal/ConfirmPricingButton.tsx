@@ -15,7 +15,7 @@ export default function ConfirmPricingButton({ pricing, description, onClick }) 
         <p className="pt-2.5 font-urwgeometric text-gray_2">{description}</p>
       </div>
       <span className="flex size-11 items-center justify-center rounded-full border-x border-b-2 border-gray_overlay_6 bg-black_8">
-        <Icon name="CaretRight" />
+        <Icon name="CaretRight" aria-label="Confirm Pricing" />
       </span>
     </button>
   )

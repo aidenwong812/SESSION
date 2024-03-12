@@ -1,13 +1,12 @@
 import useIsMobile from "@/hooks/useIsMobile"
+import getSessionFee from "@/lib/getSessionFee"
 import { useCheckOutSession } from "@/providers/CheckOutSessionProvider"
 import Media from "@/shared/Media"
 
 const StudioOffer = () => {
   const isMobile = useIsMobile()
   const { sessionData } = useCheckOutSession()
-  const sessionFee = parseFloat(
-    ((sessionData.sessionPrice + sessionData.engineerPrice) * 0.05).toFixed(2),
-  )
+  const sessionFee = getSessionFee(sessionData.sessionPrice, sessionData.engineerPrice)
 
   return (
     <div

@@ -4,6 +4,7 @@ import { usePayment } from "@/providers/PaymentProvider"
 import useIsMobile from "@/hooks/useIsMobile"
 import convertTimeFormat from "@/lib/convertTimeFormat"
 import { STEPS } from "@/lib/consts/checkout"
+import getSessionFee from "@/lib/getSessionFee"
 import BackwardButton from "../../../BackwardButton"
 import StripeCheckOutForm from "../StripeCheckOutForm"
 
@@ -11,9 +12,7 @@ const StripeDetail = () => {
   const { sessionData, setCurStep } = useCheckOutSession()
   const { stripePromise, stripeOption, stripePaymentId, stripeClientSecret } = usePayment()
   const isMobile = useIsMobile()
-  const sessionFee = parseFloat(
-    ((sessionData.sessionPrice + sessionData.engineerPrice) * 0.05).toFixed(2),
-  )
+  const sessionFee = getSessionFee(sessionData.sessionPrice, sessionData.engineerPrice)
 
   return (
     <div

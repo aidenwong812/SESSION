@@ -1,19 +1,6 @@
 import { useEffect, useMemo } from "react"
-import { twMerge } from "tailwind-merge"
 import dayjs from "dayjs"
-
-const Button = ({ children, active = false, onClick }) => (
-  <button
-    type="button"
-    onClick={onClick}
-    className={twMerge(
-      "bg-gray_overlay_6 rounded-full px-6 py-2 flex items-center jusitfy-center text-gray_2 font-urwgeometric",
-      active && "bg-gradient_s_1 text-black_0 font-urwgeometric_semibold shadow-session_shadow",
-    )}
-  >
-    <p>{children}</p>
-  </button>
-)
+import SessionDurationButton from "./SessionDurationButton"
 
 export default function SessionDurationSelect({ selected, onChange }) {
   const options = useMemo(() => {
@@ -42,13 +29,13 @@ export default function SessionDurationSelect({ selected, onChange }) {
   return (
     <div className="flex w-full items-center gap-3 rounded-full bg-gray_overlay_6 px-5 py-4">
       {options.map((option) => (
-        <Button
+        <SessionDurationButton
           key={`${option.value[0].valueOf()}-${option.value[1].valueOf()}`}
           active={option.value === selected}
           onClick={() => onChange(option.value)}
         >
           {option.label}
-        </Button>
+        </SessionDurationButton>
       ))}
     </div>
   )
