@@ -1,12 +1,12 @@
 import { createHandler, Post, Body } from "next-api-decorators"
 import sendEmail from "@/lib/sendEmail"
-import { DeclineSessionDTO } from "@/DTO/declinesession.dto"
+import { DeclineProjectDTO } from "@/DTO/declineproject.dto"
 import deleteSessionRequest from "@/lib/firebase/deleteSessionRequest"
-import { SESSION_EMAIL, declineSessionMail } from "@/lib/consts/mail"
+import { SESSION_EMAIL, declineProjectMail } from "@/lib/consts/mail"
 
-class sendDeclinedSession {
+class sendDeclinedProject {
   @Post()
-  async sendDeclinedSession(@Body() body: DeclineSessionDTO) {
+  async sendDeclinedProject(@Body() body: DeclineProjectDTO) {
     const { request, studioNotes } = body
 
     const personalizations = [
@@ -21,7 +21,7 @@ class sendDeclinedSession {
       content: [
         {
           type: "text/html",
-          value: declineSessionMail(studioNotes),
+          value: declineProjectMail(request.projectName, studioNotes),
         },
       ],
       from: {
@@ -44,4 +44,4 @@ class sendDeclinedSession {
   }
 }
 
-export default createHandler(sendDeclinedSession)
+export default createHandler(sendDeclinedProject)
