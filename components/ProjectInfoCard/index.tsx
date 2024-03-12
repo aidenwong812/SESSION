@@ -18,12 +18,12 @@ export default function ProjectInfoCard({ project }) {
             <Media type="image" containerClasses="size-16" link="/images/Admin/project-3d.svg" />
             <div className="space-y-1">
               <div className="font-urwgeometric_semibold text-2xl text-project">
-                {project.projectName}
+                {project?.projectName}
               </div>
               <div className="flex items-center gap-2 font-urwgeometric_light">
-                <span className="text-gray_1">{project.tracks} tracks</span>
+                <span className="text-gray_1">{project?.tracks} tracks</span>
                 <span className="text-gray_2">•</span>
-                <span className="text-gray_2">{project.timeframe.label}</span>
+                <span className="text-gray_2">{project?.timeframe?.label}</span>
               </div>
             </div>
           </div>
@@ -37,7 +37,7 @@ export default function ProjectInfoCard({ project }) {
                 link={project?.artist?.avatar}
               />
               <p className="whitespace-nowrap font-urwgeometric text-2xl leading-none text-gray_1">
-                {project.bandName}
+                {project?.bandName}
               </p>
             </div>
           </div>
