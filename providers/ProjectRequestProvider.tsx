@@ -2,8 +2,8 @@ import { createContext, useContext, useState, useMemo, useEffect } from "react"
 import { toast } from "react-toastify"
 import getProjectRequests from "@/lib/firebase/getProjectRequests"
 import updateProjectRequest from "@/lib/firebase/updateProjectRequest"
-import sendSessionDeclined from "@/lib/sendSessionDeclined"
 import addToSessionCalendar from "@/lib/addToSessionCalendar"
+import sendProjectDeclined from "@/lib/sendProjectDeclined"
 
 export enum PROJECT_REQUEST_STATUS {
   INITIAL = "INITIAL",
@@ -28,9 +28,9 @@ const ProjectRequestProvider = ({ children }) => {
   }
 
   const handleDecline = async (request) => {
-    const response: any = await sendSessionDeclined({ request, studioNotes })
+    const response: any = await sendProjectDeclined({ request, studioNotes })
     if (response.status === 200) {
-      toast.success("Declined Request")
+      toast.success("Declined Project")
       fetchProjectRequests()
     }
   }
