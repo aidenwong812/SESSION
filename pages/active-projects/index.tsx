@@ -1,3 +1,10 @@
 import ActiveProjectsPage from "@/components/Admin/Pages/ActiveProjectsPage"
+import ProjectRequestProvider from "@/providers/ProjectRequestProvider"
 
-export default ActiveProjectsPage
+const ActiveProject = () => (
+  <ProjectRequestProvider>
+    <ActiveProjectsPage />
+  </ProjectRequestProvider>
+)
+
+export default ActiveProject
