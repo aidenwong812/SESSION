@@ -67,7 +67,8 @@ const TrackList = () => {
                     />
                   </div>
                   {Object.keys(track)
-                    .filter((_) => _ !== "name").map(
+                    .filter((_) => _ !== "name")
+                    .map(
                       (one, id) =>
                         track[one] === true && (
                           <>
@@ -76,7 +77,8 @@ const TrackList = () => {
                               {one}
                             </ClipSpan>
                           </>
-                        ))}
+                        ),
+                    )}
                 </div>
               </div>
             ))}

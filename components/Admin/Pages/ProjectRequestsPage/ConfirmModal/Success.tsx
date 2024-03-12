@@ -16,11 +16,11 @@ const Success = ({ onClose }) => {
       <div>
         <Media
           type="image"
-          link="/images/Admin/session-requests-confirm-logo.svg"
-          blurLink="/images/Admin/session-requests-confirm-logo.png"
-          containerClasses="w-[400px] h-[302px] translate-x-[-80px]"
+          link="/images/Admin/project-requests-confirm-logo.svg"
+          blurLink="/images/Admin/project-requests-confirm-logo.png"
+          containerClasses="w-[216px] h-[216px] translate-x-[-40px]"
         />
-        <div className="translate-y-[-90px]">
+        <div className="translate-y-[-40px]">
           <p className="font-urwgeometric text-[44px] leading-[48px] text-gray_1">
             Session accepted.
           </p>
@@ -28,7 +28,7 @@ const Success = ({ onClose }) => {
             We have informed the artist via Email.
           </p>
         </div>
-        <div className="mt-[-50px]">
+        <div className="mt-[50px]">
           <ProjectDetail />
         </div>
       </div>
