@@ -1,7 +1,6 @@
 import BackwardButton from "@/components/BackwardButton"
 import Button from "@/shared/Button"
 import { PROJECT_REQUEST_STATUS, useProjectRequest } from "@/providers/ProjectRequestProvider"
-import sendProjectAccepted from "@/lib/sendProjectAccepted"
 import PaidDescription from "./PaidDescription"
 import UserInfo from "./UserInfo"
 import StudioNotes from "./StudioNotes"
@@ -9,17 +8,9 @@ import PriceInput from "./PriceInput"
 import ProjectDetail from "../ProjectDetailModal/ProjectDetail"
 
 export default function ConfirmPricing() {
-  const {
-    selectedRequest,
-    setConfirmStatus,
-    projectPrice,
-    setProjectPrice,
-    studioNotes,
-    handleAccept,
-  } = useProjectRequest()
+  const { selectedRequest, setConfirmStatus, projectPrice, setProjectPrice, handleAccept } = useProjectRequest()
 
   const onClickConfirm = () => {
-    sendProjectAccepted({ request: selectedRequest, studioNotes })
     handleAccept(selectedRequest)
     setConfirmStatus(PROJECT_REQUEST_STATUS.SUCCESS)
   }

@@ -2,8 +2,8 @@ import { createContext, useContext, useState, useMemo, useEffect } from "react"
 import { toast } from "react-toastify"
 import getProjectRequests from "@/lib/firebase/getProjectRequests"
 import updateProjectRequest from "@/lib/firebase/updateProjectRequest"
-import addToSessionCalendar from "@/lib/addToSessionCalendar"
 import sendProjectDeclined from "@/lib/sendProjectDeclined"
+import sendProjectAccepted from "@/lib/sendProjectAccepted"
 
 export enum PROJECT_REQUEST_STATUS {
   INITIAL = "INITIAL",
@@ -41,17 +41,11 @@ const ProjectRequestProvider = ({ children }) => {
       projectPrice,
       studioNotes,
     })
-    const startDateTime = request.event.start.dateTime
-    const endDateTime = request.event.end.dateTime
-    const response = await Promise.all([
-      await addToSessionCalendar(startDateTime, endDateTime, request.studio.calendarEmail),
-      await addToSessionCalendar(startDateTime, endDateTime, request.email),
-    ])
 
-    if (response[0].error || response[1].error) {
-      toast.error("add event to calendar failed")
-    } else {
-      toast.success("Accepted Request")
+    const response: any = await sendProjectAccepted({ request: selectedRequest, studioNotes })
+
+    if (response.status) {
+      toast.success("Accepted Project")
     }
   }
 

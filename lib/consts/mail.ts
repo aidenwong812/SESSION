@@ -2767,7 +2767,7 @@ a[x-apple-data-detectors] {
 </html>
 `
 
-export const acceptProjectMail = ({ projectName, studioNotes, tracks }) => `
+export const acceptProjectMail = ({ projectName, studioNotes, tracks, numberOfTracks }) => `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
  <head>
@@ -2936,7 +2936,7 @@ a[x-apple-data-detectors] {
 		<w:anchorlock></w:anchorlock>
 		<center style='color:#8c8c8c; font-family:arial, "helvetica neue", helvetica, sans-serif; font-size:18px; font-weight:400; line-height:18px;  mso-text-raise:1px'>${studioNotes}</center>
 	</v:roundrect></a>
-<![endif]--><!--[if !mso]><!-- --><span class="msohide es-button-border" style="border-style:solid;border-color:#333333;background:#2a2a29;border-width:0px 0px 2px 0px;display:block;border-radius:24px;width:auto;mso-hide:all;border-top-width:0px;border-left-width:2px;border-right-width:2px"><a href="" class="es-button msohide es-button-1710254279447" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#8c8c8c;font-size:18px;display:block;background:#2a2a29;border-radius:24px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center;padding:20px 5px;mso-padding-alt:0;mso-border-alt:10px solid #2a2a29;mso-hide:all"> Button </a></span><!--<![endif]--></td>
+<![endif]--><!--[if !mso]><!-- --><span class="msohide es-button-border" style="border-style:solid;border-color:#333333;background:#2a2a29;border-width:0px 0px 2px 0px;display:block;border-radius:24px;width:auto;mso-hide:all;border-top-width:0px;border-left-width:2px;border-right-width:2px"><a href="" class="es-button msohide es-button-1710254279447" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#8c8c8c;font-size:18px;display:block;background:#2a2a29;border-radius:24px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center;padding:20px 5px;mso-padding-alt:0;mso-border-alt:10px solid #2a2a29;mso-hide:all"> ${studioNotes} </a></span><!--<![endif]--></td>
                      </tr>
                    </table></td>
                  </tr>
@@ -2959,11 +2959,11 @@ a[x-apple-data-detectors] {
                       <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src="https://eewmooh.stripocdn.email/content/guids/CABINET_e98ffad1325256aff7907ef9a09936cf45367a36862fd99de6d4b1e28acbb098/images/3d.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" height="230"></td>
                      </tr>
                      <tr>
-                      <td align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:40px;padding-right:40px;border-radius:24px;background-color: #2a2a29;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:33px;color:#FF6A2B;font-size:22px">${projectName}</p><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#8c8c8c;font-size:14px">Consisting of ${tracks.length} tracks:</p>
+                      <td align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:40px;padding-right:40px;border-radius:24px;background-color: #2a2a29;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:33px;color:#FF6A2B;font-size:22px">${projectName}</p><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#8c8c8c;font-size:14px">Consisting of ${numberOfTracks} tracks:</p>
                        <ul>
-                        <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;Margin-bottom:15px;margin-left:0;color:#8c8c8c;font-size:14px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#d2d2d2;font-size:14px">${tracks[0].name}</p></li>
-                        <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;Margin-bottom:15px;margin-left:0;color:#8c8c8c;font-size:14px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#d2d2d2;font-size:14px">${tracks[1].name}</p></li>
-                       </ul></td>
+                        ${tracks}
+                       </ul>
+                      </td>
                      </tr>
                    </table></td>
                  </tr>
