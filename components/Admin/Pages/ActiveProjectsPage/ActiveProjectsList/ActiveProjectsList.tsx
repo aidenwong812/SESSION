@@ -1,6 +1,6 @@
 import { useState } from "react"
 import ProjectInfoCard from "@/components/ProjectInfoCard"
-import DurationSelect from "@/components/ui/DurationSelect"
+import SessionDurationSelect from "@/components/ui/SessionDurationSelect"
 
 const activeProjects = [
   {

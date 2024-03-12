@@ -5,7 +5,7 @@ import Media from "@/shared/Media"
 import ClipSpan from "@/components/ClipSpan"
 import ViewSwitch, { ViewType } from "@/components/ui/ViewSwitch"
 import Search from "@/components/ui/Search"
-import DurationSelect from "@/components/ui/DurationSelect"
+import SessionDurationSelect from "@/components/ui/SessionDurationSelect"
 import { useSessionRequest } from "@/providers/SessionRequestProvider"
 import Notification from "../Notification"
 import Layout from "../../../Layout"
@@ -53,7 +53,7 @@ export default function SessionRequestsPage() {
           </div>
         </div>
         <div className="mt-10 flex w-full grow flex-col overflow-y-hidden rounded-t-3xl bg-black_8">
-          <DurationSelect selected={selectedDuration} onChange={setSelectedDuration} />
+          <SessionDurationSelect selected={selectedDuration} onChange={setSelectedDuration} />
           <div
             className={twJoin(
               "grow overflow-x-hidden overflow-y-scroll p-8 grid gap-5",
