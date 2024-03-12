@@ -21,7 +21,9 @@ export default function ProjectInfoCard({ project }) {
                 {project?.projectName}
               </div>
               <div className="flex items-center gap-2 font-urwgeometric_light">
-                <span className="text-gray_1">{project?.tracks} tracks</span>
+                <span className="text-gray_1">
+                  {project?.trackList && project?.trackList.length} tracks
+                </span>
                 <span className="text-gray_2">•</span>
                 <span className="text-gray_2">{project?.timeframe?.label}</span>
               </div>

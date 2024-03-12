@@ -18,7 +18,7 @@ export default function ProjectDetail() {
           {selectedRequest?.projectName}
         </div>
         <div className="flex items-center gap-2 font-urwgeometric_light">
-          <span className="text-gray_1">{selectedRequest?.tracks} tracks</span>
+          <span className="text-gray_1">{selectedRequest?.trackList.length} tracks</span>
           <span className="text-gray_2">•</span>
           <span className="text-gray_2">{selectedRequest?.timeframe?.label}</span>
         </div>

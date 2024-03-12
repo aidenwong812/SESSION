@@ -58,7 +58,7 @@ const Links = () => {
                 <a
                   href={link}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   type="button"
                   className="flex size-[32px] items-center justify-center rounded-full
           border-x-[1px] border-b-[2px] border-gray_overlay_6 bg-gradient_s_1"

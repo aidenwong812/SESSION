@@ -11,6 +11,7 @@ export default function UserInfo() {
         containerClasses="w-[40px] h-[40px] rounded-full !overflow-hidden"
         link={selectedRequest?.pfp || "/images/Admin/session-requests-avatar.svg"}
         blurLink={selectedRequest?.pfp || "/blurLink/Admin/session-requests-avatar.png"}
+        alt="user avatar"
       />
       <div className="flex flex-col gap-x-[5px]">
         <p className="text-left font-urwgeometric text-[14px] leading-[14px] text-gray_2">

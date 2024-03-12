@@ -40,8 +40,8 @@ const TrackList = () => {
               duration: 0.1,
             }}
           >
-            {selectedRequest.trackList.map((track, index) => (
-              <div key={track.id} className="flex flex-col gap-[4px]">
+            {selectedRequest.tracks.map((track, index) => (
+              <div key={track.name} className="flex flex-col gap-[4px]">
                 <div
                   className="mt-[20px] flex w-full items-center
                 !rounded-[24px] !border-x-[1px]
@@ -66,19 +66,14 @@ const TrackList = () => {
                       containerClasses="w-[12px] h-[12px]"
                     />
                   </div>
-                  {Object.keys(track)
-                    .filter((_) => _ !== "name")
-                    .map(
-                      (one, id) =>
-                        track[one] === true && (
-                          <>
-                            {id !== 0 && <span className="p-0 leading-[16px] text-gray_2">•</span>}
-                            <ClipSpan key={one} className="py-0 font-urwgeometric text-[16px]">
-                              {one}
-                            </ClipSpan>
-                          </>
-                        ),
-                    )}
+                  {track.tracks.map((one, id) => (
+                    <>
+                      {id !== 0 && <span className="p-0 leading-[16px] text-gray_2">•</span>}
+                      <ClipSpan key={one} className="py-0 font-urwgeometric text-[16px]">
+                        {one}
+                      </ClipSpan>
+                    </>
+                  ))}
                 </div>
               </div>
             ))}

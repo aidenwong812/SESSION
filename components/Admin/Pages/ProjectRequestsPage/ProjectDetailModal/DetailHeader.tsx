@@ -12,6 +12,7 @@ const DetailHeader = ({ onClose }) => (
       blurLink="/images/Admin/session-requests-project-detail-logo.png"
       containerClasses="!absolute w-[136px] h-[136px]
             left-0 top-[5px]"
+      alt="project detail logo"
     />
     <p className="font-urwgeometric_semibold text-[44px] leading-[48px] text-gray_1">
       Project Request
@@ -32,6 +33,7 @@ const DetailHeader = ({ onClose }) => (
         link="/images/BookSession/close.svg"
         blurLink="/images/BookSession/close.png"
         containerClasses="w-[16px] md:w-[9.6px] lg:w-[12.8pxpx] xl:w-[16px] aspect-[1/1]"
+        alt="close"
       />
     </Button>
   </div>
