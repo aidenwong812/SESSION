@@ -15,7 +15,7 @@ const Button = ({ children, active = false, onClick }) => (
   </button>
 )
 
-export default function DurationSelect({ selected, onChange }) {
+export default function SessionDurationSelect({ selected, onChange }) {
   const options = useMemo(() => {
     const today = dayjs()
     const comingMonths = [1, 2, 3].map((diff) => today.add(diff, "month"))
