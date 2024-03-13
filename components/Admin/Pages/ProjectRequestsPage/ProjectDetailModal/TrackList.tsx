@@ -55,17 +55,19 @@ const TrackList = () => {
                   </p>
                 </div>
                 <div className="flex items-end gap-[2px] px-[20px]">
-                  <div
-                    className="mr-[10px] flex size-[16px] items-center justify-center
-                  rounded-full border-x-[1px] border-gray_overlay_6 bg-gradient_s_1"
-                  >
-                    <Media
-                      type="image"
-                      link="/images/Admin/session-detail-check.svg"
-                      blurLink="/images/Admin/session-detail-check.png"
-                      containerClasses="w-[12px] h-[12px]"
-                    />
-                  </div>
+                  {track.tracks.length > 0 && (
+                    <div
+                      className="mr-[10px] flex size-[16px] items-center justify-center
+                    rounded-full border-x-[1px] border-gray_overlay_6 bg-gradient_s_1"
+                    >
+                      <Media
+                        type="image"
+                        link="/images/Admin/session-detail-check.svg"
+                        blurLink="/images/Admin/session-detail-check.png"
+                        containerClasses="w-[12px] h-[12px]"
+                      />
+                    </div>
+                  )}
                   {track.tracks.map((one, id) => (
                     <>
                       {id !== 0 && <span className="p-0 leading-[16px] text-gray_2">•</span>}

@@ -11,6 +11,7 @@ const requestProject = async (
   timeframe,
   trackList,
   instruments,
+  pfp,
 ) => {
   try {
     const projectDocRef = await addDoc(collection(db, "requests"), {
@@ -26,6 +27,7 @@ const requestProject = async (
       type: "project",
       createdAt: Date.now(),
       booked: false,
+      pfp,
     })
 
     return projectDocRef

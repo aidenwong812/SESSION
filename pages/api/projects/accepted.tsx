@@ -9,6 +9,7 @@ class sendAcceptedProject {
     const { request, studioNotes } = body
 
     const emailData = {
+      requestId: request.id,
       projectName: request.projectName,
       tracks: request.tracks
         .map(

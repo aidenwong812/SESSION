@@ -2,19 +2,22 @@ import useIsMobile from "@/hooks/useIsMobile"
 import { useCheckOutProject } from "@/providers/CheckOutProjectProvider"
 import Button from "@/shared/Button"
 import { STEPS } from "@/lib/consts/checkout"
-import Layout from "../../../Layout"
-import Container from "../../../Container"
-import FadeIn from "../../../FadeIn"
+import Layout from "@/components/Layout"
+import Container from "@/components/Container"
+import FadeIn from "@/components/FadeIn"
+import PaymentSelector from "@/components/PaymentSelector/PaymentSelector"
+import SingleStudio from "@/components/SingleStudio"
 import PriceDetails from "../PriceDetails"
-import PaymentSelector from "../../../PaymentSelector/PaymentSelector"
 import CheckOutTitle from "../CheckOutTitle"
 import RemainingAmount from "../RemainingAmount"
-import SingleStudio from "../../../SingleStudio"
 import StudioNotes from "../StudioNotes"
+import LoadingPage from "../../LoadingPage"
 
 const ProjectCheckOut = () => {
   const isMobile = useIsMobile()
-  const { setCurStep } = useCheckOutProject()
+  const { projectData, setCurStep } = useCheckOutProject()
+
+  if (!projectData) return <LoadingPage />
 
   return (
     <Layout type={isMobile ? "mobile_transparent" : "base"}>

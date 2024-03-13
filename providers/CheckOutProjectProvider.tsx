@@ -1,19 +1,36 @@
 import { createContext, useContext, useState, useMemo, useCallback, useEffect } from "react"
+import { useRouter } from "next/router"
+import { toast } from "react-toastify"
 import { PAYMENTS } from "@/lib/consts/global"
 import { STEPS } from "@/lib/consts/checkout"
+import getProjectByRequestId from "@/lib/firebase/getProjectByRequestId"
 
 const CheckOutProjectContext = createContext(null)
 
 const CheckOutProjectProvider = ({ children }) => {
   const [curStep, setCurStep] = useState(STEPS.PAYMENT_CHECKOUT)
   const [selectedPayment, setSelectedPayment] = useState(PAYMENTS.STRIPE)
-  const [studioData, setStudioData] = useState(null)
+  const [projectData, setProjectData] = useState(null)
+  const [loading, setLoading] = useState(false)
 
-  const getStudioData = useCallback(() => {}, [])
+  const router = useRouter()
+  const projectId = router.query.id
+
+  const getProjectData = useCallback(async () => {
+    if (!projectId) return
+    const response: any = await getProjectByRequestId(projectId)
+    if (response.error) {
+      toast.error("project data is not existed!")
+      router.push("/booktype")
+      return
+    }
+
+    setProjectData(response)
+  }, [projectId])
 
   useEffect(() => {
-    getStudioData()
-  }, [getStudioData])
+    getProjectData()
+  }, [getProjectData])
 
   const value = useMemo(
     () => ({
@@ -21,9 +38,11 @@ const CheckOutProjectProvider = ({ children }) => {
       setCurStep,
       setSelectedPayment,
       selectedPayment,
-      studioData,
+      projectData,
+      loading,
+      setLoading,
     }),
-    [curStep, setCurStep, setSelectedPayment, selectedPayment, studioData],
+    [curStep, setCurStep, setSelectedPayment, selectedPayment, projectData, loading],
   )
 
   return <CheckOutProjectContext.Provider value={value}>{children}</CheckOutProjectContext.Provider>
