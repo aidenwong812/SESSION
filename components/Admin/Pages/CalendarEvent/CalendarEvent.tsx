@@ -30,9 +30,9 @@ const CalendarEvent = ({ event = null, className = "", onClick = () => {} }) => 
         <div className="flex h-full w-fit items-center gap-x-[2px] rounded-full bg-black_0 p-[2px]">
           <Media
             type="image"
-            link="/images/Admin/user_1.svg"
-            blurLink="/images/Admin/user_1.png"
-            containerClasses="h-full aspect-[1/1]"
+            link={event?.pfp || "/images/Admin/user_1.svg"}
+            blurLink={event?.pfp || "/images/Admin/user_1.png"}
+            containerClasses="h-full aspect-[1/1] rounded-full !overflow-hidden"
           />
           {isSession ? (
             <Media
