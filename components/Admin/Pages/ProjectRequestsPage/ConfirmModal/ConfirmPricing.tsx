@@ -7,8 +7,9 @@ import StudioNotes from "./StudioNotes"
 import PriceInput from "./PriceInput"
 import ProjectDetail from "../ProjectDetailModal/ProjectDetail"
 
-export default function ConfirmPricing() {
-  const { selectedRequest, setConfirmStatus, projectPrice, setProjectPrice, handleAccept } = useProjectRequest()
+export default function ConfirmPricing({ onClose }) {
+  const { selectedRequest, setConfirmStatus, projectPrice, setProjectPrice, handleAccept } =
+    useProjectRequest()
 
   const onClickConfirm = () => {
     handleAccept(selectedRequest)
@@ -17,7 +18,7 @@ export default function ConfirmPricing() {
 
   return (
     <div className="w-full">
-      <BackwardButton onClick={() => setConfirmStatus(PROJECT_REQUEST_STATUS.INITIAL)} />
+      <BackwardButton onClick={onClose} />
       <div className="mt-[40px] grid grid-cols-12 gap-x-[80px]">
         <div className="col-span-6">
           <PaidDescription />

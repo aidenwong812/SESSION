@@ -431,7 +431,7 @@ a[x-apple-data-detectors] {
 																	<td align="left" style="padding:0;Margin:0;padding-top:12px">
 																		<h6 style="Margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:16px;font-style:normal;font-weight:normal;line-height:24px !important;color:#d2d2d2">
 																			<span style="color:#A1EA04">Sound Studios</span>
-																			couldn’t accept your Session request.<br>Don’t worry though, why don’t you try out another studio?<br><br>Check out some of our studios down below.</h6>
+																			couldn’t accept your Session request.</h6>
 																	</td>
 																</tr>
 															</table>
@@ -2702,7 +2702,7 @@ a[x-apple-data-detectors] {
                      </tr>
                      <tr>
                       <td align="left" style="padding:0;Margin:0;padding-top:20px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;color:#d2d2d2;font-size:16px">
-                        <span style="color:#A1EA04">Sound Studios</span> couldn't accept your Project request.<br></p><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;color:#d2d2d2;font-size:16px">Don't worry though, why don't you try out another studio?</p><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;color:#d2d2d2;font-size:16px"><br></p><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;color:#d2d2d2;font-size:16px">Check out some of our studios below down</p></td>
+                        <span style="color:#A1EA04">Sound Studios</span> couldn't accept your Project request.</p></td>
                      </tr>
                    </table></td>
                  </tr>
@@ -2767,7 +2767,13 @@ a[x-apple-data-detectors] {
 </html>
 `
 
-export const acceptProjectMail = ({ projectName, studioNotes, tracks, numberOfTracks }) => `
+export const acceptProjectMail = ({
+  requestId,
+  projectName,
+  studioNotes,
+  tracks,
+  numberOfTracks,
+}) => `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
  <head>
@@ -2901,13 +2907,13 @@ a[x-apple-data-detectors] {
                   <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr>
-                      <td align="center" style="padding:0;Margin:0"><!--[if mso]><a href="https://project.com" target="_blank" hidden>
-	<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="https://project.com" 
+                      <td align="center" style="padding:0;Margin:0"><!--[if mso]><a href="https://session-pied.vercel.app/checkout-project/${requestId}" target="_blank" hidden>
+	<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="https://session-pied.vercel.app/checkout-project/${requestId}" 
                 style="height:49px; v-text-anchor:middle; width:556px" arcsize="50%" strokecolor="#2cb543" strokeweight="2px" fillcolor="#a1ea04">
 		<w:anchorlock></w:anchorlock>
 		<center style='color:#000000; font-family:arial, "helvetica neue", helvetica, sans-serif; font-size:18px; font-weight:700; line-height:18px;  mso-text-raise:1px'>Go to Project</center>
 	</v:roundrect></a>
-<![endif]--><!--[if !mso]><!-- --><span class="msohide es-button-border" style="border-style:solid;border-color:#2CB543;background:#a1ea04;border-width:0px 0px 2px 0px;display:block;border-radius:30px;width:auto;mso-hide:all"><a href="https://project.com" class="es-button msohide es-button-1710253738424" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#000000;font-size:18px;display:block;background:#a1ea04;border-radius:30px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:bold;font-style:normal;line-height:22px;width:auto;text-align:center;padding:15px 5px;mso-padding-alt:0;mso-border-alt:10px solid #a1ea04;mso-hide:all">Go to Project</a></span><!--<![endif]--></td>
+<![endif]--><!--[if !mso]><!-- --><span class="msohide es-button-border" style="border-style:solid;border-color:#2CB543;background:#a1ea04;border-width:0px 0px 2px 0px;display:block;border-radius:30px;width:auto;mso-hide:all"><a href="https://session-pied.vercel.app/checkout-project/${requestId}" class="es-button msohide es-button-1710253738424" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#000000;font-size:18px;display:block;background:#a1ea04;border-radius:30px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:bold;font-style:normal;line-height:22px;width:auto;text-align:center;padding:15px 5px;mso-padding-alt:0;mso-border-alt:10px solid #a1ea04;mso-hide:all">Go to Project</a></span><!--<![endif]--></td>
                      </tr>
                    </table></td>
                  </tr>

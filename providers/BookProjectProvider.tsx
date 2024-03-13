@@ -39,6 +39,7 @@ const BookProjectProvider = ({ children }) => {
       timeframe,
       trackList,
       instruments.instruments,
+      userData?.photoURL,
     )
 
     setLoading(false)

@@ -13,7 +13,7 @@ const ConfirmModal = ({ isVisible, toggleModal }) => {
       containerClasses="!w-auto !min-w-[600px]"
       showCloseButton={confirmStatus !== PROJECT_REQUEST_STATUS.INITIAL}
     >
-      {confirmStatus === PROJECT_REQUEST_STATUS.INITIAL && <ConfirmPricing />}
+      {confirmStatus === PROJECT_REQUEST_STATUS.INITIAL && <ConfirmPricing onClose={toggleModal} />}
       {confirmStatus === PROJECT_REQUEST_STATUS.SUCCESS && <Success onClose={toggleModal} />}
     </SideModal>
   )
