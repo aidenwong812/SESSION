@@ -8,10 +8,15 @@ import getSessionFee from "@/lib/getSessionFee"
 import BackwardButton from "@/components/BackwardButton"
 
 const PayPalDetail = () => {
-  const { bookSession, sessionData, setCurStep } = useCheckOutSession()
+  const { bookSession, sessionData, setCurStep, setLoading } = useCheckOutSession()
   const { onPayPalCreateOrder, onPayPalApproveOrder } = usePayment()
   const isMobile = useIsMobile()
   const sessionFee = getSessionFee(sessionData.sessionPrice, sessionData.engineerPrice)
+
+  const handleBackward = () => {
+    setCurStep(STEPS.PAYMENT_CHECKOUT)
+    setLoading(false)
+  }
 
   return (
     <div
@@ -20,7 +25,7 @@ const PayPalDetail = () => {
       rounded-[24px] bg-black_0 p-[24px] md:grid-cols-2"
     >
       <div className="col-span-1 pb-[20px] md:col-span-2">
-        <BackwardButton onClick={() => setCurStep(STEPS.PAYMENT_CHECKOUT)} label="Back to detail" />
+        <BackwardButton onClick={handleBackward} label="Back to detail" />
       </div>
       <div
         className="aspect-[1/1] rounded-[24px] bg-cover bg-center"
