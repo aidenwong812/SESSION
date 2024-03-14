@@ -10,7 +10,6 @@ const StripeDetail = () => {
   const { projectData, setCurStep } = useCheckOutProject()
   const { stripePromise, stripeOption, stripePaymentId, stripeClientSecret } = usePayment()
   const sessionFee = getSessionFee(projectData.projectPrice, 0)
-  console.log(projectData)
 
   return (
     <div
