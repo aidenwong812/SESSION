@@ -16,6 +16,10 @@ const CheckOutProjectProvider = ({ children }) => {
   const router = useRouter()
   const projectId = router.query.id
 
+  const startProject = async () => {
+    setCurStep(STEPS.BOOKED_SUCCESS)
+  }
+
   const getProjectData = useCallback(async () => {
     if (!projectId) return
     const response: any = await getProjectByRequestId(projectId)
@@ -41,8 +45,9 @@ const CheckOutProjectProvider = ({ children }) => {
       projectData,
       loading,
       setLoading,
+      startProject,
     }),
-    [curStep, setCurStep, setSelectedPayment, selectedPayment, projectData, loading],
+    [curStep, setCurStep, setSelectedPayment, selectedPayment, projectData, loading, startProject],
   )
 
   return <CheckOutProjectContext.Provider value={value}>{children}</CheckOutProjectContext.Provider>
