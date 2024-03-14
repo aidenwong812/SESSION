@@ -8,13 +8,16 @@ import ClipSpan from "../../../ClipSpan"
 import GreenGodRayAnimation from "../GreenGodRayAnimation"
 
 const BookSession = () => {
-  const { push } = useRouter()
+  const { push, query } = useRouter()
   const [isHovered, setIsHovered] = useState(false)
   const { userData } = useAuth()
 
   const handleBookSession = async () => {
     createVisitEvent(userData.email)
-    push("/booksession")
+    push({
+      pathname: "/[studio]/booksession",
+      query: { studio: query.studio },
+    })
   }
 
   return (

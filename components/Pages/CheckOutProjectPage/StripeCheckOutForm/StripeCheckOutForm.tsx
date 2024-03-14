@@ -1,7 +1,7 @@
 import { useElements, useStripe, PaymentElement } from "@stripe/react-stripe-js"
 import { useState } from "react"
 import { usePayment } from "@/providers/PaymentProvider"
-import { useCheckOutSession } from "@/providers/CheckOutSessionProvider"
+import { useCheckOutProject } from "@/providers/CheckOutProjectProvider"
 import Button from "@/shared/Button"
 import { STEPS } from "@/lib/consts/checkout"
 import handleTxError from "@/lib/handleTxError"
@@ -10,7 +10,7 @@ const StripeCheckOutForm = () => {
   const stripe = useStripe()
   const elements = useElements()
 
-  const { sessionData, bookSession } = useCheckOutSession()
+  const { projectData, startProject } = useCheckOutProject()
   const { stripeClientSecret } = usePayment()
   const [isLoading, setIsLoading] = useState(false)
 
@@ -23,7 +23,7 @@ const StripeCheckOutForm = () => {
     const paymentIntent = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `${window.location.origin}/checkout-session/${sessionData.id}?status=${STEPS.BOOKED_SUCCESS}`,
+        return_url: `${window.location.origin}/checkout-session/${projectData.id}?status=${STEPS.BOOKED_SUCCESS}`,
       },
       redirect: "if_required",
     })
@@ -34,7 +34,7 @@ const StripeCheckOutForm = () => {
       return
     }
 
-    await bookSession()
+    await startProject()
     setIsLoading(false)
   }
 

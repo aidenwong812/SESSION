@@ -12,6 +12,7 @@ const requestProject = async (
   trackList,
   instruments,
   pfp,
+  studioId,
 ) => {
   try {
     const projectDocRef = await addDoc(collection(db, "requests"), {
@@ -28,6 +29,7 @@ const requestProject = async (
       createdAt: Date.now(),
       booked: false,
       pfp,
+      studioId,
     })
 
     return projectDocRef
