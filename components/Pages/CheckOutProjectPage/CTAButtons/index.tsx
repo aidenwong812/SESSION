@@ -1,3 +1,3 @@
-import CTAButtons from "./CATButtons"
+import CTAButtons from "./CTAButtons"
 
 export default CTAButtons
