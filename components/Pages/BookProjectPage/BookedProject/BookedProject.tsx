@@ -47,8 +47,7 @@ const BookedProject = () => {
           className="pb-[10px] font-urwgeometric_medium
           text-[32px] leading-[90%] text-gray_1 md:pb-[15px] md:text-[64px]"
         >
-          Your <ClipSpan className="bg-gradient-to-r from-[#FF6A2B] to-[#FF442B]">Project</ClipSpan>{" "}
-          has <br />
+          Your <span className="text-project">Project</span> has <br />
           been submitted.
         </p>
         <p className="font-urwgeometric_medium text-[12px] text-gray_1 samsungS8:text-[14px] xs:text-[16px] md:pt-[1.5vh]">

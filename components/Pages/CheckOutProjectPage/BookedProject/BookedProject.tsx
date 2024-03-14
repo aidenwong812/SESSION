@@ -42,16 +42,12 @@ const BookedProject = () => {
         >
           {isMobile ? (
             <>
-              Your{" "}
-              <ClipSpan className="bg-gradient-to-r from-[#FF6A2B] to-[#FF442B]">Project</ClipSpan>{" "}
-              has <br />
+              Your <span className="text-project">Project</span> has <br />
               been submitted.
             </>
           ) : (
             <>
-              Your{" "}
-              <ClipSpan className="bg-gradient-to-r from-[#FF6A2B] to-[#FF442B]">Project</ClipSpan>{" "}
-              has been <br />
+              Your <span className="text-project">Project</span> has been <br />
               submitted.
             </>
           )}

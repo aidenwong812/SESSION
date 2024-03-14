@@ -14,7 +14,7 @@ const RemainingAmount = () => {
         lg:p-[16px] xl:gap-y-[20px] xl:rounded-[24px] xl:p-[20px]"
     >
       <p className="font-urwgeometric_medium text-[24px] text-gray_1 md:text-[14.4px] lg:text-[19.2px] xl:text-[24px]">
-        Studio Offer (Total)
+        Remaining Amount
       </p>
       <p className="font-urwgeometric_bold text-[35px] leading-[100%] text-[#a1ea04] drop-shadow-xl drop-shadow-session md:text-[40px] lg:text-[50px] xl:text-[64px]">
         {`$${projectData.projectPrice + sessionFee}`}
