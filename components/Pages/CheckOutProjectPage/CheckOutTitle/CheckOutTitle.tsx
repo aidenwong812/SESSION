@@ -1,7 +1,6 @@
 import useIsMobile from "@/hooks/useIsMobile"
 import Media from "@/shared/Media"
 import { useCheckOutProject } from "@/providers/CheckOutProjectProvider"
-import ClipSpan from "../../../ClipSpan"
 
 const CheckOutTitle = () => {
   const isMobile = useIsMobile()
@@ -17,10 +16,7 @@ const CheckOutTitle = () => {
           containerClasses="w-[108px] aspect-[1/1]"
         />
         <p className="px-[20px] font-urwgeometric text-[30px] leading-[100%] text-gray_1 samsungS8:text-[34px] md:px-0 lg:text-[48px]">
-          Your Project{" "}
-          <ClipSpan className="bg-gradient-to-r from-[#FF6A2B] to-[#FF442B]">
-            {`“${projectData.projectName}”`}
-          </ClipSpan>{" "}
+          Your Project<span className="text-project">{` “${projectData.projectName}” `}</span>
           has been
           <br /> completed.
         </p>
