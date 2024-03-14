@@ -1,9 +1,11 @@
-import { createContext, useContext, useState, useMemo, useEffect } from "react"
+import { createContext, useContext, useState, useMemo, useEffect, useCallback } from "react"
+import { useRouter } from "next/router"
 import JoiBase from "joi"
 import { toast } from "react-toastify"
 import { STEPS, validation, genreOptions, timeframeOptions } from "@/lib/consts/bookProject"
 import { instrumentsOptions } from "@/lib/consts/global"
 import requestProject from "@/lib/firebase/requestProject"
+import getStudioByStudioName from "@/lib/firebase/getStudioByStudioName"
 import useInstruments from "../hooks/useInstruments"
 import { useAuth } from "./AuthProvider"
 
@@ -26,6 +28,10 @@ const BookProjectProvider = ({ children }) => {
   const instruments = useInstruments()
   const [loading, setLoading] = useState(false)
   const { userData } = useAuth()
+  const [selectedStudio, setSelectedStudio] = useState(null)
+
+  const { query, push } = useRouter()
+  const studioName = query.studio
 
   const request = async () => {
     setLoading(true)
@@ -40,6 +46,7 @@ const BookProjectProvider = ({ children }) => {
       trackList,
       instruments.instruments,
       userData?.photoURL,
+      selectedStudio?.id,
     )
 
     setLoading(false)
@@ -71,6 +78,25 @@ const BookProjectProvider = ({ children }) => {
 
     setGenre([...temp, option])
   }
+
+  const getStudioData = useCallback(async () => {
+    if (!studioName) return
+    const response: any = await getStudioByStudioName(studioName)
+    if (response.error || response.length < 1) {
+      toast.error("studio data is not existed!")
+      push({
+        pathname: "/[studio]/booktype",
+        query: { studio: query.studio },
+      })
+      return
+    }
+
+    setSelectedStudio(response[0])
+  }, [studioName])
+
+  useEffect(() => {
+    getStudioData()
+  }, [getStudioData])
 
   useEffect(() => {
     const linkSchema = {}
@@ -119,11 +145,11 @@ const BookProjectProvider = ({ children }) => {
       selectedTrackNo,
       request,
       loading,
+      selectedStudio,
     }),
     [
       curStep,
       setCurStep,
-      STEPS,
       totalStep,
       bandName,
       setBandName,
@@ -131,14 +157,11 @@ const BookProjectProvider = ({ children }) => {
       setLinks,
       validationSchema,
       projectName,
-      instrumentsOptions,
       setProjectName,
       genre,
       setGenre,
       projectDesc,
       setProjectDesc,
-      genreOptions,
-      timeframeOptions,
       timeframe,
       setTimeframe,
       trackList,
@@ -151,6 +174,7 @@ const BookProjectProvider = ({ children }) => {
       selectedTrackNo,
       request,
       loading,
+      selectedStudio,
     ],
   )
 

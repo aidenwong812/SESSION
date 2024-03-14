@@ -8,14 +8,17 @@ import createVisitEvent from "@/lib/createVisitEvent"
 import RedGodRayAnimation from "../RedGodRayAnimation"
 
 const BookProject = () => {
-  const { push } = useRouter()
+  const { push, query } = useRouter()
   const isMobile = useIsMobile()
   const [isHovered, setIsHovered] = useState(false)
   const { userData } = useAuth()
 
   const handleClick = () => {
     createVisitEvent(userData.email)
-    push("/bookproject")
+    push({
+      pathname: "/[studio]/bookproject",
+      query: { studio: query.studio },
+    })
   }
 
   return (

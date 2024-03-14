@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useMemo } from "react"
+import { createContext, useContext, useState, useMemo, useEffect } from "react"
 import { loadStripe } from "@stripe/stripe-js"
 import { toast } from "react-toastify"
 import { PAYMENTS } from "@/lib/consts/global"
@@ -10,6 +10,7 @@ const PaymentProvider = ({ children }) => {
   const [selectedPayment, setSelectedPayment] = useState(PAYMENTS.STRIPE)
   const [stripeClientSecret, setStripeClientSecret] = useState(null)
   const [stripePaymentId, setStripePaymentId] = useState(null)
+  const [stripePromise, setStripePromise] = useState(null)
   const [loading, setLoading] = useState(false)
 
   const appearance = {
@@ -33,14 +34,17 @@ const PaymentProvider = ({ children }) => {
       toast.error("create payment failed")
       return false
     }
-    setStripeClientSecret(response.clientSecret)
-    setStripePaymentId(response.paymentId)
+    setStripeClientSecret(response.client_secret)
+    setStripePaymentId(response.id)
     return true
   }
 
-  const stripePromise = useMemo(async () => {
-    const promise = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PK)
-    return promise
+  useEffect(() => {
+    const loadStripePromise = async () => {
+      const promise = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PK)
+      setStripePromise(promise)
+    }
+    loadStripePromise()
   }, [])
 
   const stripeOption = {

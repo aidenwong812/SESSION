@@ -9,12 +9,12 @@ import HourMin from "../HourMin"
 import StudioName from "../StudioName"
 
 const SingleStudio = ({ className = "", data, hasEquipmentButton = false }) => {
-  const { openEquipmentModal, setCurStep, setSelectedStudio, setLoading } = useBookSession()
+  const { openEquipmentModal, setCurStep, setSelectedRoom, setLoading } = useBookSession()
   const { fetchSessionCalendarEvents } = useDateSelect()
 
   const handleClick = async () => {
     setLoading(true)
-    setSelectedStudio(data)
+    setSelectedRoom(data)
     await fetchSessionCalendarEvents(data?.calendarEmail)
     setCurStep(STEPS.CHOOSE_DATE)
     setLoading(false)

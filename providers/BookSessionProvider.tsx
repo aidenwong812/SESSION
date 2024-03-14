@@ -1,9 +1,11 @@
-import { createContext, useContext, useState, useMemo } from "react"
+import { useRouter } from "next/router"
+import { createContext, useContext, useState, useMemo, useEffect, useCallback } from "react"
 import { toast } from "react-toastify"
 import { STEPS } from "@/lib/consts/bookSession"
 import convertDecimalDigit from "@/lib/convetDecimalDigit"
 import convertTo24HourFormat from "@/lib/convertTo24HourFormat"
 import requestSession from "@/lib/firebase/requestSession"
+import getStudioByStudioName from "@/lib/firebase/getStudioByStudioName"
 import { ONE_DAY_MILLISECONDS } from "@/lib/consts/global"
 import { useAuth } from "./AuthProvider"
 import useInstruments from "../hooks/useInstruments"
@@ -16,6 +18,7 @@ const BookSessionProvider = ({ children }) => {
   const [studioOnModal, setStudioOnModal] = useState(null)
   const [isOpenEquipmentModal, setIsOpenEquipmentModal] = useState(false)
   const [selectedStudio, setSelectedStudio] = useState(null)
+  const [selectedRoom, setSelectedRoom] = useState(null)
   const [sessionDetail, setSessionDetail] = useState("")
   const [comingPeople, setComingPeople] = useState(1)
   const [isEngineerNeeded, setIsEngineerNeeded] = useState(true)
@@ -24,6 +27,9 @@ const BookSessionProvider = ({ children }) => {
   const instruments = useInstruments()
   const [loading, setLoading] = useState(false)
   const { userData } = useAuth()
+
+  const { query, push } = useRouter()
+  const studioName = query.studio
 
   const request = async (startTime, endTime, selectedDay, studioId) => {
     setLoading(true)
@@ -82,6 +88,25 @@ const BookSessionProvider = ({ children }) => {
     setIsOpenEquipmentModal(true)
   }
 
+  const getStudioData = useCallback(async () => {
+    if (!studioName) return
+    const response: any = await getStudioByStudioName(studioName)
+    if (response.error || response.length < 1) {
+      toast.error("studio data is not existed!")
+      push({
+        pathname: "/[studio]/booktype",
+        query: { studio: query.studio },
+      })
+      return
+    }
+
+    setSelectedStudio(response[0])
+  }, [studioName])
+
+  useEffect(() => {
+    getStudioData()
+  }, [getStudioData])
+
   const value = useMemo(
     () => ({
       curStep,
@@ -93,7 +118,8 @@ const BookSessionProvider = ({ children }) => {
       setIsOpenEquipmentModal,
       openEquipmentModal,
       selectedStudio,
-      setSelectedStudio,
+      selectedRoom,
+      setSelectedRoom,
       sessionDetail,
       setSessionDetail,
       isEngineerNeeded,
@@ -118,7 +144,8 @@ const BookSessionProvider = ({ children }) => {
       setIsOpenEquipmentModal,
       openEquipmentModal,
       selectedStudio,
-      setSelectedStudio,
+      selectedRoom,
+      setSelectedRoom,
       sessionDetail,
       setSessionDetail,
       isEngineerNeeded,

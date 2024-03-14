@@ -3,11 +3,11 @@ import Button from "@/shared/Button"
 import Media from "@/shared/Media"
 import useIsMobile from "@/hooks/useIsMobile"
 import { useBookSession } from "@/providers/BookSessionProvider"
+import ClipSpan from "@/components/ClipSpan"
 import BookedStudio from "../BookedStudio"
-import ClipSpan from "../../../ClipSpan"
 
 const BookedSession = () => {
-  const router = useRouter()
+  const { push, query } = useRouter()
   const isMobile = useIsMobile()
   const { isBookedOnProject } = useBookSession()
 
@@ -89,7 +89,12 @@ const BookedSession = () => {
           lg:text-[12.8px] xl:mt-[24px] xl:h-[48px]
           xl:text-[16px]"
           pulseColor="white"
-          onClick={() => router.push("/booktype")}
+          onClick={() =>
+            push({
+              pathname: "/[studio]/booktype",
+              query: { studio: query.studio },
+            })
+          }
         >
           Back to the Studio
         </Button>

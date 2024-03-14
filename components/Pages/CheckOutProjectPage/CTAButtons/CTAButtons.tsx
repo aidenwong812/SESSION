@@ -30,7 +30,7 @@ const CTAButtons = () => {
         className="h-[48px] w-full border-x-[1px] border-b-[2px] border-x-gray_overlay_6 border-b-gray_overlay_6 bg-gray_overlay_6 !bg-none
                                             font-urwgeometric_bold text-s_error
                                             shadow-none md:h-[28.8px] md:w-[144px]
-                                            md:text-[9.6px] lg:h-[38.4px] lg:w-[192x]
+                                            md:text-[9.6px] lg:h-[38.4px] lg:w-[192px]
                                             lg:text-[12.8px] xl:h-[48px]
                                             xl:w-[240px] xl:text-[16px]"
         pulseColor="white"
