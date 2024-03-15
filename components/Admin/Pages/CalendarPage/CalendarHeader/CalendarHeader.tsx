@@ -1,7 +1,7 @@
 import { useAdminCalendar } from "@/providers/AdminCalendarProvider"
 import Media from "@/shared/Media"
 import { FULL_MONTH_LABELS } from "@/lib/consts/global"
-import StudioSelect from "./StudioSelect"
+import StudioSelect from "./RoomSelect"
 import ViewSelect from "./ViewSelect"
 
 const CalendarHeader = () => {

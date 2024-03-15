@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import getStudios from "@/lib/firebase/getStudios"
+import getRoomsByStudioId from "@/lib/firebase/getRoomsByStudioId"
 
 export const AdminCalendarViewTypes = [
   {
@@ -17,9 +17,9 @@ export const AdminCalendarViewTypes = [
 ]
 
 const useAdminCalendarData = () => {
-  const [selectedStudio, setSelectedStudio] = useState(null)
+  const [selectedRoom, setSelectedRoom] = useState(null)
   const [selectedViewType, setSelectedViewType] = useState(AdminCalendarViewTypes[1])
-  const [studioList, setStudioList] = useState([]) as any
+  const [roomList, setRoomList] = useState([]) as any
 
   const isWeeklyCalendar = selectedViewType.value === AdminCalendarViewTypes[0].value
   const isMonthlyCalendar = selectedViewType.value === AdminCalendarViewTypes[1].value
@@ -27,27 +27,28 @@ const useAdminCalendarData = () => {
 
   useEffect(() => {
     const init = async () => {
-      const response = await getStudios()
+      const studioId = "mkDfxshbbVnhsHU4CVag"
+      const response = await getRoomsByStudioId(studioId)
       const { error } = response as any
 
       if (error) return
 
-      setStudioList(response)
-      setSelectedStudio(response[0])
+      setRoomList(response)
+      setSelectedRoom(response[0])
     }
 
     init()
   }, [])
 
   return {
-    setSelectedStudio,
-    selectedStudio,
+    setSelectedRoom,
+    selectedRoom,
     selectedViewType,
     setSelectedViewType,
     isMonthlyCalendar,
     isWeeklyCalendar,
     isYearlyCalendar,
-    studioList,
+    roomList,
   }
 }
 

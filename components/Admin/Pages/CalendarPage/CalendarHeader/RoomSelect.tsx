@@ -2,12 +2,12 @@ import useSelectClickoutside from "@/hooks/useSelectClickoutside"
 import { useAdminCalendar } from "@/providers/AdminCalendarProvider"
 import Media from "@/shared/Media"
 
-const StudioSelect = () => {
-  const { selectedStudio, setSelectedStudio, studioList } = useAdminCalendar()
+const RoomSelect = () => {
+  const { selectedRoom, setSelectedRoom, roomList } = useAdminCalendar()
   const { selectRef, setIsVisibleSelect, isVisibleSelect } = useSelectClickoutside()
 
-  const handleClick = (studio) => {
-    setSelectedStudio(studio)
+  const handleClick = (room) => {
+    setSelectedRoom(room)
     setIsVisibleSelect(false)
   }
 
@@ -21,7 +21,7 @@ const StudioSelect = () => {
         ${isVisibleSelect ? "border-session" : "border-gray_overlay_6"}`}
       >
         <p className="font-urwgeometric_semibold text-[14px] leading-[14px] text-gray_2">
-          {selectedStudio?.name || "Loading..."}
+          {selectedRoom?.name || "Loading..."}
         </p>
         <div
           className="flex size-[24px] items-center justify-center rounded-full
@@ -40,15 +40,15 @@ const StudioSelect = () => {
           className="absolute left-0 top-full mt-[8px] flex w-full
             flex-col gap-y-[20px] rounded-[16px] bg-gray_overlay_6 p-[12px] backdrop-blur-[20px]"
         >
-          {studioList.map((studio) => (
+          {roomList.map((room) => (
             <button
               type="button"
-              key={studio.id}
-              onClick={() => handleClick(studio)}
+              key={room.id}
+              onClick={() => handleClick(room)}
               className="text-left font-urwgeometric_semibold text-[14px] leading-[14px]
                         text-gray_2"
             >
-              {studio.name}
+              {room.name}
             </button>
           ))}
         </div>
@@ -57,4 +57,4 @@ const StudioSelect = () => {
   )
 }
 
-export default StudioSelect
+export default RoomSelect
