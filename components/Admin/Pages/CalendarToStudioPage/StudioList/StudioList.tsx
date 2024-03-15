@@ -4,7 +4,6 @@ import SingleStudio from "../SingleStudio"
 
 const StudioList = () => {
   const { roomList } = useSessionStudio()
-  console.log(roomList)
 
   return (
     <FadeIn className="md:pt-[40px]">
