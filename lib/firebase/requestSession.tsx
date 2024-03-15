@@ -11,6 +11,7 @@ const requestSession = async ({
   selectedDay,
   event,
   studioId,
+  roomName,
   pfp,
 }) => {
   try {
@@ -24,6 +25,7 @@ const requestSession = async ({
       selectedDay,
       event,
       studioId,
+      roomName,
       type: "session",
       createdAt: Date.now(),
       booked: false,

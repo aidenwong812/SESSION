@@ -6,7 +6,7 @@ import FadeIn from "../../../FadeIn"
 import SingleStudio from "../SingleStudio"
 
 const StudioList = () => {
-  const { studioList } = useSessionStudio()
+  const { roomList } = useSessionStudio()
   const { loading } = useBookSession()
   const isMobile = useIsMobile()
   const size = isMobile ? 50 : 100
@@ -17,10 +17,8 @@ const StudioList = () => {
         className="grid w-full grid-cols-1 gap-[10px]
         md:grid-cols-2 md:gap-[24px] lg:gap-[32px] xl:gap-[40px]"
       >
-        {studioList && !loading ? (
-          studioList.map((studio) => (
-            <SingleStudio key={studio.name} data={studio} hasEquipmentButton />
-          ))
+        {roomList && !loading ? (
+          roomList.map((room) => <SingleStudio key={room.name} data={room} hasEquipmentButton />)
         ) : (
           <div
             className="col-span-1 flex min-h-[300px] w-full items-center

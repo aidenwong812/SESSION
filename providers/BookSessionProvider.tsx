@@ -5,7 +5,7 @@ import { STEPS } from "@/lib/consts/bookSession"
 import convertDecimalDigit from "@/lib/convetDecimalDigit"
 import convertTo24HourFormat from "@/lib/convertTo24HourFormat"
 import requestSession from "@/lib/firebase/requestSession"
-import getStudioByStudioName from "@/lib/firebase/getStudioByStudioName"
+import getStudioByStudioId from "@/lib/firebase/getStudioByStudioId"
 import { ONE_DAY_MILLISECONDS } from "@/lib/consts/global"
 import { useAuth } from "./AuthProvider"
 import useInstruments from "../hooks/useInstruments"
@@ -29,9 +29,9 @@ const BookSessionProvider = ({ children }) => {
   const { userData } = useAuth()
 
   const { query, push } = useRouter()
-  const studioName = query.studio
+  const studioId = query.studio
 
-  const request = async (startTime, endTime, selectedDay, studioId) => {
+  const request = async (startTime, endTime, selectedDay, roomName) => {
     setLoading(true)
     const startDate = `${selectedDay.year}-${convertDecimalDigit(
       selectedDay.month,
@@ -72,6 +72,7 @@ const BookSessionProvider = ({ children }) => {
       selectedDay,
       event: eventDetails,
       studioId,
+      roomName,
       pfp: userData?.photoURL,
     })
 
@@ -89,9 +90,9 @@ const BookSessionProvider = ({ children }) => {
   }
 
   const getStudioData = useCallback(async () => {
-    if (!studioName) return
-    const response: any = await getStudioByStudioName(studioName)
-    if (response.error || response.length < 1) {
+    if (!studioId) return
+    const response: any = await getStudioByStudioId(studioId)
+    if (response.error) {
       toast.error("studio data is not existed!")
       push({
         pathname: "/[studio]/booktype",
@@ -100,8 +101,8 @@ const BookSessionProvider = ({ children }) => {
       return
     }
 
-    setSelectedStudio(response[0])
-  }, [studioName])
+    setSelectedStudio(response)
+  }, [studioId])
 
   useEffect(() => {
     getStudioData()
