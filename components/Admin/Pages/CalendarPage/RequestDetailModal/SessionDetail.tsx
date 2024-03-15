@@ -13,6 +13,7 @@ const SessionDetail = () => {
             !p-[20px]"
       >
         <textarea
+          readOnly
           className="!min-h-[280px] w-full
                     !border-none  !bg-transparent
                     font-urwgeometric text-gray_1 focus:!outline-none
