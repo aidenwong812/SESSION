@@ -25,7 +25,7 @@ const CheckOutProjectProvider = ({ children }) => {
     const response: any = await getProjectByRequestId(projectId)
     if (response.error) {
       toast.error("project data is not existed!")
-      router.push("/booktype")
+      router.push("/Studio B/booktype")
       return
     }
 

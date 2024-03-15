@@ -68,7 +68,7 @@ const useAuthFlow = () => {
     const response: any = await userLogin(userEmail, userPassword)
     if (!response?.error) {
       toast.success("Sign in successful")
-      push("/booktype")
+      push("/Studio B/booktype")
     }
     setLoading(false)
   }

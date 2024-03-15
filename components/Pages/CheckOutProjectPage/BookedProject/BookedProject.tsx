@@ -45,9 +45,9 @@ const BookedProject = () => {
         >
           <Media
             type="image"
-            link="/images/BookProject/success.svg"
-            blurLink="/images/BookProject/success.png"
-            containerClasses="w-[200px] aspect-[1/1] !absolute left-[calc(50%-100px)] md:left-[-100px] top-[-140px] md:top-[-70px]"
+            link="/images/BookProject/confirm.svg"
+            blurLink="/images/BookProject/confirm.png"
+            containerClasses="w-[200px] aspect-[1/1] !absolute left-[calc(50%-110px)] md:left-[-110px] top-[-140px] md:top-[-70px]"
           />
           <div className="text-project">{projectData.projectName}</div>
           <p className="pt-[4px] font-urwgeometric text-[10px] text-gray_2">
