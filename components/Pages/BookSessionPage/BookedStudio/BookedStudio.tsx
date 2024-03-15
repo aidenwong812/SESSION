@@ -6,7 +6,7 @@ import getMonthName from "@/lib/getMonthName"
 import { availableTimes, STEPS } from "@/lib/consts/bookSession"
 
 const BookedStudio = ({ className = "" }) => {
-  const { selectedStudio, curStep } = useBookSession()
+  const { selectedRoom, curStep } = useBookSession()
   const { selectedDay, selectedStartTime, selectedEndTime } = useDateSelect()
 
   const isSuccessPage = curStep === STEPS.SUCCESS_BOOKED
@@ -23,7 +23,7 @@ const BookedStudio = ({ className = "" }) => {
             border-r-[2px] border-[#a1ea04]
             bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('${selectedStudio?.photo}')`,
+          backgroundImage: `url('${selectedRoom?.photo}')`,
         }}
       />
       <div
@@ -31,7 +31,7 @@ const BookedStudio = ({ className = "" }) => {
           isSuccessPage ? "md:p-[16px]" : "md:p-[9.6px] lg:p-[12.8px] xl:p-[16px]"
         }`}
         style={{
-          backgroundImage: `url('${selectedStudio?.photo}')`,
+          backgroundImage: `url('${selectedRoom?.photo}')`,
         }}
       >
         <div
@@ -83,7 +83,7 @@ const BookedStudio = ({ className = "" }) => {
               isSuccessPage ? "md:text-[24px]" : "md:text-[14.4px] lg:text-[19.2px] xl:text-[24px]"
             }`}
           >
-            {selectedStudio?.name}
+            {selectedRoom?.name}
           </p>
           <p
             className={`font-urwgeometric_bold text-[10px]
@@ -109,7 +109,7 @@ const BookedStudio = ({ className = "" }) => {
                 isSuccessPage ? "!text-[12px]" : ""
               }`}
             >
-              {selectedStudio?.capacity}
+              {selectedRoom?.capacity}
             </p>
           </div>
         </div>

@@ -15,7 +15,7 @@ import StartTimeSelector from "../StartTimeSelector"
 import TimeSelectStatus from "../TImeSelectStatus"
 
 const TimeSelector = () => {
-  const { setCurStep, curStep, selectedStudio } = useBookSession()
+  const { setCurStep, curStep, selectedRoom } = useBookSession()
 
   const { selectedDay, selectedEndTime, selectedStartTime } = useDateSelect()
 
@@ -44,7 +44,7 @@ const TimeSelector = () => {
         {!isMobile && (
           <div className="col-span-8">
             <SingleStudio
-              data={selectedStudio}
+              data={selectedRoom}
               hasEquipmentButton
               className="md:!h-[84px] lg:!h-[112px] xl:!h-[140px]"
             />

@@ -5,7 +5,7 @@ import { toast } from "react-toastify"
 import { STEPS, validation, genreOptions, timeframeOptions } from "@/lib/consts/bookProject"
 import { instrumentsOptions } from "@/lib/consts/global"
 import requestProject from "@/lib/firebase/requestProject"
-import getStudioByStudioName from "@/lib/firebase/getStudioByStudioName"
+import getStudioByStudioId from "@/lib/firebase/getStudioByStudioId"
 import useInstruments from "../hooks/useInstruments"
 import { useAuth } from "./AuthProvider"
 
@@ -81,8 +81,8 @@ const BookProjectProvider = ({ children }) => {
 
   const getStudioData = useCallback(async () => {
     if (!studioName) return
-    const response: any = await getStudioByStudioName(studioName)
-    if (response.error || response.length < 1) {
+    const response: any = await getStudioByStudioId(studioName)
+    if (response.error) {
       toast.error("studio data is not existed!")
       push({
         pathname: "/[studio]/booktype",
@@ -91,7 +91,7 @@ const BookProjectProvider = ({ children }) => {
       return
     }
 
-    setSelectedStudio(response[0])
+    setSelectedStudio(response)
   }, [studioName])
 
   useEffect(() => {

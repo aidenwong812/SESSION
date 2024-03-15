@@ -15,7 +15,7 @@ import BackwardButton from "../../../BackwardButton"
 import InputBandInstrument from "../InputBandInstrument"
 
 const AddDetails = () => {
-  const { selectedStudio, setCurStep, request } = useBookSession()
+  const { selectedRoom, setCurStep, request } = useBookSession()
   const { selectedDay, selectedStartTime, selectedEndTime } = useDateSelect()
   const isMobile = useIsMobile()
 
@@ -27,7 +27,7 @@ const AddDetails = () => {
             availableTimes[selectedStartTime - 1],
             availableTimes[selectedEndTime + 3],
             selectedDay,
-            selectedStudio.id,
+            selectedRoom.name,
           )
         }
         validationSchema={validation}
@@ -61,7 +61,7 @@ const AddDetails = () => {
           md:gap-y-[24px] lg:gap-y-[32px] xl:gap-y-[40px]"
         >
           <StudioLocation />
-          <EquipmentDetail data={selectedStudio} />
+          <EquipmentDetail data={selectedRoom} />
         </div>
       </Form>
     </FadeIn>
