@@ -6,7 +6,7 @@ import useIsMobile from "@/hooks/useIsMobile"
 import ClipSpan from "../../../ClipSpan"
 
 const BookedProject = () => {
-  const router = useRouter()
+  const { push, query } = useRouter()
   const { projectName, trackList } = useBookProject()
   const isMobile = useIsMobile()
 
@@ -80,7 +80,12 @@ const BookedProject = () => {
           lg:h-[38.4px] lg:text-[12.8px] xl:mt-[24px]
           xl:h-[48px] xl:text-[16px]"
           pulseColor="white"
-          onClick={() => router.push("/booktype")}
+          onClick={() =>
+            push({
+              pathname: "/[studio]/booktype",
+              query: { studio: query.studio },
+            })
+          }
         >
           Back to the Studio
         </Button>

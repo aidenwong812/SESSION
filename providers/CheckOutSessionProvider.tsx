@@ -59,7 +59,7 @@ const CheckOutSessionProvider = ({ children }) => {
       toast.error("add event failed")
       return
     }
-    router.push("/booktype")
+    router.push("/Studio B/booktype")
   }
 
   const getSessionData = useCallback(async () => {
@@ -67,7 +67,7 @@ const CheckOutSessionProvider = ({ children }) => {
     const response: any = await getSessionByRequestId(sessionId)
     if (response.error) {
       toast.error("session data is not existed!")
-      router.push("/booktype")
+      router.push("/Studio B/booktype")
       return
     }
 
