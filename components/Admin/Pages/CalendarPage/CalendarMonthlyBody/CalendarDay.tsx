@@ -1,17 +1,16 @@
 import getCurrentDate from "@/lib/getCurrentDate"
 import getCurrentFullMonth from "@/lib/getCurrentFullMonth"
 import getCurrentFullYear from "@/lib/getCurrentFullYear"
-import { useAdminCalendar } from "@/providers/AdminCalendarProvider"
 import useCalendarDayEvents from "@/hooks/useCalendarDayEvents"
 import CalendarEvent from "../../CalendarEvent"
 
 const CalendarDay = ({ date }) => {
-  const { selectedStudio } = useAdminCalendar()
+  const selectedStudio = "mkDfxshbbVnhsHU4CVag"
   const isToday =
     date.year === getCurrentFullYear() &&
     date.month === getCurrentFullMonth() &&
     date.day === getCurrentDate()
-  const { events } = useCalendarDayEvents(date, selectedStudio?.id)
+  const { events } = useCalendarDayEvents(date, selectedStudio)
 
   return (
     <div
