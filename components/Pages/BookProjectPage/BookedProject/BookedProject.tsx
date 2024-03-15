@@ -23,9 +23,9 @@ const BookedProject = () => {
           blurLink="/images/BookProject/success.png"
           containerClasses="w-[200px] aspect-[1/1] !absolute left-[calc(50%-100px)] md:left-[-100px] top-[-140px] md:top-[-70px]"
         />
-        <ClipSpan className="bg-gradient-to-r from-[#FF6A2B] to-[#FF442B] font-urwgeometric_bold text-[18px] leading-[100%] samsungS8:!text-[20px] md:!text-[24px]">
+        <p className="text-[18px] leading-[100%] text-project samsungS8:!text-[20px] md:!text-[24px]">
           {projectName}
-        </ClipSpan>
+        </p>
         <p className="font-urwgeometric text-[12px] text-gray_2 md:text-[14px]">
           Consisting of {trackList.length} tracks:
         </p>
