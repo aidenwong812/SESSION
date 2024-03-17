@@ -33,6 +33,19 @@ const useAuthFlow = () => {
 
   const isAuthenticated = userData
 
+  const initStep = () => {
+    if (isResetPage) {
+      setCurStep(STEPS.INPUT_EMAIL)
+      return
+    }
+    if (isMobile) {
+      setCurStep(STEPS.LANDING)
+    } else {
+      if (isSignInPage) setCurStep(STEPS.INPUT_EMAIL_PASSWORD)
+      if (isSignUpPage) setCurStep(STEPS.INPUT_EMAIL)
+    }
+  }
+
   const updatePassword = async () => {
     const response: any = await sendResetPassLink(userEmail)
     if (response?.error) initStep()
@@ -68,22 +81,9 @@ const useAuthFlow = () => {
     const response: any = await userLogin(userEmail, userPassword)
     if (!response?.error) {
       toast.success("Sign in successful")
-      push("/Studio B/booktype")
+      push("/mkDfxshbbVnhsHU4CVag/booktype")
     }
     setLoading(false)
-  }
-
-  const initStep = () => {
-    if (isResetPage) {
-      setCurStep(STEPS.INPUT_EMAIL)
-      return
-    }
-    if (isMobile) {
-      setCurStep(STEPS.LANDING)
-    } else {
-      if (isSignInPage) setCurStep(STEPS.INPUT_EMAIL_PASSWORD)
-      if (isSignUpPage) setCurStep(STEPS.INPUT_EMAIL)
-    }
   }
 
   const logout = () => {
