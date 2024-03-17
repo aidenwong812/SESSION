@@ -9,14 +9,14 @@ const useSocialLogin = () => {
     const response: any = await signInWithTwitter()
     if (response?.error) return
 
-    router.push("/Studio B/booktype")
+    router.push("/mkDfxshbbVnhsHU4CVag/booktype")
   }
 
   const googleSign = async () => {
     const response: any = await signInWithGoogle()
     if (response?.error) return
 
-    router.push("/Studio B/booktype")
+    router.push("/mkDfxshbbVnhsHU4CVag/booktype")
   }
 
   return {

@@ -60,7 +60,7 @@ const CalendarProvider = ({ children }) => {
         return
       }
 
-      router.push("/Studio B/booktype")
+      router.push("/mkDfxshbbVnhsHU4CVag/booktype")
     } catch (error) {
       handleTxError(error)
       return { error }
