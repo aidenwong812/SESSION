@@ -22,7 +22,7 @@ const PFPDropdown = () => {
     if (userData) {
       init()
     }
-  }, [])
+  }, [userData, query])
 
   const publicRouters = ["/signin", "/signup", "/forgotpass", "/"]
   const isPublicPage = publicRouters.includes(pathname)
