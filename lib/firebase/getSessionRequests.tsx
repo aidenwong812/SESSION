@@ -1,9 +1,9 @@
-import { collection, getDocs, query, where, and, doc, getDoc } from "firebase/firestore"
+import { collection, getDocs, query, where, doc, getDoc } from "firebase/firestore"
 import { db } from "./db"
 
 const getSessionRequests = async () => {
   try {
-    const requestQuery = query(collection(db, "requests"), and(where("type", "==", "session")))
+    const requestQuery = query(collection(db, "requests"), where("type", "==", "session"))
 
     const requestSnapshot = await getDocs(requestQuery)
 
