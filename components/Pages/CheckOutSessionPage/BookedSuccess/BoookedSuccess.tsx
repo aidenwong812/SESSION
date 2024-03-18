@@ -3,16 +3,17 @@ import Spline from "@splinetool/react-spline"
 import Button from "@/shared/Button"
 import useIsMobile from "@/hooks/useIsMobile"
 import { useCheckOutSession } from "@/providers/CheckOutSessionProvider"
-import BookedStudio from "../BookedStudio"
-import ClipSpan from "../../../ClipSpan"
-import Layout from "../../../Layout"
-import FadeIn from "../../../FadeIn"
+import convertCalendarEventDateTime from "@/lib/convertCalendarEventDateTime"
+import ClipSpan from "@/components/ClipSpan"
+import Layout from "@/components/Layout"
+import FadeIn from "@/components/FadeIn"
 import LoadingPage from "../../LoadingPage"
+import BookedStudio from "../BookedStudio"
 
 const BookedSuccess = () => {
   const router = useRouter()
   const isMobile = useIsMobile()
-  const { addToCalendar, loading, sessionData } = useCheckOutSession()
+  const { loading, sessionData } = useCheckOutSession()
 
   if (!sessionData) return <LoadingPage />
 
@@ -75,23 +76,32 @@ const BookedSuccess = () => {
           >
             Back to the Studio
           </Button>
-          <Button
-            id="add-calendar"
-            type="button"
-            className="h-[48px] w-full border-x-[1px] border-b-[2px] border-x-[#A1EA04]
-            border-b-[#A1EA04] font-urwgeometric_bold
-            text-black shadow-[0px_0px_40px_0px_#a1ea0466]
-            md:mt-[14.4px] md:h-[28.8px]
-            md:text-[9.6px] lg:mt-[19.2px]
-            lg:h-[38.4px]
-            lg:text-[12.8px] xl:mt-[24px] xl:h-[48px]
-            xl:text-[16px]"
-            pulseColor="white"
-            onClick={addToCalendar}
-            disabled={loading}
+          <a
+            href={`https://calendar.google.com/calendar/event?action=TEMPLATE&dates=${convertCalendarEventDateTime(
+              sessionData.event.start.dateTime,
+            )}/${convertCalendarEventDateTime(
+              sessionData.event.end.dateTime,
+            )}&text=Book+Session+event&location=Office&recur=RRULE:FREQ%3DWEEKLY;INTERVAL%3D3`}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Add To Calendar
-          </Button>
+            <Button
+              id="add-calendar"
+              type="button"
+              className="h-[48px] w-full border-x-[1px] border-b-[2px] border-x-[#A1EA04]
+              border-b-[#A1EA04] font-urwgeometric_bold
+              text-black shadow-[0px_0px_40px_0px_#a1ea0466]
+              md:mt-[14.4px] md:h-[28.8px]
+              md:text-[9.6px] lg:mt-[19.2px]
+              lg:h-[38.4px]
+              lg:text-[12.8px] xl:mt-[24px] xl:h-[48px]
+              xl:text-[16px]"
+              pulseColor="white"
+              disabled={loading}
+            >
+              Add To Calendar
+            </Button>
+          </a>
         </div>
       </FadeIn>
     </Layout>

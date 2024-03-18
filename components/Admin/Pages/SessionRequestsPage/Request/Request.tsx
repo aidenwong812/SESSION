@@ -41,9 +41,7 @@ const Request = ({ request }) => {
           <div className="relative z-20 h-0.5 w-full bg-gray_overlay_3" />
           <div className="relative z-20 flex w-full items-center justify-between">
             <div>
-              <p className="font-urwgeometric_semibold text-2xl text-gray_1">
-                {request.studio.name}
-              </p>
+              <p className="font-urwgeometric_semibold text-2xl text-gray_1">{request.roomName}</p>
               <div className="flex items-center">
                 <Media
                   type="image"

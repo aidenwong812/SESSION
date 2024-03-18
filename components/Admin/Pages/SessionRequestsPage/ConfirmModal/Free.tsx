@@ -10,7 +10,7 @@ const Free = () => {
 
   const onClickConfirm = () => {
     sendSessionAccepted({ request: selectedRequest, studioNotes, type: "free" })
-    handleAccept(selectedRequest)
+    handleAccept(selectedRequest, "free")
     setConfirmStatus(SESSION_REQUEST_STATUS.SUCCESS)
   }
 

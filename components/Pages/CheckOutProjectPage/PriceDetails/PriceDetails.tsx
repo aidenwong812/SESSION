@@ -27,7 +27,7 @@ const PriceDetails = () => {
       >
         <p>Project {`“${projectData.projectName}”`}</p>
         <p className="text-right">{`$${projectData.projectPrice}`}</p>
-        <p>Service Fee</p>
+        <p>Session Fee</p>
         <p className="text-right">{`$${sessionFee}`}</p>
       </div>
       <div className="my-[6px] h-[2px] w-full bg-gray_overlay_6" />
