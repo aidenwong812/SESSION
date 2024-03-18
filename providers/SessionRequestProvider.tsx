@@ -28,9 +28,7 @@ const SessionRequestProvider = ({ children }) => {
       return
     }
 
-    newSessionRequests.sort((a, b) =>
-      a.event.start.dateTime < b.event.start.dateTime ? -1 : 1
-    )
+    newSessionRequests.sort((a, b) => (a.event.start.dateTime < b.event.start.dateTime ? -1 : 1))
 
     setSessionRequests(newSessionRequests)
   }
