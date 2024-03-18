@@ -31,7 +31,7 @@ const SessionRequestProvider = ({ children }) => {
     newSessionRequests.sort((a, b) =>
       a.event.start.dateTime < b.event.start.dateTime ? -1 : 1
     )
-    
+
     setSessionRequests(newSessionRequests)
   }
 
@@ -43,22 +43,26 @@ const SessionRequestProvider = ({ children }) => {
     }
   }
 
-  const handleAccept = async (request) => {
+  const handleAccept = async (request, type) => {
     updateSessionRequest({
       id: request.id,
       sessionPrice,
       engineerPrice,
       studioNotes,
     })
-    const startDateTime = request.event.start.dateTime
-    const endDateTime = request.event.end.dateTime
-    const response = await Promise.all([
-      await addToSessionCalendar(startDateTime, endDateTime, request.studio.calendarEmail),
-      await addToSessionCalendar(startDateTime, endDateTime, request.email),
-    ])
+    if (type === "free") {
+      const startDateTime = request.event.start.dateTime
+      const endDateTime = request.event.end.dateTime
+      const response = await Promise.all([
+        await addToSessionCalendar(startDateTime, endDateTime, request.studio.calendarEmail),
+        await addToSessionCalendar(startDateTime, endDateTime, request.email),
+      ])
 
-    if (response[0].error || response[1].error) {
-      toast.error("add event to calendar failed")
+      if (response[0].error || response[1].error) {
+        toast.error("add event to calendar failed")
+      } else {
+        toast.success("Accepted Request")
+      }
     } else {
       toast.success("Accepted Request")
     }

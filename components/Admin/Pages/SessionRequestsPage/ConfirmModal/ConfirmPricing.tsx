@@ -23,7 +23,7 @@ export default function ConfirmPricing() {
 
   const onClickConfirm = () => {
     sendSessionAccepted({ request: selectedRequest, studioNotes, type: "paid" })
-    handleAccept(selectedRequest)
+    handleAccept(selectedRequest, "paid")
     setConfirmStatus(SESSION_REQUEST_STATUS.SUCCESS)
   }
 
