@@ -23,10 +23,15 @@ const SessionRequestProvider = ({ children }) => {
   const [selectedRequest, setSelectedRequest] = useState(null)
 
   const fetchSessionRequests = async () => {
-    const newSessionRequests = await getSessionRequests()
+    const newSessionRequests: any = await getSessionRequests()
     if ("error" in newSessionRequests) {
       return
     }
+
+    newSessionRequests.sort((a, b) =>
+      a.event.start.dateTime < b.event.start.dateTime ? -1 : 1
+    )
+    
     setSessionRequests(newSessionRequests)
   }
 
