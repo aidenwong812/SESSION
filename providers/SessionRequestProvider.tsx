@@ -53,12 +53,13 @@ const SessionRequestProvider = ({ children }) => {
     if (type === "free") {
       const startDateTime = request.event.start.dateTime
       const endDateTime = request.event.end.dateTime
-      const response = await Promise.all([
-        await addToSessionCalendar(startDateTime, endDateTime, request.studio.calendarEmail),
-        await addToSessionCalendar(startDateTime, endDateTime, request.email),
-      ])
+      const response = await addToSessionCalendar(
+        startDateTime,
+        endDateTime,
+        request.studio.calendarEmail,
+      )
 
-      if (response[0].error || response[1].error) {
+      if (response.error) {
         toast.error("add event to calendar failed")
       } else {
         toast.success("Accepted Request")

@@ -5,6 +5,7 @@ import { SESSION_EMAIL, acceptFreeMail, acceptPaidMail } from "@/lib/consts/mail
 import getMonthName from "@/lib/getMonthName"
 import getWeekDay from "@/lib/getWeekDay"
 import convertTimeFormat from "@/lib/convertTimeFormat"
+import convertCalendarEventDateTime from "@/lib/convertCalendarEventDateTime"
 
 class sendAcceptedSession {
   @Post()
@@ -22,6 +23,11 @@ class sendAcceptedSession {
       studioName: request.roomName,
       comingPeople: request.comingPeople,
       studioNotes,
+      calendarLink: `https://calendar.google.com/calendar/event?action=TEMPLATE&dates=${convertCalendarEventDateTime(
+        request.event.start.dateTime,
+      )}/${convertCalendarEventDateTime(
+        request.event.end.dateTime,
+      )}&text=Book+Session+event&location=Office&recur=RRULE:FREQ%3DWEEKLY;INTERVAL%3D3`
     }
 
     const personalizations = [

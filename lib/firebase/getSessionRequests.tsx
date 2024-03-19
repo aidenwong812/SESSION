@@ -16,6 +16,7 @@ const getSessionRequests = async (studioId) => {
       studio: {},
       roomName: data.data().roomName,
       room: {},
+      event: data.data().event,
       ...data.data(),
     }))
 
