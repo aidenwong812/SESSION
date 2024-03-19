@@ -1,28 +1,13 @@
-import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 import Media from "@/shared/Media"
 import { useAuth } from "@/providers/AuthProvider"
 import useSelectClickoutside from "@/hooks/useSelectClickoutside"
-import getProjectByUser from "@/lib/firebase/getProjectByUser"
 import HeaderDropdown from "./HeaderDropdown"
 
 const PFPDropdown = () => {
-  const [hasActiveProject, setHasActiveProject] = useState(false)
   const { userData } = useAuth()
   const router = useRouter()
-  const { pathname, query } = router
-
-  useEffect(() => {
-    const init = async () => {
-      const studioId = query.studio
-      const res = await getProjectByUser({ studioId, email: userData.email })
-      if (res.length > 0) setHasActiveProject(true)
-    }
-
-    if (userData) {
-      init()
-    }
-  }, [userData, query.studio])
+  const { pathname } = router
 
   const publicRouters = ["/signin", "/signup", "/forgotpass", "/"]
   const isPublicPage = publicRouters.includes(pathname)
@@ -34,8 +19,8 @@ const PFPDropdown = () => {
       {!isPublicPage && (
         <button
           type="button"
-          className={`flex size-[40px] items-center justify-center
-          rounded-full ${hasActiveProject ? "bg-[#ff6a2b]" : "bg-gradient_s_1"}`}
+          className="flex size-[40px] items-center justify-center
+        rounded-full bg-gradient_s_1"
           onClick={() => setIsVisibleSelect(!isVisibleSelect)}
         >
           <Media
