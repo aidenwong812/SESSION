@@ -27,7 +27,7 @@ class sendAcceptedSession {
         request.event.start.dateTime,
       )}/${convertCalendarEventDateTime(
         request.event.end.dateTime,
-      )}&text=Book+Session+event&location=Office&recur=RRULE:FREQ%3DWEEKLY;INTERVAL%3D3`
+      )}&text=Book+Session+event&location=Office&recur=RRULE:FREQ%3DWEEKLY;INTERVAL%3D3`,
     }
 
     const personalizations = [
