@@ -2,6 +2,7 @@ import { createContext, useContext, useState, useMemo, useCallback, useEffect } 
 import { useRouter } from "next/router"
 import { toast } from "react-toastify"
 import { STEPS } from "@/lib/consts/checkout"
+import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
 import getSessionByRequestId from "@/lib/firebase/getSessionByRequestId"
 import addToSessionCalendar from "@/lib/addToSessionCalendar"
 
@@ -38,8 +39,8 @@ const CheckOutSessionProvider = ({ children }) => {
     if (!sessionId) return
     const response: any = await getSessionByRequestId(sessionId)
     if (response.error) {
-      toast.error("session data is not existed!")
-      router.push("/mkDfxshbbVnhsHU4CVag/booktype")
+      toast.error("session data does not exist.")
+      router.push(`/${DEFAULT_STUDIO_ID}/booktype`)
       return
     }
 

@@ -18,14 +18,14 @@ const BookedStudio = ({ className = "" }) => {
               border-r-[2px] border-[#a1ea04]
               bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('${sessionData.studio.photo}')`,
+          backgroundImage: `url('${sessionData.room.photo}')`,
         }}
       />
       <div
         className={`relative grow bg-cover bg-center
           p-[10px] md:p-[9.6px] lg:p-[12.8px] xl:p-[16px]`}
         style={{
-          backgroundImage: `url('${sessionData.studio.photo}')`,
+          backgroundImage: `url('${sessionData.room.photo}')`,
         }}
       >
         <div
@@ -75,7 +75,7 @@ const BookedStudio = ({ className = "" }) => {
             Sound Studios
           </p>
           <p className="mt-[-5px] font-urwgeometric_semibold text-[18px] text-gray_1">
-            {sessionData.studio.name}
+            {sessionData.roomName}
           </p>
           <div className="flex items-center gap-x-[5px]">
             <Media
@@ -89,7 +89,7 @@ const BookedStudio = ({ className = "" }) => {
               className={`text-[10px] 
                 text-gray_2 md:text-[7.2px] lg:text-[9.6px] xl:text-[12px]`}
             >
-              {sessionData.studio.capacity}
+              {sessionData.room.capacity}
             </p>
           </div>
         </div>

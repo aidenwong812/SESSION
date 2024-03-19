@@ -57,7 +57,7 @@ export default function StudioDetail({ request }) {
                 containerClasses="w-[24px] h-[23px]"
               />
               <p className="font-urwgeometric_medium text-[12px] text-gray_1">
-                {request.studio.capacity}
+                {request.room?.capacity}
               </p>
             </div>
           </div>

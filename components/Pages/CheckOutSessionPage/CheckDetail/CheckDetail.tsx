@@ -56,7 +56,7 @@ const CheckDetail = () => {
         </div>
         <div className="col-span-2 flex flex-col gap-y-[20px]">
           <StudioLocation />
-          <EquipmentDetail data={sessionData?.studio} />
+          <EquipmentDetail data={sessionData?.room} />
         </div>
       </div>
     </div>

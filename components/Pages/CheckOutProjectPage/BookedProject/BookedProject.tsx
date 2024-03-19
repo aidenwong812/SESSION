@@ -79,7 +79,7 @@ const BookedProject = () => {
                     lg:h-[38.4px] lg:text-[12.8px] xl:mt-[24px]
                     xl:h-[48px] xl:text-[16px]"
         pulseColor="white"
-        onClick={() => router.push("/mkDfxshbbVnhsHU4CVag/booktype")}
+        onClick={() => router.push(`/${projectData.studioId}/booktype`)}
       >
         Back to the Studio
       </Button>

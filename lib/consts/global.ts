@@ -138,3 +138,4 @@ export const SHORT_MONTH_LABELS = [
 export const MONTH_CALENDAR_DAY_COUNT = 42
 export const MAXIMUM_MONTH = 12
 export const MINIMUM_MONTH = 1
+export const DEFAULT_STUDIO_ID = "mkDfxshbbVnhsHU4CVag"

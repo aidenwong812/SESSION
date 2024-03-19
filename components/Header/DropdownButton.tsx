@@ -2,7 +2,7 @@ const DropdownButton = ({ children, onClick, text, textClasses = "" }) => (
   <button
     type="button"
     onClick={onClick}
-    className="flex w-[200px] items-center gap-x-[10px] p-[10px]"
+    className="ml-[50px] flex w-[200px] items-center gap-x-[10px] p-[10px]"
   >
     <div
       className="flex size-[24px] items-center justify-center

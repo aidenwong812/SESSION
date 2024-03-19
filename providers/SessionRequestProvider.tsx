@@ -4,6 +4,7 @@ import getSessionRequests from "@/lib/firebase/getSessionRequests"
 import sendSessionDeclined from "@/lib/sendSessionDeclined"
 import addToSessionCalendar from "@/lib/addToSessionCalendar"
 import updateSessionRequest from "@/lib/firebase/updateSessionRequest"
+import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
 
 export enum SESSION_REQUEST_STATUS {
   INITIAL = "INITIAL",
@@ -23,7 +24,8 @@ const SessionRequestProvider = ({ children }) => {
   const [selectedRequest, setSelectedRequest] = useState(null)
 
   const fetchSessionRequests = async () => {
-    const newSessionRequests: any = await getSessionRequests()
+    const studioId = DEFAULT_STUDIO_ID
+    const newSessionRequests: any = await getSessionRequests(studioId)
     if ("error" in newSessionRequests) {
       return
     }

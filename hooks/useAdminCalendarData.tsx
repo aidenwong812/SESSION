@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import getRoomsByStudioId from "@/lib/firebase/getRoomsByStudioId"
+import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
 
 export const AdminCalendarViewTypes = [
   {
@@ -27,7 +28,7 @@ const useAdminCalendarData = () => {
 
   useEffect(() => {
     const init = async () => {
-      const studioId = "mkDfxshbbVnhsHU4CVag"
+      const studioId = DEFAULT_STUDIO_ID
       const response = await getRoomsByStudioId(studioId)
       const { error } = response as any
 

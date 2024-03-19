@@ -26,7 +26,7 @@ const StripeDetail = () => {
       <div
         className="aspect-[1/1] rounded-[24px] bg-cover bg-center"
         style={{
-          backgroundImage: `url('${sessionData.studio.photo}')`,
+          backgroundImage: `url('${sessionData.room.photo}')`,
         }}
       />
       <div className="col-span-1 flex flex-col justify-center">
@@ -34,7 +34,7 @@ const StripeDetail = () => {
           className="font-urwgeometric text-[32px] leading-[130%] text-gray_1 
         md:text-[28.8px] lg:text-[38.4px] xl:text-[48px]"
         >
-          {sessionData.studio.name}
+          {sessionData.roomName}
         </p>
         <p
           className="py-[10px] font-urwgeometric_medium text-[24px] leading-[100%] text-[#a1ea04] drop-shadow-xl

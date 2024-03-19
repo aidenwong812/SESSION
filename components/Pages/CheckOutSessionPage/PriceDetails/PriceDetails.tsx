@@ -25,7 +25,7 @@ const PriceDetails = () => {
                 text-[14px] text-gray_1 md:pt-[9.6px] md:text-[8.4px]
                 lg:pt-[12.8px] lg:text-[11.2px] xl:pt-[16px] xl:text-[14px]"
       >
-        <p>{sessionData.studio.name} – 4 Hours</p>
+        <p>{sessionData.roomName} – 4 Hours</p>
         <p className="text-right">{`$${sessionData.sessionPrice}`}</p>
         <p>Engineer Fee</p>
         <p className="text-right">{`$${sessionData.engineerPrice}`}</p>

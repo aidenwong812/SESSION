@@ -1,11 +1,12 @@
 import getCurrentDate from "@/lib/getCurrentDate"
 import getCurrentFullMonth from "@/lib/getCurrentFullMonth"
 import getCurrentFullYear from "@/lib/getCurrentFullYear"
+import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
 import useCalendarDayEvents from "@/hooks/useCalendarDayEvents"
 import CalendarEvent from "../../CalendarEvent"
 
 const CalendarDay = ({ date }) => {
-  const selectedStudio = "mkDfxshbbVnhsHU4CVag"
+  const selectedStudio = DEFAULT_STUDIO_ID
   const isToday =
     date.year === getCurrentFullYear() &&
     date.month === getCurrentFullMonth() &&
