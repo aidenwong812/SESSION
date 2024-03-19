@@ -3,15 +3,15 @@ import Input from "@/shared/Input"
 import Media from "@/shared/Media"
 
 const ComingPeople = () => {
-  const { comingPeople, setComingPeople } = useBookSession()
+  const { comingPeople, setComingPeople, selectedRoom } = useBookSession()
   const handlePeopleCount = (e) => {
     if (Number.isNaN(Number(e.target.value))) {
       setComingPeople(1)
       return
     }
 
-    if (Number(e.target.value) > 6) {
-      setComingPeople(6)
+    if (Number(e.target.value) > selectedRoom.capacity) {
+      setComingPeople(selectedRoom.capacity)
       return
     }
 
@@ -33,7 +33,7 @@ const ComingPeople = () => {
             leading-[100%] text-gray_2 md:pb-[12px] md:text-[7.2px] lg:pb-[16px]
             lg:text-[9.6px] xl:pb-[20px] xl:text-[12px]"
         >
-          (Max. 6)
+          {`(Max. ${selectedRoom.capacity})`}
         </span>
       </p>
       <div className="relative size-full">
@@ -97,11 +97,11 @@ const ComingPeople = () => {
               type="button"
               className="flex aspect-[1/1] w-[30px] items-center justify-center rounded-full bg-black_0 md:w-[32px]"
               onClick={() => setComingPeople(comingPeople + 1)}
-              disabled={comingPeople === 6}
+              disabled={comingPeople === selectedRoom.capacity}
             >
               <p
                 className={`pb-[4px] text-[20px] leading-[100%] ${
-                  comingPeople === 6
+                  comingPeople === selectedRoom.capacity
                     ? "cursor-not-allowed text-gray_2 opacity-[0.4]"
                     : "text-gray_1"
                 }`}

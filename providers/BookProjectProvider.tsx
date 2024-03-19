@@ -83,7 +83,7 @@ const BookProjectProvider = ({ children }) => {
     if (!studioName) return
     const response: any = await getStudioByStudioId(studioName)
     if (response.error) {
-      toast.error("studio data is not existed!")
+      toast.error("studio data does not exist.")
       push({
         pathname: "/[studio]/booktype",
         query: { studio: query.studio },

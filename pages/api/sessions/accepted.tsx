@@ -19,7 +19,7 @@ class sendAcceptedSession {
       time: `${convertTimeFormat(request.event.start.dateTime)} - ${convertTimeFormat(
         request.event.end.dateTime,
       )}`,
-      studioName: request.studio.name,
+      studioName: request.roomName,
       comingPeople: request.comingPeople,
       studioNotes,
     }

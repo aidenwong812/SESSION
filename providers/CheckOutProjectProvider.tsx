@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useMemo, useCallback, useEffect } from "react"
 import { useRouter } from "next/router"
 import { toast } from "react-toastify"
-import { PAYMENTS } from "@/lib/consts/global"
+import { DEFAULT_STUDIO_ID, PAYMENTS } from "@/lib/consts/global"
 import { STEPS } from "@/lib/consts/checkout"
 import getProjectByRequestId from "@/lib/firebase/getProjectByRequestId"
 
@@ -24,8 +24,8 @@ const CheckOutProjectProvider = ({ children }) => {
     if (!projectId) return
     const response: any = await getProjectByRequestId(projectId)
     if (response.error) {
-      toast.error("project data is not existed!")
-      router.push("/mkDfxshbbVnhsHU4CVag/booktype")
+      toast.error("project data does not exist.")
+      router.push(`/${DEFAULT_STUDIO_ID}/booktype`)
       return
     }
 

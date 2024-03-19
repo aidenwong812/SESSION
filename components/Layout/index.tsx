@@ -2,6 +2,7 @@ import { useRouter } from "next/router"
 import { useEffect } from "react"
 import { useAuth } from "@/providers/AuthProvider"
 import { STATUS } from "@/lib/consts/authStatus"
+import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
 import LoadingPage from "../Pages/LoadingPage"
 import BaseLayout from "./BaseLayout"
 import FullLayout from "./FullLayout"
@@ -39,7 +40,7 @@ const Layout = ({ children, type }: ILayoutFactory) => {
 
   useEffect(() => {
     if (isPublicPage && authStatus === STATUS.AUTHORIZED)
-      router.push("/mkDfxshbbVnhsHU4CVag/booktype")
+      router.push(`/${DEFAULT_STUDIO_ID}/booktype`)
     if (!isPublicPage && authStatus === STATUS.UNAUTHORIZED) router.push("/")
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPublicPage, authStatus])

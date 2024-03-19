@@ -1,9 +1,11 @@
 import { useDateSelect } from "@/providers/DateSelectProvider"
+import { useBookSession } from "@/providers/BookSessionProvider"
 import { availableTimes } from "@/lib/consts/bookSession"
 
 const EndTimeSelector = () => {
   const { selectedStartTime, selectedEndTime, setSelectedEndTime, disabledEndTimes } =
     useDateSelect()
+  const { selectedRoom } = useBookSession()
   return (
     <div
       className="flex
@@ -32,9 +34,11 @@ const EndTimeSelector = () => {
             className="grid w-full grid-cols-2 gap-[10px]
           md:grid-cols-3 md:gap-[12px] lg:gap-[16px] xl:gap-[20px]"
           >
-            {availableTimes.slice(selectedStartTime + 3, availableTimes.length).map((time, i) => (
-              <button
-                className={`flex h-fit items-center
+            {availableTimes
+              .slice(selectedStartTime + selectedRoom.minimumHours - 1, availableTimes.length)
+              .map((time, i) => (
+                <button
+                  className={`flex h-fit items-center
                         justify-center rounded-full
                         bg-gray_overlay_6 p-[5px] transition duration-[200ms]
                         md:py-[4.8px] md:text-[12px] lg:py-[6.4px] lg:text-[16px]
@@ -49,15 +53,15 @@ const EndTimeSelector = () => {
                             ? "!bg-[#A1EA04] !text-[#121212]"
                             : ""
                         }`}
-                type="button"
-                key={time}
-                onClick={() => setSelectedEndTime(selectedStartTime + i)}
-              >
-                <p className="font-urwgeometric_bold">
-                  {disabledEndTimes.includes(time) ? <s>{time}</s> : time}
-                </p>
-              </button>
-            ))}
+                  type="button"
+                  key={time}
+                  onClick={() => setSelectedEndTime(selectedStartTime + i)}
+                >
+                  <p className="font-urwgeometric_bold">
+                    {disabledEndTimes.includes(time) ? <s>{time}</s> : time}
+                  </p>
+                </button>
+              ))}
           </div>
         ) : (
           <div

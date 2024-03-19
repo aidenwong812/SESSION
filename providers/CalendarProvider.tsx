@@ -7,6 +7,7 @@ import CALENDAR_CONFIG from "@/lib/consts/google-calendar-config"
 import addAdminCalendarToStudio from "@/lib/firebase/addAdminCalendarToStudio"
 import shareCalendarWithSession from "@/lib/shareCalendarWithSession"
 import getStudioCalendarEvents from "@/lib/getStudioCalendarEvents"
+import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
 
 const CalendarContext = createContext(null)
 
@@ -60,7 +61,7 @@ const CalendarProvider = ({ children }) => {
         return
       }
 
-      router.push("/mkDfxshbbVnhsHU4CVag/booktype")
+      router.push(`/${DEFAULT_STUDIO_ID}/booktype`)
     } catch (error) {
       handleTxError(error)
       return { error }

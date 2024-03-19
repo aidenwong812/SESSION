@@ -71,7 +71,7 @@ const BookedSuccess = () => {
             lg:mt-[19.2px] lg:h-[38.4px] lg:text-[12.8px] xl:mt-[24px]
             xl:h-[48px] xl:text-[16px]"
             pulseColor="white"
-            onClick={() => router.push("/mkDfxshbbVnhsHU4CVag/booktype")}
+            onClick={() => router.push(`/${sessionData.studioId}/booktype`)}
             bgVariant="primary"
           >
             Back to the Studio

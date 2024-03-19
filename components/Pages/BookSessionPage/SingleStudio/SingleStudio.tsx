@@ -69,7 +69,7 @@ const SingleStudio = ({ className = "", data, hasEquipmentButton = false }) => {
       >
         <StudioName name={data?.name} />
         <div className="flex items-center gap-x-[10px] md:gap-x-[6px] lg:gap-x-[8px] xl:gap-x-[10px]">
-          <HourMin />
+          <HourMin minimumHours={data?.minimumHours} />
           {hasEquipmentButton && (
             <Button
               id="see-equipment"

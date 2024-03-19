@@ -1,6 +1,6 @@
 import Media from "@/shared/Media"
 
-const HourMin = () => (
+const HourMin = ({ minimumHours }) => (
   <div className="flex items-center">
     <div className="overflow-hidden rounded-full">
       <Media
@@ -11,7 +11,7 @@ const HourMin = () => (
       />
     </div>
     <p className="font-urwgeometric text-gray_1 md:text-[8.4px] md:leading-[80%] lg:text-[11.2px] xl:text-[14px]">
-      4h
+      {`${minimumHours}h`}
     </p>
   </div>
 )

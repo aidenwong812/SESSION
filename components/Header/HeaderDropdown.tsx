@@ -8,7 +8,7 @@ const HeaderDropdown = () => {
   const { logout } = useAuth()
 
   return (
-    <div className="absolute right-0 top-full flex w-[100px] flex-col items-center gap-x-[10px] rounded-full bg-black_8 p-[10px]">
+    <div className="absolute right-0 top-full flex w-[200px] flex-col items-center gap-x-[10px] rounded-full bg-black_8 p-[10px]">
       <DropdownButton
         onClick={() => push("/dashboard")}
         text="Session Commander"

@@ -5,7 +5,7 @@ import getMonthName from "@/lib/getMonthName"
 import { useAdminCalendar } from "@/providers/AdminCalendarProvider"
 
 const StudioDetail = () => {
-  const { selectedEvent, selectedStudio } = useAdminCalendar()
+  const { selectedEvent, selectedRoom } = useAdminCalendar()
   return (
     <div className="relative">
       <Media
@@ -48,7 +48,7 @@ const StudioDetail = () => {
           <div className="relative z-[2] flex grow flex-col justify-end">
             <ClipSpan className="!py-0 font-urwgeometric text-[14px]">Sound Studios</ClipSpan>
             <p className="mt-[-5px] font-urwgeometric_semibold text-[24px] text-gray_1">
-              {selectedStudio.name}
+              {selectedRoom.name}
             </p>
             <div className="ml-[-5px] mt-[-5px] flex items-center">
               <Media
@@ -58,7 +58,7 @@ const StudioDetail = () => {
                 containerClasses="w-[24px] h-[23px]"
               />
               <p className="font-urwgeometric_medium text-[12px] text-gray_1">
-                {selectedStudio.capacity}
+                {selectedRoom.capacity}
               </p>
             </div>
           </div>

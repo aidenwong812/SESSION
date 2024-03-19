@@ -8,6 +8,7 @@ import { auth } from "@/lib/firebase/db"
 import handleTxError from "@/lib/handleTxError"
 import { STATUS } from "@/lib/consts/authStatus"
 import { STEPS } from "@/lib/consts/authStep"
+import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
 import getUserDataByEmail from "@/lib/firebase/getUserDataByEmail"
 import createUserFromCredential from "@/lib/createUserFromCredential"
 import useSocialLogin from "./useSocialLogin"
@@ -81,7 +82,7 @@ const useAuthFlow = () => {
     const response: any = await userLogin(userEmail, userPassword)
     if (!response?.error) {
       toast.success("Sign in successful")
-      push("/mkDfxshbbVnhsHU4CVag/booktype")
+      push(`/${DEFAULT_STUDIO_ID}/booktype`)
     }
     setLoading(false)
   }
