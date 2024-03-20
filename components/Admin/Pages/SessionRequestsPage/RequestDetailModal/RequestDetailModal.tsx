@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useSessionRequest } from "@/providers/SessionRequestProvider"
 import Modal from "@/shared/Modal"
 import Media from "@/shared/Media"
+import checkPayment from "@/lib/checkPayment"
 import DetailHeader from "./DetailHeader"
 import DetailBody from "./DetailBody"
 import ConfirmModal from "../ConfirmModal"
@@ -57,6 +58,7 @@ const RequestDetailModal = ({ request, isVisible, toggleModal }) => {
             type="button"
             className="flex size-[64px] items-center justify-center rounded-full
           border-x-[1px] border-b-[2px] border-gray_overlay_6 bg-gradient_s_1"
+            disabled={checkPayment(request)}
             onClick={onClickConfirm}
           >
             <Media

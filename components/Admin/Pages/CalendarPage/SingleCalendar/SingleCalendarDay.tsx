@@ -3,14 +3,14 @@ import getCurrentDate from "@/lib/getCurrentDate"
 import getCurrentFullMonth from "@/lib/getCurrentFullMonth"
 import getCurrentFullYear from "@/lib/getCurrentFullYear"
 import useYearlyCalendarDay from "@/hooks/useYearlyCalendarDay"
-import { useAdminCalendar } from "@/providers/AdminCalendarProvider"
+import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
 import SingleCalendarToolTip from "./SingleCalendarTooltip"
 
 const SingleCalendarDay = ({ date }) => {
   const { selectRef, setIsVisibleSelect, isVisibleSelect } = useSelectClickoutside()
-  const { selectedStudio } = useAdminCalendar()
+  const selectedStudio = DEFAULT_STUDIO_ID
   const { haveOnlySession, haveProject, haveEvents, haveSessionAndProject, events } =
-    useYearlyCalendarDay(date, selectedStudio?.id)
+    useYearlyCalendarDay(date, selectedStudio)
 
   const isToday =
     date.year === getCurrentFullYear() &&

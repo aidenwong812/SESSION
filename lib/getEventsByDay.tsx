@@ -5,7 +5,11 @@ const getEventsByDay = async (date, studioId) => {
   try {
     const q = query(
       collection(db, "requests"),
-      and(where("selectedDay", "==", date), where("studioId", "==", studioId)),
+      and(
+        where("selectedDay", "==", date),
+        where("studioId", "==", studioId),
+        where("booked", "==", true),
+      ),
     )
 
     const querySnapShot = await getDocs(q)

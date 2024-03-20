@@ -44,13 +44,12 @@ const SessionRequestProvider = ({ children }) => {
   }
 
   const handleAccept = async (request, type) => {
-    updateSessionRequest({
-      id: request.id,
-      sessionPrice,
-      engineerPrice,
-      studioNotes,
-    })
     if (type === "free") {
+      updateSessionRequest({
+        id: request.id,
+        studioNotes,
+        booked: true,
+      })
       const startDateTime = request.event.start.dateTime
       const endDateTime = request.event.end.dateTime
       const response = await addToSessionCalendar(
@@ -65,6 +64,12 @@ const SessionRequestProvider = ({ children }) => {
         toast.success("Accepted Request")
       }
     } else {
+      updateSessionRequest({
+        id: request.id,
+        sessionPrice,
+        engineerPrice,
+        studioNotes,
+      })
       toast.success("Accepted Request")
     }
   }

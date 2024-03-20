@@ -5,6 +5,7 @@ import Media from "@/shared/Media"
 import Button from "@/shared/Button"
 import getStudioByStudioId from "@/lib/firebase/getStudioByStudioId"
 import getProjectByUser from "@/lib/firebase/getProjectByUser"
+import getProjectByRequestId from "@/lib/firebase/getProjectByRequestId"
 import { useAuth } from "@/providers/AuthProvider"
 import PFPDropdown from "./PFPDropdown"
 import ProjectHeaderButton from "./ProjectHeaderButton"
@@ -15,11 +16,18 @@ const Header = () => {
   const { userData } = useAuth()
   const { pathname, query } = useRouter()
   const studioId = query.studio
+  const projectId = query.id
 
   useEffect(() => {
     const init = async () => {
-      const res = await getStudioByStudioId(studioId)
-      if (!res.error) setStudio(res)
+      if (projectId) {
+        const response: any = await getProjectByRequestId(projectId)
+        const res = await getStudioByStudioId(response.studioId)
+        if (!res.error) setStudio(res)
+      } else {
+        const res = await getStudioByStudioId(studioId)
+        if (!res.error) setStudio(res)
+      }
 
       if (userData) {
         const project = await getProjectByUser({ studioId, email: userData.email })
@@ -27,7 +35,7 @@ const Header = () => {
       }
     }
     init()
-  }, [studioId, userData])
+  }, [studioId, projectId, userData])
 
   return (
     <>

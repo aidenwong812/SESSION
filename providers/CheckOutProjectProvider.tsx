@@ -4,6 +4,7 @@ import { toast } from "react-toastify"
 import { DEFAULT_STUDIO_ID, PAYMENTS } from "@/lib/consts/global"
 import { STEPS } from "@/lib/consts/checkout"
 import getProjectByRequestId from "@/lib/firebase/getProjectByRequestId"
+import deleteRequest from "@/lib/firebase/deleteRequest"
 
 const CheckOutProjectContext = createContext(null)
 
@@ -20,10 +21,15 @@ const CheckOutProjectProvider = ({ children }) => {
     setCurStep(STEPS.BOOKED_SUCCESS)
   }
 
+  const cancelProject = async () => {
+    await deleteRequest(projectId)
+    setCurStep(STEPS.CANCEL_REQUEST)
+  }
+
   const getProjectData = useCallback(async () => {
     if (!projectId) return
     const response: any = await getProjectByRequestId(projectId)
-    if (response.error) {
+    if (response.error || !response.projectName) {
       toast.error("project data does not exist.")
       router.push(`/${DEFAULT_STUDIO_ID}/booktype`)
       return
@@ -46,8 +52,18 @@ const CheckOutProjectProvider = ({ children }) => {
       loading,
       setLoading,
       startProject,
+      cancelProject,
     }),
-    [curStep, setCurStep, setSelectedPayment, selectedPayment, projectData, loading, startProject],
+    [
+      curStep,
+      setCurStep,
+      setSelectedPayment,
+      selectedPayment,
+      projectData,
+      loading,
+      startProject,
+      cancelProject,
+    ],
   )
 
   return <CheckOutProjectContext.Provider value={value}>{children}</CheckOutProjectContext.Provider>

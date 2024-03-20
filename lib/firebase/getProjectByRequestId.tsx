@@ -1,9 +1,9 @@
 import { doc, getDoc } from "firebase/firestore"
 import { db } from "./db"
 
-const getProjectByRequestId = async (sessionId) => {
+const getProjectByRequestId = async (id) => {
   try {
-    const projectDoc = await getDoc(doc(db, "requests", sessionId))
+    const projectDoc = await getDoc(doc(db, "requests", id))
 
     return {
       id: projectDoc.id,

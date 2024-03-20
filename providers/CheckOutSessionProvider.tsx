@@ -5,6 +5,8 @@ import { STEPS } from "@/lib/consts/checkout"
 import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
 import getSessionByRequestId from "@/lib/firebase/getSessionByRequestId"
 import addToSessionCalendar from "@/lib/addToSessionCalendar"
+import deleteRequest from "@/lib/firebase/deleteRequest"
+import updateSessionRequest from "@/lib/firebase/updateSessionRequest"
 
 const CheckOutSessionContext = createContext(null)
 
@@ -31,8 +33,21 @@ const CheckOutSessionProvider = ({ children }) => {
       setLoading(false)
       return
     }
+
+    updateSessionRequest({
+      id: sessionData.id,
+      sessionPrice: sessionData.sessionPrice,
+      engineerPrice: sessionData.engineerPrice,
+      studioNotes: sessionData.studioNotes,
+      booked: true,
+    })
     setLoading(false)
     setCurStep(STEPS.BOOKED_SUCCESS)
+  }
+
+  const cancelSession = async () => {
+    await deleteRequest(sessionId)
+    setCurStep(STEPS.CANCEL_REQUEST)
   }
 
   const getSessionData = useCallback(async () => {
@@ -57,10 +72,11 @@ const CheckOutSessionProvider = ({ children }) => {
       setCurStep,
       sessionData,
       bookSession,
+      cancelSession,
       loading,
       setLoading,
     }),
-    [curStep, setCurStep, sessionData, bookSession],
+    [curStep, setCurStep, sessionData, bookSession, cancelSession],
   )
 
   return <CheckOutSessionContext.Provider value={value}>{children}</CheckOutSessionContext.Provider>
