@@ -1,7 +1,7 @@
 import { createHandler, Post, Body } from "next-api-decorators"
 import sendEmail from "@/lib/sendEmail"
 import { DeclineSessionDTO } from "@/DTO/declinesession.dto"
-import deleteSessionRequest from "@/lib/firebase/deleteSessionRequest"
+import deleteRequest from "@/lib/firebase/deleteRequest"
 import { SESSION_EMAIL, declineSessionMail } from "@/lib/consts/mail"
 
 class sendDeclinedSession {
@@ -35,7 +35,7 @@ class sendDeclinedSession {
     }
 
     try {
-      await deleteSessionRequest(request.id)
+      await deleteRequest(request.id)
       const response = await sendEmail(data)
       return response.data
     } catch (err) {

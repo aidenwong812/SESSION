@@ -1,7 +1,7 @@
 import { deleteDoc, doc } from "firebase/firestore"
 import { db } from "./db"
 
-const deleteSessionRequest = async (requestId) => {
+const deleteRequest = async (requestId) => {
   try {
     const response = await deleteDoc(doc(db, "requests", requestId))
 
@@ -11,4 +11,4 @@ const deleteSessionRequest = async (requestId) => {
   }
 }
 
-export default deleteSessionRequest
+export default deleteRequest

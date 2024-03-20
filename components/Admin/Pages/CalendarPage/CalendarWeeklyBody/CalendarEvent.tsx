@@ -1,10 +1,10 @@
 import useCalendarDayEvents from "@/hooks/useCalendarDayEvents"
-import { useAdminCalendar } from "@/providers/AdminCalendarProvider"
+import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
 import EventItem from "./EventItem"
 
 const CalendarEvent = ({ date }) => {
-  const { selectedStudio } = useAdminCalendar()
-  const { events } = useCalendarDayEvents(date, selectedStudio?.id)
+  const selectedStudio = DEFAULT_STUDIO_ID
+  const { events } = useCalendarDayEvents(date, selectedStudio)
 
   return (
     <div className="relative h-[40px] w-full">

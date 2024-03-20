@@ -2,10 +2,12 @@ import { useEffect, useState } from "react"
 import { useInView } from "react-intersection-observer"
 import Button from "@/shared/Button"
 import useIsMobile from "@/hooks/useIsMobile"
+import { useCheckOutSession } from "@/providers/CheckOutSessionProvider"
 import BookSessionButton from "../BookSessionButton"
 
 const CTAButtons = () => {
   const [ref, inView] = useInView()
+  const { cancelSession } = useCheckOutSession()
 
   const isMobile = useIsMobile()
   const [isVisibleSticky, setIsVisibleSticky] = useState(false)
@@ -35,6 +37,7 @@ const CTAButtons = () => {
                                             xl:w-[240px] xl:text-[16px]"
         pulseColor="white"
         bgVariant="primary"
+        onClick={cancelSession}
       >
         Cancel Session
       </Button>
