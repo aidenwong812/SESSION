@@ -20,7 +20,7 @@ const PFPDropdown = () => {
         <button
           type="button"
           className="flex size-[40px] items-center justify-center
-        rounded-full bg-gradient_s_1"
+          rounded-full bg-gradient_s_1"
           onClick={() => setIsVisibleSelect(!isVisibleSelect)}
         >
           <Media

@@ -12,7 +12,10 @@ const getProjectByUser = async ({ studioId, email }) => {
       ),
     )
     const querySnapshot = await getDocs(requestQuery)
-    return querySnapshot.docs
+    return querySnapshot.docs.map((data) => ({
+      id: data.id,
+      ...data.data(),
+    }))
   } catch (error) {
     return []
   }

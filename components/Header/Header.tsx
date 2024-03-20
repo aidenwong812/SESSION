@@ -4,20 +4,30 @@ import { useRouter } from "next/router"
 import Media from "@/shared/Media"
 import Button from "@/shared/Button"
 import getStudioByStudioId from "@/lib/firebase/getStudioByStudioId"
+import getProjectByUser from "@/lib/firebase/getProjectByUser"
+import { useAuth } from "@/providers/AuthProvider"
 import PFPDropdown from "./PFPDropdown"
+import ProjectHeaderButton from "./ProjectHeaderButton"
 
 const Header = () => {
   const [studio, setStudio] = useState<any>({})
-  const { query } = useRouter()
+  const [activeProject, setActiveProject] = useState<any>({})
+  const { userData } = useAuth()
+  const { pathname, query } = useRouter()
   const studioId = query.studio
 
   useEffect(() => {
     const init = async () => {
       const res = await getStudioByStudioId(studioId)
       if (!res.error) setStudio(res)
+
+      if (userData) {
+        const project = await getProjectByUser({ studioId, email: userData.email })
+        if (project.length > 0) setActiveProject(project[0])
+      }
     }
     init()
-  }, [studioId])
+  }, [studioId, userData])
 
   return (
     <>
@@ -34,6 +44,9 @@ const Header = () => {
         </div>
       </Link>
       <div className="flex gap-x-[10px]">
+        {pathname.includes("booksession") && (
+          <ProjectHeaderButton projectName={activeProject.projectName} />
+        )}
         <Button
           id="logo-btn"
           type="button"

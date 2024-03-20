@@ -10,7 +10,7 @@ export default function ProjectDurationSelect({ selected, onChange }) {
       { label: "Within 2 month", value: "2-months" },
       { label: "Within 3 month", value: "3-months" },
       { label: "Within 6 month", value: "6-months" },
-      { label: "Within a year", value: "a-year" },
+      { label: "Within the next year", value: "next-year" },
     ],
     [],
   )
