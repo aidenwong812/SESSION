@@ -4,8 +4,9 @@ import useIsMobile from "@/hooks/useIsMobile"
 import ClipSpan from "../../../ClipSpan"
 
 const SessionTab = () => {
-  const router = useRouter()
+  const { query, push } = useRouter()
   const isMobile = useIsMobile()
+  const studioId = query.studio
 
   return (
     <button
@@ -14,7 +15,7 @@ const SessionTab = () => {
       md:w-[144px] lg:w-[192px]
       xl:w-[240px]"
       type="button"
-      onClick={() => router.push("/booksession")}
+      onClick={() => push(`/${studioId}/booksession`)}
     >
       <div
         className="absolute

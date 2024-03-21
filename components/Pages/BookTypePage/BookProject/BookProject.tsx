@@ -15,10 +15,7 @@ const BookProject = () => {
 
   const handleClick = () => {
     createVisitEvent(userData.email)
-    push({
-      pathname: "/[studio]/bookproject",
-      query: { studio: query.studio },
-    })
+    push(`/${query.studio}/bookproject`)
   }
 
   return (

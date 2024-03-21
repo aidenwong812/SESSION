@@ -1,9 +1,10 @@
 import { createContext, useContext, useState, useMemo, useEffect } from "react"
 import { toast } from "react-toastify"
 import getSessionRequests from "@/lib/firebase/getSessionRequests"
+import updateSessionRequest from "@/lib/firebase/updateSessionRequest"
+import getRoomsByStudioId from "@/lib/firebase/getRoomsByStudioId"
 import sendSessionDeclined from "@/lib/sendSessionDeclined"
 import addToSessionCalendar from "@/lib/addToSessionCalendar"
-import updateSessionRequest from "@/lib/firebase/updateSessionRequest"
 import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
 
 export enum SESSION_REQUEST_STATUS {
@@ -22,6 +23,8 @@ const SessionRequestProvider = ({ children }) => {
   const [sessionRequests, setSessionRequests] = useState([])
   const [studioNotes, setStudioNotes] = useState("")
   const [selectedRequest, setSelectedRequest] = useState(null)
+  const [selectedRoom, setSelectedRoom] = useState(null)
+  const [roomList, setRoomList] = useState([]) as any
 
   const fetchSessionRequests = async () => {
     const studioId = DEFAULT_STUDIO_ID
@@ -32,7 +35,7 @@ const SessionRequestProvider = ({ children }) => {
 
     newSessionRequests.sort((a, b) => (a.event.start.dateTime < b.event.start.dateTime ? -1 : 1))
 
-    setSessionRequests(newSessionRequests)
+    setSessionRequests(newSessionRequests.filter(request => request.roomName === selectedRoom.name))
   }
 
   const handleDecline = async (request) => {
@@ -75,6 +78,18 @@ const SessionRequestProvider = ({ children }) => {
   }
 
   useEffect(() => {
+    const init = async () => {
+      const studioId = DEFAULT_STUDIO_ID
+      const response = await getRoomsByStudioId(studioId)
+      const { error } = response as any
+
+      if (error) return
+
+      setRoomList(response)
+      setSelectedRoom(response[0])
+    }
+
+    init()
     fetchSessionRequests()
   }, [])
 
@@ -91,6 +106,9 @@ const SessionRequestProvider = ({ children }) => {
       selectedRequest,
       setSelectedRequest,
       sessionRequests,
+      setSelectedRoom,
+      selectedRoom,
+      roomList,
       handleDecline,
       handleAccept,
       fetchSessionRequests,
@@ -107,6 +125,9 @@ const SessionRequestProvider = ({ children }) => {
       selectedRequest,
       setSelectedRequest,
       sessionRequests,
+      setSelectedRoom,
+      selectedRoom,
+      roomList,
       handleDecline,
       handleAccept,
       fetchSessionRequests,

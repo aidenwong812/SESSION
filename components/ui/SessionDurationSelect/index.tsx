@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from "react"
 import dayjs from "dayjs"
 import SessionDurationButton from "./SessionDurationButton"
+import RoomSelect from "./RoomSelect"
 
 export default function SessionDurationSelect({ selected, onChange }) {
   const options = useMemo(() => {
@@ -37,6 +38,7 @@ export default function SessionDurationSelect({ selected, onChange }) {
           {option.label}
         </SessionDurationButton>
       ))}
+      <RoomSelect />
     </div>
   )
 }

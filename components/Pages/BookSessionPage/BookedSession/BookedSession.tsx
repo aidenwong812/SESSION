@@ -89,12 +89,7 @@ const BookedSession = () => {
           lg:text-[12.8px] xl:mt-[24px] xl:h-[48px]
           xl:text-[16px]"
           pulseColor="white"
-          onClick={() =>
-            push({
-              pathname: "/[studio]/booktype",
-              query: { studio: query.studio },
-            })
-          }
+          onClick={() => push(`/${query.studio}/booktype`)}
         >
           Back to the Studio
         </Button>

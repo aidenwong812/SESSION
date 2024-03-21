@@ -14,10 +14,7 @@ const BookSession = () => {
 
   const handleBookSession = async () => {
     createVisitEvent(userData.email)
-    push({
-      pathname: "/[studio]/booksession",
-      query: { studio: query.studio },
-    })
+    push(`/${query.studio}/booksession`)
   }
 
   return (

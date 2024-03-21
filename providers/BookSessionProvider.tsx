@@ -94,10 +94,7 @@ const BookSessionProvider = ({ children }) => {
     const response: any = await getStudioByStudioId(studioId)
     if (response.error) {
       toast.error("studio data does not exist.")
-      push({
-        pathname: "/[studio]/booktype",
-        query: { studio: query.studio },
-      })
+      push(`/${query.studio}/booktype`)
       return
     }
 
