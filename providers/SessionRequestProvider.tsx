@@ -35,7 +35,9 @@ const SessionRequestProvider = ({ children }) => {
 
     newSessionRequests.sort((a, b) => (a.event.start.dateTime < b.event.start.dateTime ? -1 : 1))
 
-    setSessionRequests(newSessionRequests.filter(request => request.roomName === selectedRoom.name))
+    setSessionRequests(
+      newSessionRequests.filter((request) => request.roomName === selectedRoom.name),
+    )
   }
 
   const handleDecline = async (request) => {
