@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import Media from "@/shared/Media"
 import { useProjectRequest } from "@/providers/ProjectRequestProvider"
 import ClipSpan from "@/components/ClipSpan"
+import convertLink from "@/lib/convetLink"
 
 const Links = () => {
   const [isOpenStudioMenu, setIsOpenStudioMenu] = useState(true)
@@ -56,7 +57,7 @@ const Links = () => {
                   </p>
                 </div>
                 <a
-                  href={link}
+                  href={convertLink(link)}
                   target="_blank"
                   rel="noopener noreferrer"
                   type="button"

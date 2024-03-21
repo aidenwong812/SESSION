@@ -41,16 +41,9 @@ const CancelProject = () => {
             md:text-[16px]"
           >
             {isMobile ? (
-              <>
-                You successfully canceled your Project. Would you like to <br />
-                try out another studio? Explore some of our other studios near you.
-              </>
+              <>You successfully canceled your Project.</>
             ) : (
-              <>
-                You successfully canceled your Project. Would you like to try out another studio?
-                <br />
-                Explore some of our other studios near you.
-              </>
+              <>You successfully canceled your Project.</>
             )}
           </p>
         </div>

@@ -3,8 +3,9 @@ import Media from "@/shared/Media"
 import useIsMobile from "@/hooks/useIsMobile"
 
 const ProjectTab = () => {
-  const router = useRouter()
+  const { query, push } = useRouter()
   const isMobile = useIsMobile()
+  const studioId = query.studio
 
   return (
     <button
@@ -12,7 +13,7 @@ const ProjectTab = () => {
       rounded-full px-[1px] pb-[2px] md:aspect-[240/48]
       md:w-[144px] lg:w-[192px]
       xl:w-[240px]"
-      onClick={() => router.push("/bookproject")}
+      onClick={() => push(`/${studioId}/bookproject`)}
       type="button"
     >
       <div

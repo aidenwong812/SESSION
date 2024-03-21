@@ -1,7 +1,7 @@
 import { useAdminCalendar } from "@/providers/AdminCalendarProvider"
 import Media from "@/shared/Media"
 import { FULL_MONTH_LABELS } from "@/lib/consts/global"
-import StudioSelect from "./RoomSelect"
+import RoomSelect from "./RoomSelect"
 import ViewSelect from "./ViewSelect"
 
 const CalendarHeader = () => {
@@ -90,7 +90,7 @@ const CalendarHeader = () => {
         </button>
       </div>
       <div className="flex items-center gap-x-[10px]">
-        <StudioSelect />
+        <RoomSelect />
         <ViewSelect />
       </div>
     </div>
