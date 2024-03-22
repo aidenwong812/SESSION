@@ -1,13 +1,14 @@
 import { and, collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "./firebase/db"
 
-const getEventsByDay = async (date, studioId) => {
+const getEventsByDay = async (date, studioId, roomName) => {
   try {
     const q = query(
       collection(db, "requests"),
       and(
         where("selectedDay", "==", date),
         where("studioId", "==", studioId),
+        where("roomName", "==", roomName),
         where("booked", "==", true),
       ),
     )

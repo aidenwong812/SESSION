@@ -26,7 +26,7 @@ const SessionRequestProvider = ({ children }) => {
   const [selectedRoom, setSelectedRoom] = useState(null)
   const [roomList, setRoomList] = useState([]) as any
 
-  const fetchSessionRequests = async () => {
+  const fetchSessionRequests = async (roomName) => {
     const studioId = DEFAULT_STUDIO_ID
     const newSessionRequests: any = await getSessionRequests(studioId)
     if ("error" in newSessionRequests) {
@@ -35,16 +35,14 @@ const SessionRequestProvider = ({ children }) => {
 
     newSessionRequests.sort((a, b) => (a.event.start.dateTime < b.event.start.dateTime ? -1 : 1))
 
-    setSessionRequests(
-      newSessionRequests.filter((request) => request.roomName === selectedRoom.name),
-    )
+    setSessionRequests(newSessionRequests.filter((request) => request.roomName === roomName))
   }
 
   const handleDecline = async (request) => {
     const response: any = await sendSessionDeclined({ request, studioNotes })
     if (response.status === 200) {
       toast.success("Declined Request")
-      fetchSessionRequests()
+      fetchSessionRequests(selectedRoom.name)
     }
   }
 
@@ -89,11 +87,15 @@ const SessionRequestProvider = ({ children }) => {
 
       setRoomList(response)
       setSelectedRoom(response[0])
+      fetchSessionRequests(response[0].name)
     }
 
     init()
-    fetchSessionRequests()
   }, [])
+
+  useEffect(() => {
+    fetchSessionRequests(selectedRoom?.name)
+  }, [selectedRoom])
 
   const value = useMemo(
     () => ({
@@ -113,7 +115,6 @@ const SessionRequestProvider = ({ children }) => {
       roomList,
       handleDecline,
       handleAccept,
-      fetchSessionRequests,
     }),
     [
       confirmStatus,
@@ -132,7 +133,6 @@ const SessionRequestProvider = ({ children }) => {
       roomList,
       handleDecline,
       handleAccept,
-      fetchSessionRequests,
     ],
   )
 

@@ -5,7 +5,7 @@ import getMonthName from "@/lib/getMonthName"
 import { availableTimes, STEPS } from "@/lib/consts/bookSession"
 
 const TimeSelectStatus = () => {
-  const { setCurStep } = useBookSession()
+  const { setCurStep, selectedRoom } = useBookSession()
   const { selectedDay, selectedEndTime, selectedStartTime } = useDateSelect()
   return (
     <div
@@ -26,7 +26,8 @@ const TimeSelectStatus = () => {
         onClick={() => setCurStep(STEPS.ADD_DETAILS)}
       >
         Reserve {getMonthName(selectedDay.month)}, {selectedDay.day} {"/ "}
-        {availableTimes[selectedStartTime - 1]} - {availableTimes[selectedEndTime + 3]}
+        {availableTimes[selectedStartTime - 1]} -{" "}
+        {availableTimes[selectedEndTime + selectedRoom.minimumHours - 1]}
       </Button>
     </div>
   )

@@ -25,7 +25,7 @@ const AddDetails = () => {
         onSubmit={() =>
           request(
             availableTimes[selectedStartTime - 1],
-            availableTimes[selectedEndTime + 3],
+            availableTimes[selectedEndTime + selectedRoom.minimumHours - 1],
             selectedDay,
             selectedRoom.name,
           )

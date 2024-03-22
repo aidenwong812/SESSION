@@ -61,7 +61,8 @@ const BookedStudio = ({ className = "" }) => {
                 isSuccessPage ? "md:text-[16px]" : "md:text-[9.6px] lg:text-[12.8px] xl:text-[16px]"
               }`}
             >
-              {availableTimes[selectedStartTime - 1]} - {availableTimes[selectedEndTime + 3]}
+              {availableTimes[selectedStartTime - 1]} -{" "}
+              {availableTimes[selectedEndTime + selectedRoom.minimumHours - 1]}
             </span>
           </p>
         </div>
