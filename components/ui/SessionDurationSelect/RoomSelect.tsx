@@ -37,8 +37,8 @@ const RoomSelect = () => {
       </button>
       {isVisibleSelect && (
         <div
-          className="absolute left-0 top-full mt-[8px] flex w-full
-            flex-col gap-y-[20px] rounded-[16px] bg-gray_overlay_6 p-[12px] backdrop-blur-[20px]"
+          className="absolute left-0 top-full z-10 mt-[8px] flex
+            w-full flex-col gap-y-[20px] rounded-[16px] bg-gray_overlay_6 p-[12px] backdrop-blur-[20px]"
         >
           {roomList.map((room) => (
             <button

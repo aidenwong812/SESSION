@@ -1,8 +1,10 @@
 import { useMemo } from "react"
+import { useAdminCalendar } from "@/providers/AdminCalendarProvider"
 import useCalendarDayEvents from "./useCalendarDayEvents"
 
 const useYearlyCalendarDay = (date, studioId) => {
-  const { events } = useCalendarDayEvents(date, studioId)
+  const { selectedRoom } = useAdminCalendar()
+  const { events } = useCalendarDayEvents(date, studioId, selectedRoom?.name)
 
   const haveProject = useMemo(
     () => events.filter((event) => event.type === "project").length > 0,
