@@ -1,9 +1,12 @@
-import { collection, getDocs, query, where } from "firebase/firestore"
+import { and, collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "./db"
 
-const getProjectRequests = async () => {
+const getProjectRequests = async (studioId) => {
   try {
-    const requestQuery = query(collection(db, "requests"), where("type", "==", "project"))
+    const requestQuery = query(
+      collection(db, "requests"),
+      and(where("type", "==", "project"), where("studioId", "==", studioId)),
+    )
 
     const requestSnapshot = await getDocs(requestQuery)
 

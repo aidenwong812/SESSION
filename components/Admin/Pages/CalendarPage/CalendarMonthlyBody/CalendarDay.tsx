@@ -4,11 +4,13 @@ import getCurrentFullYear from "@/lib/getCurrentFullYear"
 import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
 import useCalendarDayEvents from "@/hooks/useCalendarDayEvents"
 import { useAdminCalendar } from "@/providers/AdminCalendarProvider"
+import { useAuth } from "@/providers/AuthProvider"
 import CalendarEvent from "../../CalendarEvent"
 
 const CalendarDay = ({ date }) => {
-  const selectedStudio = DEFAULT_STUDIO_ID
   const { selectedRoom } = useAdminCalendar()
+  const { userData } = useAuth()
+  const selectedStudio = userData?.studioId || DEFAULT_STUDIO_ID
   const isToday =
     date.year === getCurrentFullYear() &&
     date.month === getCurrentFullMonth() &&

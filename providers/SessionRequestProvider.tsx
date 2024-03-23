@@ -6,6 +6,7 @@ import getRoomsByStudioId from "@/lib/firebase/getRoomsByStudioId"
 import sendSessionDeclined from "@/lib/sendSessionDeclined"
 import addToSessionCalendar from "@/lib/addToSessionCalendar"
 import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
+import { useAuth } from "./AuthProvider"
 
 export enum SESSION_REQUEST_STATUS {
   INITIAL = "INITIAL",
@@ -25,9 +26,10 @@ const SessionRequestProvider = ({ children }) => {
   const [selectedRequest, setSelectedRequest] = useState(null)
   const [selectedRoom, setSelectedRoom] = useState(null)
   const [roomList, setRoomList] = useState([]) as any
+  const { userData } = useAuth()
 
   const fetchSessionRequests = async (roomName) => {
-    const studioId = DEFAULT_STUDIO_ID
+    const studioId = userData?.studioId || DEFAULT_STUDIO_ID
     const newSessionRequests: any = await getSessionRequests(studioId)
     if ("error" in newSessionRequests) {
       return
@@ -79,7 +81,7 @@ const SessionRequestProvider = ({ children }) => {
 
   useEffect(() => {
     const init = async () => {
-      const studioId = DEFAULT_STUDIO_ID
+      const studioId = userData?.studioId || DEFAULT_STUDIO_ID
       const response = await getRoomsByStudioId(studioId)
       const { error } = response as any
 

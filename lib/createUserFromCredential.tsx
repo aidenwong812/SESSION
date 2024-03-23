@@ -9,13 +9,13 @@ const createUserFromCredential = async (user) => {
 
     if (querySnapshot.size > 0) {
       await updateDoc(doc(db, "users", querySnapshot.docs[0].id), {
-        ...querySnapshot.docs[0].data,
+        ...querySnapshot.docs[0].data(),
         ...user.providerData[0],
         uid: user.uid,
       })
 
       return {
-        ...querySnapshot.docs[0].data,
+        ...querySnapshot.docs[0].data(),
         ...user.providerData[0],
         uid: user.uid,
       }

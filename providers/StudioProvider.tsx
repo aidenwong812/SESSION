@@ -1,12 +1,24 @@
 import { createContext, useContext, useState, useMemo, useCallback, useEffect } from "react"
 import { useRouter } from "next/router"
+import getStudios from "@/lib/firebase/getStudios"
 import getRoomsByStudioId from "@/lib/firebase/getRoomsByStudioId"
 
 const StudioContext = createContext(null)
 
 const StudioProvider = ({ children }) => {
+  const [studioList, setStudioList] = useState(null)
   const [roomList, setRoomList] = useState(null)
   const { query } = useRouter()
+
+  const getAllStudios = useCallback(async () => {
+    const response: any = await getStudios()
+
+    if (response.error) {
+      setStudioList([])
+      return
+    }
+    setStudioList(response)
+  }, [])
 
   const getAllRooms = useCallback(async (studioId) => {
     const response: any = await getRoomsByStudioId(studioId)
@@ -19,14 +31,16 @@ const StudioProvider = ({ children }) => {
   }, [])
 
   useEffect(() => {
+    getAllStudios()
     getAllRooms(query.studio)
-  }, [getAllRooms, query])
+  }, [getAllStudios, getAllRooms, query])
 
   const value = useMemo(
     () => ({
       roomList,
+      studioList,
     }),
-    [roomList],
+    [roomList, studioList],
   )
 
   return <StudioContext.Provider value={value}>{children}</StudioContext.Provider>

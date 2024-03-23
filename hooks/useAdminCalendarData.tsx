@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import getRoomsByStudioId from "@/lib/firebase/getRoomsByStudioId"
 import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
+import { useAuth } from "@/providers/AuthProvider"
 
 export const AdminCalendarViewTypes = [
   {
@@ -21,6 +22,7 @@ const useAdminCalendarData = () => {
   const [selectedRoom, setSelectedRoom] = useState(null)
   const [selectedViewType, setSelectedViewType] = useState(AdminCalendarViewTypes[1])
   const [roomList, setRoomList] = useState([]) as any
+  const { userData } = useAuth()
 
   const isWeeklyCalendar = selectedViewType.value === AdminCalendarViewTypes[0].value
   const isMonthlyCalendar = selectedViewType.value === AdminCalendarViewTypes[1].value
@@ -28,7 +30,7 @@ const useAdminCalendarData = () => {
 
   useEffect(() => {
     const init = async () => {
-      const studioId = DEFAULT_STUDIO_ID
+      const studioId = userData?.studioId || DEFAULT_STUDIO_ID
       const response = await getRoomsByStudioId(studioId)
       const { error } = response as any
 
