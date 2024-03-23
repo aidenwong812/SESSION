@@ -15,7 +15,7 @@ import BackwardButton from "../../../BackwardButton"
 import InputBandInstrument from "../InputBandInstrument"
 
 const AddDetails = () => {
-  const { selectedRoom, setCurStep, request } = useBookSession()
+  const { activeProject, selectedRoom, setCurStep, request } = useBookSession()
   const { selectedDay, selectedStartTime, selectedEndTime } = useDateSelect()
   const isMobile = useIsMobile()
 
@@ -23,12 +23,13 @@ const AddDetails = () => {
     <FadeIn className="w-full pt-[40px] lg:pt-[50px] xl:pt-[70px]">
       <Form
         onSubmit={() =>
-          request(
-            availableTimes[selectedStartTime - 1],
-            availableTimes[selectedEndTime + selectedRoom.minimumHours - 1],
+          request({
+            startTime: availableTimes[selectedStartTime - 1],
+            endTime: availableTimes[selectedEndTime + selectedRoom.minimumHours - 1],
             selectedDay,
-            selectedRoom.name,
-          )
+            roomName: selectedRoom.name,
+            projectId: activeProject?.id,
+          })
         }
         validationSchema={validation}
         className="grid w-full grid-cols-1 md:mt-[-18px]

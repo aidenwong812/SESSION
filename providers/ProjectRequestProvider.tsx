@@ -4,6 +4,8 @@ import getProjectRequests from "@/lib/firebase/getProjectRequests"
 import updateProjectRequest from "@/lib/firebase/updateProjectRequest"
 import sendProjectDeclined from "@/lib/sendProjectDeclined"
 import sendProjectAccepted from "@/lib/sendProjectAccepted"
+import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
+import { useAuth } from "./AuthProvider"
 
 export enum PROJECT_REQUEST_STATUS {
   INITIAL = "INITIAL",
@@ -18,9 +20,11 @@ const ProjectRequestProvider = ({ children }) => {
   const [projectRequests, setProjectRequests] = useState([])
   const [studioNotes, setStudioNotes] = useState("")
   const [selectedRequest, setSelectedRequest] = useState(null)
+  const { userData } = useAuth()
 
   const fetchProjectRequests = async () => {
-    const newProjectRequests = await getProjectRequests()
+    const studioId = userData?.studioId || DEFAULT_STUDIO_ID
+    const newProjectRequests = await getProjectRequests(studioId)
     if ("error" in newProjectRequests) {
       return
     }

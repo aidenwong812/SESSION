@@ -2,6 +2,7 @@ import Media from "@/shared/Media"
 import ClipSpan from "@/components/ClipSpan"
 import convertTimeFormat from "@/lib/convertTimeFormat"
 import getMonthName from "@/lib/getMonthName"
+import getWeekDay from "@/lib/getWeekDay"
 import { useAdminCalendar } from "@/providers/AdminCalendarProvider"
 
 const StudioDetail = () => {
@@ -36,7 +37,7 @@ const StudioDetail = () => {
               <ClipSpan className="!py-0">{selectedEvent?.selectedDay.day}</ClipSpan>
             </p>
             <div className="flex flex-col items-end">
-              <p className="text-[14px] text-gray_2">Tuesday,</p>
+              <p className="text-[14px] text-gray_2">{getWeekDay(selectedEvent.selectedDay)},</p>
               <div>
                 <ClipSpan className="!py-0 text-[16px]">
                   {convertTimeFormat(selectedEvent?.event.start.dateTime)} –{" "}

@@ -1,14 +1,16 @@
 import useSelectClickoutside from "@/hooks/useSelectClickoutside"
+import useYearlyCalendarDay from "@/hooks/useYearlyCalendarDay"
 import getCurrentDate from "@/lib/getCurrentDate"
 import getCurrentFullMonth from "@/lib/getCurrentFullMonth"
 import getCurrentFullYear from "@/lib/getCurrentFullYear"
-import useYearlyCalendarDay from "@/hooks/useYearlyCalendarDay"
 import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
+import { useAuth } from "@/providers/AuthProvider"
 import SingleCalendarToolTip from "./SingleCalendarTooltip"
 
 const SingleCalendarDay = ({ date }) => {
   const { selectRef, setIsVisibleSelect, isVisibleSelect } = useSelectClickoutside()
-  const selectedStudio = DEFAULT_STUDIO_ID
+  const { userData } = useAuth()
+  const selectedStudio = userData?.studioId || DEFAULT_STUDIO_ID
   const { haveOnlySession, haveProject, haveEvents, haveSessionAndProject, events } =
     useYearlyCalendarDay(date, selectedStudio)
 

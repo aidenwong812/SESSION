@@ -26,7 +26,7 @@ interface ILayoutFactory extends ILayout {
 }
 
 const Layout = ({ children, type }: ILayoutFactory) => {
-  const { authStatus } = useAuth()
+  const { authStatus, userData } = useAuth()
   const router = useRouter()
   const { pathname } = router
 
@@ -40,7 +40,7 @@ const Layout = ({ children, type }: ILayoutFactory) => {
 
   useEffect(() => {
     if (isPublicPage && authStatus === STATUS.AUTHORIZED)
-      router.push(`/${DEFAULT_STUDIO_ID}/booktype`)
+      router.push(`/${userData?.studioId || DEFAULT_STUDIO_ID}/booktype`)
     if (!isPublicPage && authStatus === STATUS.UNAUTHORIZED) router.push("/")
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPublicPage, authStatus])

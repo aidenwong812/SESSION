@@ -61,7 +61,7 @@ const CalendarProvider = ({ children }) => {
         return
       }
 
-      router.push(`/${DEFAULT_STUDIO_ID}/booktype`)
+      router.push(`/${studioId || DEFAULT_STUDIO_ID}/booktype`)
     } catch (error) {
       handleTxError(error)
       return { error }
