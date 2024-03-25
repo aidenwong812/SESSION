@@ -2,7 +2,7 @@ import { createContext, useContext, useMemo } from "react"
 import useUpcomingData from "@/hooks/useUpcomingData"
 import useTotalBookedData from "@/hooks/useTotalBookedData"
 import useVisits from "@/hooks/useVisits"
-import useTotalRevenueData from "../hooks/useTotalRevenueData"
+import useTotalRevenueData from "@/hooks/useTotalRevenueData"
 
 const DashboardContext = createContext(null)
 

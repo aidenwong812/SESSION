@@ -1,4 +1,3 @@
-import ProjectGuest from "./ProjectGuest"
 import SessionGuest from "./SessionGuest"
 
 const TodayGuestList = () => (
@@ -14,7 +13,6 @@ const TodayGuestList = () => (
     </div>
     <div className="h-[calc(160px-48px)] overflow-y-auto pt-[10px]">
       <SessionGuest />
-      <ProjectGuest />
     </div>
   </div>
 )

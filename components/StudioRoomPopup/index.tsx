@@ -1,5 +1,7 @@
 import Accordion from "@/shared/Accordion"
 import StudioRoomCard from "../StudioRoomCard"
+import infoMapper from "./infoMapper.json"
+import DetailContent from "./DetailContent"
 
 export default function StudioRoomPopup({ room, close }) {
   return (
@@ -10,25 +12,15 @@ export default function StudioRoomPopup({ room, close }) {
 
           <div className="space-y-5 p-5">
             <h3 className="font-urwgeometric_light text-2xl text-gray_1">Room Equipment</h3>
-            {room.equipment.map((equipment) => (
-              <Accordion
-                key={equipment.category}
-                tabClassName="font-urwgeometric_light text-2xl text-gray_1"
-                title={equipment.category}
-                content={
-                  <ul className="grid list-disc grid-cols-2 gap-5 px-5 pt-3">
-                    {equipment.items.map((item) => (
-                      <li
-                        key={`${equipment.category}-${item}`}
-                        className="font-urwgeometric_light text-sm text-gray_2"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                }
-              />
-            ))}
+            {room &&
+              infoMapper.map((mapper) => (
+                <Accordion
+                  key={mapper.key}
+                  tabClassName="font-urwgeometric_light text-2xl text-gray_1"
+                  title={mapper.label}
+                  content={<DetailContent content={room[mapper.key]} />}
+                />
+              ))}
           </div>
         </div>
       </div>

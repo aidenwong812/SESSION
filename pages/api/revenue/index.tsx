@@ -25,6 +25,9 @@ class GetRevenueAmount {
       }
     }
   }
+  
+  @Post()
+  async createRevenue()
 }
 
 export default createHandler(GetRevenueAmount)
