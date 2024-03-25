@@ -28,7 +28,7 @@ export default function StudioRoomCard({
       )}
     >
       <div className="absolute left-0 top-0 -z-20 size-full">
-        <Image src={room.image} alt="" layout="fill" objectFit="cover" />
+        <Image src={room.photo} alt="" layout="fill" objectFit="cover" />
       </div>
 
       <div className="absolute bottom-0 left-0 -z-10 h-2/5  w-full bg-gradient-to-t from-black_3 to-transparent" />
@@ -50,7 +50,7 @@ export default function StudioRoomCard({
       <Badge className="mt-auto flex w-full items-center bg-black_8">
         <span className="mr-auto font-urwgeometric_semibold text-lg text-gray_1">{room.name}</span>
         <Icon name="Clock" size={16} active weight="light" className="mr-1" />
-        <span className="font-urwgeometric_light text-sm text-gray_1">{room.minTime}</span>
+        <span className="font-urwgeometric_light text-sm text-gray_1">{room.minimumHours}</span>
 
         {showDetails && (
           <Button id={buttonId} className="ml-3 px-6 py-2 text-black" onClick={showDetails}>

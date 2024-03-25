@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Outboard",
+    "key": "outboard"
+  },
+  {
+    "label": "Pro Tools",
+    "key": "tools"
+  },
+  {
+    "label": "Computer Specs",
+    "key": "computer_specs"
+  },
+  {
+    "label": "Speakers",
+    "key": "speakers"
+  },
+  {
+    "label": "Instruments",
+    "key": "instruments"
+  }
+]

@@ -7,6 +7,8 @@ import getSessionByRequestId from "@/lib/firebase/getSessionByRequestId"
 import addToSessionCalendar from "@/lib/addToSessionCalendar"
 import deleteRequest from "@/lib/firebase/deleteRequest"
 import updateSessionRequest from "@/lib/firebase/updateSessionRequest"
+import createRevenue from "@/lib/createRevenue"
+import getSessionFee from "@/lib/getSessionFee"
 
 const CheckOutSessionContext = createContext(null)
 
@@ -41,6 +43,15 @@ const CheckOutSessionProvider = ({ children }) => {
       studioNotes: sessionData.studioNotes,
       booked: true,
     })
+
+    const sessionFee = getSessionFee(sessionData.sessionPrice, sessionData.engineerPrice)
+    const amount = sessionData.sessionPrice + sessionData.engineerPrice + sessionFee
+    createRevenue({
+      studioId: sessionData.studioId,
+      amount,
+      roomName: sessionData.roomName,
+    })
+    
     setLoading(false)
     setCurStep(STEPS.BOOKED_SUCCESS)
   }

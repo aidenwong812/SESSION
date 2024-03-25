@@ -1,5 +1,5 @@
-import { REVENUE_PERIOD } from "../../../../../hooks/useTotalRevenueData"
-import { useDashboard } from "../../../../../providers/DashboardProvider"
+import { REVENUE_PERIOD } from "@/hooks/useTotalRevenueData"
+import { useDashboard } from "@/providers/DashboardProvider"
 import Button from "../Button"
 
 const Buttons = () => {
