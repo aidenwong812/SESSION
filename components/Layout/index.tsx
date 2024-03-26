@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import { useAuth } from "@/providers/AuthProvider"
 import { STATUS } from "@/lib/consts/authStatus"
 import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
+import LayoutProvider from "@/providers/LayoutProvider"
 import LoadingPage from "../Pages/LoadingPage"
 import BaseLayout from "./BaseLayout"
 import FullLayout from "./FullLayout"
@@ -30,7 +31,7 @@ const Layout = ({ children, type }: ILayoutFactory) => {
   const router = useRouter()
   const { pathname } = router
 
-  const publicRoutes = ["/signin", "/signup", "/forgotpass", "/"]
+  const publicRoutes = ["/signin", "/signup", "/forgotpass", "/[studio]"]
   const isPublicPage = publicRoutes.includes(pathname)
 
   const isLoading =
@@ -41,20 +42,20 @@ const Layout = ({ children, type }: ILayoutFactory) => {
   useEffect(() => {
     if (isPublicPage && authStatus === STATUS.AUTHORIZED)
       router.push(`/${userData?.studioId || DEFAULT_STUDIO_ID}/booktype`)
-    if (!isPublicPage && authStatus === STATUS.UNAUTHORIZED) router.push("/")
+    if (!isPublicPage && authStatus === STATUS.UNAUTHORIZED) router.push(`/${DEFAULT_STUDIO_ID}`)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPublicPage, authStatus])
   const Container = layoutContainers[type]
 
   return (
-    <>
+    <LayoutProvider>
       <div className={`${isLoading ? "visible" : "hidden"}`}>
         <LoadingPage />
       </div>
       <div className={`${isLoading ? "hidden" : "visible"}`}>
         <Container>{children}</Container>
       </div>
-    </>
+    </LayoutProvider>
   )
 }
 
