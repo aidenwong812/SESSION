@@ -20,7 +20,7 @@ const SessionGuest = () => {
                 type="image"
                 link={event?.pfp || "/images/Admin/user_1.svg"}
                 blurLink={event?.pfp || "/images/Admin/user_1.png"}
-                containerClasses="w-full h-full rounded-full"
+                containerClasses="w-full h-full rounded-full !overflow-hidden"
               />
             </div>
             <div>

@@ -1,9 +1,10 @@
 import axios from "axios"
 
-const getRevenueAmountByPeriod = async (startTime, endTime) => {
+const getRevenueAmountByPeriod = async (studioId, startTime, endTime) => {
   try {
     const response = await axios.get("/api/revenue", {
       params: {
+        studioId,
         startTime,
         endTime,
       },

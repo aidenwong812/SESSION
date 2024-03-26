@@ -4,7 +4,7 @@ import ClipSpan from "@/components/ClipSpan"
 
 const Percentages = () => {
   const { totalSessionsCount, totalProjectsCount } = useDashboard()
-  const percent = (totalProjectsCount / (totalSessionsCount + totalProjectsCount)) * 100
+  const percent = (totalProjectsCount / (totalSessionsCount + totalProjectsCount)) * 100 || 50
   return (
     <div
       className="h-[220px] w-full overflow-hidden
@@ -16,12 +16,26 @@ const Percentages = () => {
       <div className="flex h-[calc(220px-48px)] items-center px-[22px] pt-[10px]">
         <div className="flex w-[160px] justify-center">
           <div className="chart">
-            <div className="project-pie" />
+            <div
+              className="project-pie"
+              style={{
+                backgroundImage: `conic-gradient(rgba(255, 106, 43, 1), rgba(255, 68, 43, 1) ${Math.floor(
+                  percent * 3.6,
+                )}deg, #0000 0)`,
+              }}
+            />
             <div className="project-pie-shadow-outer" />
             <div className="project-pie-shadow-inner" />
             <div className="session-pie-shadow-outer" />
             <div className="session-pie-shadow-inner" />
-            <div className="session-pie" />
+            <div
+              className="session-pie"
+              style={{
+                backgroundImage: `conic-gradient(rgba(161, 234, 4, 1), rgba(218, 235, 2, 1) ${Math.floor(
+                  (100 - percent) * 3.6,
+                )}deg, #0000 0)`,
+              }}
+            />
           </div>
         </div>
         <div className="grow">
@@ -41,7 +55,7 @@ const Percentages = () => {
               </div>
             </div>
             <ClipSpan className="!bg-gradient_p_1 !font-urwgeometric_medium text-[16px]">
-              {Number(percent).toFixed(2)}%
+              {Number(percent || 0).toFixed(2)}%
             </ClipSpan>
           </div>
           <div className="flex grow items-center justify-between pl-[2px]">
@@ -60,7 +74,7 @@ const Percentages = () => {
               </div>
             </div>
             <ClipSpan className="!font-urwgeometric_medium text-[16px]">
-              {Number(percent).toFixed(2)}%
+              {Number(100 - percent || 0).toFixed(2)}%
             </ClipSpan>
           </div>
         </div>

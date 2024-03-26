@@ -1,9 +1,13 @@
-import { useDashboard } from "@/providers/DashboardProvider"
-import ClipSpan from "../../../ClipSpan"
+import { useAuth } from "@/providers/AuthProvider"
+import ClipSpan from "@/components/ClipSpan"
+import { DEFAULT_STUDIO_ID } from "@/lib/consts/global"
+import useTodayEvents from "@/hooks/useTodayEvents"
 import TodayGuestList from "./TodayGuestList"
 
 const GuestSection = () => {
-  const { upcomingSessions } = useDashboard()
+  const { userData } = useAuth()
+  const selectedStudio = userData?.studioId || DEFAULT_STUDIO_ID
+  const { events } = useTodayEvents(selectedStudio)
 
   return (
     <div className="grid grid-cols-2 gap-x-[40px]">
@@ -11,9 +15,7 @@ const GuestSection = () => {
         <p className="font-urwgeometric_bold text-[56px] text-gray_1">Welcome back.</p>
         <p className="font-urwgeometric_semibold text-[18px] text-gray_1">
           You have{" "}
-          <ClipSpan className="!font-urwgeometric_bold">
-            {upcomingSessions?.length} Studio Guests
-          </ClipSpan>{" "}
+          <ClipSpan className="!font-urwgeometric_bold">{events.length} Studio Guests</ClipSpan>{" "}
           coming in today.
         </p>
       </div>
