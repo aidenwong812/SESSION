@@ -3,11 +3,16 @@ import sendEmail from "@/lib/sendEmail"
 import { DeclineProjectDTO } from "@/DTO/declineproject.dto"
 import deleteRequest from "@/lib/firebase/deleteRequest"
 import { SESSION_EMAIL, declineProjectMail } from "@/lib/consts/mail"
+import getStudioByStudioId from "@/lib/firebase/getStudioByStudioId"
 
 class sendDeclinedProject {
   @Post()
   async sendDeclinedProject(@Body() body: DeclineProjectDTO) {
     const { request, studioNotes } = body
+    const studio: any = await getStudioByStudioId(request.studioId)
+    const studioImage = studio.photo.includes("https://")
+      ? studio.photo
+      : `https://session-pied.vercel.app${studio.photo}`
 
     const personalizations = [
       {
@@ -21,7 +26,7 @@ class sendDeclinedProject {
       content: [
         {
           type: "text/html",
-          value: declineProjectMail(request.projectName, studioNotes),
+          value: declineProjectMail(request.projectName, studioNotes, studioImage),
         },
       ],
       from: {

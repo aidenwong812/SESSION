@@ -1,4 +1,4 @@
-export const declineSessionMail = (studioNotes) => `
+export const declineSessionMail = (studioNotes, studioImage) => `
 <!DOCTYPE html PUBLIC "-//W3C//DTDXHTML1.0Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
 	<head><meta charset="UTF-8"><meta content="width=device-width, initial-scale=1" name="viewport"><meta name="x-apple-disable-message-reformatting"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta content="telephone=no" name="format-detection"><title>Empty template</title>
@@ -359,7 +359,7 @@ a[x-apple-data-detectors] {
 														<td class="es-m-p0r" valign="top" align="center" style="padding:0;Margin:0;width:600px">
 															<table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
 																<tr>
-																	<td align="center" style="padding:0;Margin:0;font-size:0"><img src="https://eetqhqk.stripocdn.email/content/guids/CABINET_115ab3cd1420c5a45094390247b198dcd3dd09c88a9c58155b469023f89f9230/images/image.png" alt="" width="600" class="adapt-img" height="213" style="display:block;font-size:14px;border:0;outline:none;text-decoration:none"></td>
+																	<td align="center" style="padding:0;Margin:0;font-size:0"><img src=${studioImage} alt="" width="600" class="adapt-img" height="213" style="display:block;font-size:14px;border:0;outline:none;text-decoration:none"></td>
 																</tr>
 															</table>
 														</td>
@@ -523,6 +523,7 @@ export const acceptFreeMail = ({
   comingPeople,
   studioNotes,
   calendarLink,
+  studioImage,
 }) => `
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -1154,7 +1155,7 @@ export const acceptFreeMail = ({
                               style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                               <tr>
                                 <td align="center" style="padding:0;Margin:0;font-size:0"><img
-                                    src="https://fevfxwt.stripocdn.email/content/guids/CABINET_3eafbd7013160b7acee776b568c221146474957213164399565f63d701652eed/images/studioimage.png"
+                                    src=${studioImage}
                                     alt="" width="600" class="adapt-img" height="213"
                                     style="display:block;font-size:14px;border:0;outline:none;text-decoration:none">
                                 </td>
@@ -1546,6 +1547,7 @@ export const acceptPaidMail = ({
   studioName,
   comingPeople,
   studioNotes,
+  studioImage,
 }) => `
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -2177,7 +2179,7 @@ export const acceptPaidMail = ({
                               style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                               <tr>
                                 <td align="center" style="padding:0;Margin:0;font-size:0"><img
-                                    src="https://fevfxwt.stripocdn.email/content/guids/CABINET_3eafbd7013160b7acee776b568c221146474957213164399565f63d701652eed/images/studioimage.png"
+                                    src=${studioImage}
                                     alt="" width="600" class="adapt-img" height="213"
                                     style="display:block;font-size:14px;border:0;outline:none;text-decoration:none">
                                 </td>
@@ -2567,7 +2569,7 @@ export const acceptPaidMail = ({
 </html>
 `
 
-export const declineProjectMail = (projectName, studioNotes) => `
+export const declineProjectMail = (projectName, studioNotes, studioImage) => `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
  <head>
@@ -2637,7 +2639,7 @@ a[x-apple-data-detectors] {
                   <td class="es-m-p0r" valign="top" align="center" style="padding:0;Margin:0;width:600px">
                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr>
-                      <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src="https://eewmooh.stripocdn.email/content/guids/CABINET_e98ffad1325256aff7907ef9a09936cf45367a36862fd99de6d4b1e28acbb098/images/studioimage.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="600"></td>
+                      <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src=${studioImage} alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="600"></td>
                      </tr>
                    </table></td>
                  </tr>
@@ -2774,6 +2776,7 @@ export const acceptProjectMail = ({
   studioNotes,
   tracks,
   numberOfTracks,
+  studioImage,
 }) => `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
@@ -2844,7 +2847,7 @@ a[x-apple-data-detectors] {
                   <td class="es-m-p0r" valign="top" align="center" style="padding:0;Margin:0;width:600px">
                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr>
-                      <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src="https://eewmooh.stripocdn.email/content/guids/CABINET_e98ffad1325256aff7907ef9a09936cf45367a36862fd99de6d4b1e28acbb098/images/studioimage.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="600"></td>
+                      <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src=${studioImage} alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="600"></td>
                      </tr>
                    </table></td>
                  </tr>

@@ -28,7 +28,7 @@ const useAuthFlow = () => {
   const [curStep, setCurStep] = useState(null)
   const [userData, setUserData] = useState(null)
 
-  const isSignUpPage = pathname.includes("/signup") || pathname === "/"
+  const isSignUpPage = pathname.includes("/signup") || pathname === "/[studio]"
   const isSignInPage = pathname.includes("/signin")
   const isResetPage = pathname.includes("/forgotpass")
 

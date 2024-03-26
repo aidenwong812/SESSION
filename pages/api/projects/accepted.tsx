@@ -2,11 +2,16 @@ import { createHandler, Post, Body } from "next-api-decorators"
 import sendEmail from "@/lib/sendEmail"
 import { AccpetProjectDTO } from "@/DTO/acceptproject.dto"
 import { SESSION_EMAIL, acceptProjectMail } from "@/lib/consts/mail"
+import getStudioByStudioId from "@/lib/firebase/getStudioByStudioId"
 
 class sendAcceptedProject {
   @Post()
   async sendAcceptedProject(@Body() body: AccpetProjectDTO) {
     const { request, studioNotes } = body
+    const studio: any = await getStudioByStudioId(request.studioId)
+    const studioImage = studio.photo.includes("https://")
+      ? studio.photo
+      : `https://session-pied.vercel.app${studio.photo}`
 
     const emailData = {
       requestId: request.id,
@@ -19,6 +24,7 @@ class sendAcceptedProject {
         .join(""),
       numberOfTracks: request.tracks.length,
       studioNotes,
+      studioImage,
     }
 
     const personalizations = [
