@@ -51,7 +51,7 @@ const CheckOutSessionProvider = ({ children }) => {
       amount,
       roomName: sessionData.roomName,
     })
-    
+
     setLoading(false)
     setCurStep(STEPS.BOOKED_SUCCESS)
   }
