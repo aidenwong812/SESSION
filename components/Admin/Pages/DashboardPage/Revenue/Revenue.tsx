@@ -1,10 +1,11 @@
-import { useDashboard } from "../../../../../providers/DashboardProvider"
-import Media from "../../../../../shared/Media"
-import ClipSpan from "../../../../ClipSpan"
+import { useDashboard } from "@/providers/DashboardProvider"
+import Media from "@/shared/Media"
+import ClipSpan from "@/components/ClipSpan"
 import Buttons from "./Buttons"
 
 const Revenue = () => {
   const { displayAmount } = useDashboard()
+  const total = displayAmount.reduce((a, b) => a + b.amount, 0)
 
   return (
     <div
@@ -24,7 +25,7 @@ const Revenue = () => {
         <div className="flex grow flex-col justify-end">
           <p className="font-urwgeometric_medium text-[48px] text-[#a1ea04] drop-shadow-xl drop-shadow-session">
             <span className="text-[24px]">$</span>
-            {displayAmount}
+            {total}
           </p>
           <div className="flex items-center">
             <Media

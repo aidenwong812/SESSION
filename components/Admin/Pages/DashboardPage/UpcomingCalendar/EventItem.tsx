@@ -1,8 +1,24 @@
+import { useEffect, useState } from "react"
 import { useUpcomingCalendar } from "@/providers/UpcomingCalendarProvider"
+import { eventTimesInFirestore } from "@/lib/consts/bookSession"
 import CalendarEvent from "../../CalendarEvent"
 
-const EventItem = ({ startTimeIndex = 0, timePeriod = 0 }) => {
+const EventItem = ({ event }) => {
   const { intervalWidth } = useUpcomingCalendar()
+
+  const [startTimeIndex, setStartTimeIndex] = useState(0)
+  const [timePeriod, setTimePeriod] = useState(0)
+
+  useEffect(() => {
+    const startTime = event.event.start.dateTime.slice(-8)
+    const endTime = event.event.end.dateTime.slice(-8)
+    const startIndex = eventTimesInFirestore.findIndex((time) => time === startTime)
+    const endIndex = eventTimesInFirestore.findIndex((time) => time === endTime)
+    const period = endIndex - startIndex
+
+    setStartTimeIndex(startIndex)
+    setTimePeriod(period)
+  }, [event])
 
   return (
     <div
@@ -12,7 +28,7 @@ const EventItem = ({ startTimeIndex = 0, timePeriod = 0 }) => {
         width: `${intervalWidth * timePeriod}px`,
       }}
     >
-      <CalendarEvent />
+      <CalendarEvent event={event} />
     </div>
   )
 }

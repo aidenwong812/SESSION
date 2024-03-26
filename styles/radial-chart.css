@@ -3,13 +3,11 @@
 }
 
 .project-pie {
-  --ng: 160deg;
   --thickness: 16px;
   --_inner: calc(70% - var(--thickness));
   --_outer: calc(var(--_inner) + 1px);
 
   mask: radial-gradient(circle, #0000 var(--_inner), #000 var(--_outer));
-  background-image: conic-gradient(rgba(255, 106, 43, 1), rgba(255, 68, 43, 1) var(--ng), #0000 0);
 
   aspect-ratio: 1;
   inline-size: 100px;
@@ -40,13 +38,11 @@
 }
 
 .session-pie {
-  --ng: 200deg;
   --thickness: 16px;
   --_inner: calc(70% - var(--thickness));
   --_outer: calc(var(--_inner) + 1px);
 
   mask: radial-gradient(circle, #0000 var(--_inner), #000 var(--_outer));
-  background-image: conic-gradient(rgba(161, 234, 4, 1), rgba(218, 235, 2, 1) var(--ng), #0000 0);
 
   aspect-ratio: 1;
   inline-size: 100px;
