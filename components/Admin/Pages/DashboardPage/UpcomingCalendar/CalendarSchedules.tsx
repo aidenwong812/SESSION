@@ -5,10 +5,7 @@ const CalendarSchedules = () => {
   const { upcomingDays } = useUpcomingCalendar()
 
   return (
-    <div
-      className="flex size-full flex-col justify-center
-    gap-y-[40px]"
-    >
+    <div className="flex size-full flex-col justify-center">
       {upcomingDays.map((date, i) => (
         // eslint-disable-next-line react/no-array-index-key
         <CalendarSchedule key={i} date={date} />
