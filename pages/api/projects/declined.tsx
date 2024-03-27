@@ -1,16 +1,15 @@
 import { createHandler, Post, Body } from "next-api-decorators"
-import sendEmail from "@/lib/sendEmail"
 import { DeclineProjectDTO } from "@/DTO/declineproject.dto"
+import sendEmail from "@/lib/sendEmail"
 import deleteRequest from "@/lib/firebase/deleteRequest"
 import { SESSION_EMAIL, declineProjectMail } from "@/lib/consts/mail"
+import getStudioImageFromURL from "@/lib/getStudioImageFromURL"
 
 class sendDeclinedProject {
   @Post()
   async sendDeclinedProject(@Body() body: DeclineProjectDTO) {
     const { request, studioNotes } = body
-    const studioImage = request?.studio?.photo.includes("https://")
-      ? request?.studio?.photo
-      : `https://session-pied.vercel.app${request?.studio?.photo}`
+    const studioImage = getStudioImageFromURL(request?.studio)
 
     const personalizations = [
       {

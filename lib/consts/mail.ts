@@ -359,7 +359,7 @@ a[x-apple-data-detectors] {
 														<td class="es-m-p0r" valign="top" align="center" style="padding:0;Margin:0;width:600px">
 															<table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
 																<tr>
-																	<td align="center" style="padding:0;Margin:0;font-size:0"><img src=${studioImage} alt="" width="600" class="adapt-img" height="213" style="display:block;font-size:14px;border:0;outline:none;text-decoration:none"></td>
+																	<td align="center" style="padding:0;Margin:0;font-size:0"><img src=${studioImage} width="600" class="adapt-img" style="display:block;font-size:14px;border:0;outline:none;text-decoration:none"></td>
 																</tr>
 															</table>
 														</td>
@@ -1156,7 +1156,7 @@ export const acceptFreeMail = ({
                               <tr>
                                 <td align="center" style="padding:0;Margin:0;font-size:0"><img
                                     src=${studioImage}
-                                    alt="" width="600" class="adapt-img" height="213"
+                                    width="600" class="adapt-img"
                                     style="display:block;font-size:14px;border:0;outline:none;text-decoration:none">
                                 </td>
                               </tr>
@@ -2180,7 +2180,7 @@ export const acceptPaidMail = ({
                               <tr>
                                 <td align="center" style="padding:0;Margin:0;font-size:0"><img
                                     src=${studioImage}
-                                    alt="" width="600" class="adapt-img" height="213"
+                                    width="600" class="adapt-img"
                                     style="display:block;font-size:14px;border:0;outline:none;text-decoration:none">
                                 </td>
                               </tr>
@@ -2639,7 +2639,7 @@ a[x-apple-data-detectors] {
                   <td class="es-m-p0r" valign="top" align="center" style="padding:0;Margin:0;width:600px">
                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr>
-                      <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src=${studioImage} alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="600"></td>
+                      <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src=${studioImage} style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="600"></td>
                      </tr>
                    </table></td>
                  </tr>
@@ -2847,7 +2847,7 @@ a[x-apple-data-detectors] {
                   <td class="es-m-p0r" valign="top" align="center" style="padding:0;Margin:0;width:600px">
                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr>
-                      <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src=${studioImage} alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="600"></td>
+                      <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src=${studioImage} style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="600"></td>
                      </tr>
                    </table></td>
                  </tr>

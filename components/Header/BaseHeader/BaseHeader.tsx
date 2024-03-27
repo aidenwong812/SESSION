@@ -1,7 +1,7 @@
 import Header from "../Header"
 
 const BaseHeader = () => (
-  <div className="fixed z-[1] flex w-screen justify-center">
+  <div className="fixed z-10 flex w-screen justify-center">
     <div
       className="flex items-center justify-between
       md:w-[768px] md:pt-[24px] lg:w-[1024px]

@@ -6,14 +6,13 @@ import getMonthName from "@/lib/getMonthName"
 import getWeekDay from "@/lib/getWeekDay"
 import convertTimeFormat from "@/lib/convertTimeFormat"
 import convertCalendarEventDateTime from "@/lib/convertCalendarEventDateTime"
+import getStudioImageFromURL from "@/lib/getStudioImageFromURL"
 
 class sendAcceptedSession {
   @Post()
   async sendAcceptedSession(@Body() body: AccpetSessionDTO) {
     const { request, studioNotes, type } = body
-    const studioImage = request?.studio?.photo.includes("https://")
-      ? request?.studio?.photo
-      : `https://session-pied.vercel.app${request?.studio?.photo}`
+    const studioImage = getStudioImageFromURL(request?.studio)
 
     const emailData = {
       requestId: request.id,
