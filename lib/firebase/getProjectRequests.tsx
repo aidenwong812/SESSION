@@ -1,4 +1,4 @@
-import { and, collection, getDocs, query, where } from "firebase/firestore"
+import { and, collection, doc, getDoc, getDocs, query, where } from "firebase/firestore"
 import { db } from "./db"
 
 const getProjectRequests = async (studioId) => {
@@ -18,9 +18,21 @@ const getProjectRequests = async (studioId) => {
       }))
       return {
         id: data.id,
+        studioId: data.data().studioId,
+        studio: {},
         tracks,
         ...data.data(),
       }
+    })
+    const studioIdsSet = new Set()
+    requestData.forEach((data) => studioIdsSet.add(data.studioId))
+    const studioIds = Array.from(studioIdsSet)
+    const studioDocs = await Promise.all(
+      studioIds.map(async (id: string) => getDoc(doc(db, "studios", id))),
+    )
+    requestData.forEach((request) => {
+      const studio = studioDocs.find((studioDoc) => studioDoc.id === request.studioId)
+      request.studio = studio.data()
     })
 
     return requestData

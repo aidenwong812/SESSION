@@ -1,6 +1,8 @@
 import { useState } from "react"
 import Modal from "@/shared/Modal"
 import Media from "@/shared/Media"
+import checkPayment from "@/lib/checkPayment"
+import { useProjectRequest } from "@/providers/ProjectRequestProvider"
 import DetailHeader from "./DetailHeader"
 import DetailBody from "./DetailBody"
 import DeclineModal from "../DeclineModal"
@@ -9,6 +11,7 @@ import ConfirmModal from "../ConfirmModal"
 const ProjectDetailModal = ({ isVisible, toggleModal }) => {
   const [isOpenConfirmModal, setIsOpenConfirmModal] = useState(false)
   const [isOpenDeclineModal, setIsOpenDeclineModal] = useState(false)
+  const { selectedRequest } = useProjectRequest()
 
   const onClickConfirm = () => {
     toggleModal()
@@ -53,6 +56,7 @@ const ProjectDetailModal = ({ isVisible, toggleModal }) => {
             type="button"
             className="flex size-[64px] items-center justify-center rounded-full
           border-x-[1px] border-b-[2px] border-gray_overlay_6 bg-gradient_s_1"
+            disabled={checkPayment(selectedRequest)}
             onClick={onClickConfirm}
           >
             <Media

@@ -20,6 +20,7 @@ const AdminLayout = ({ children }: ILayout) => {
         alt=""
         layout="fill"
         objectFit="cover"
+        className="opacity-50"
       />
       <SeoHead
         title="SESSION"

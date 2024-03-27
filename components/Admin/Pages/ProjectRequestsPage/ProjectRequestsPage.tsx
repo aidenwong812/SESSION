@@ -18,9 +18,11 @@ export default function ProjectRequestsPage() {
 
   const filteredProjectRequests = useMemo(() => {
     if (selectedDuration === "all") {
-      return projectRequests
+      return projectRequests.filter((project) => project.booked === false)
     }
-    return projectRequests.filter((project) => project.timeframe.value === selectedDuration)
+    return projectRequests.filter(
+      (project) => project.timeframe.value === selectedDuration && project.booked === false
+    )
   }, [projectRequests, selectedDuration])
 
   return (

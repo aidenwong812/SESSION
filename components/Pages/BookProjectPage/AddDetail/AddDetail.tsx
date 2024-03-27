@@ -2,12 +2,12 @@ import { useBookProject } from "@/providers/BookProjectProvider"
 import Button from "@/shared/Button"
 import Form from "@/shared/Form"
 import Media from "@/shared/Media"
-import FadeIn from "../../../FadeIn"
-import SelectBox from "../../../SelectBox"
-import TextInput from "../../../TextInput"
-import AddLinks from "../AddLinks"
+import FadeIn from "@/components/FadeIn"
+import SelectBox from "@/components/SelectBox"
+import TextInput from "@/components/TextInput"
+import SingleStudio from "@/components/SingleStudio"
 import SelectTimeframe from "../SelectTimeframe"
-import SingleStudio from "../../../SingleStudio"
+import AddLinks from "../AddLinks"
 
 const AddDetail = () => {
   const {
