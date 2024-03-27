@@ -22,7 +22,7 @@ const SideNavbar = () => {
 
   return (
     <div
-      className="relative flex h-screen w-[240px]
+      className="relative z-[1] flex h-screen w-[240px]
     flex-col !overflow-hidden bg-black_overlay_0 pb-[24px] pt-[15px]"
     >
       <Media
