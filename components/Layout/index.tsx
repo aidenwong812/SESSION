@@ -40,7 +40,7 @@ const Layout = ({ children, type }: ILayoutFactory) => {
     authStatus === STATUS.LOADING
 
   useEffect(() => {
-    if (isPublicPage && authStatus === STATUS.AUTHORIZED)
+    if ((isPublicPage || pathname === "/") && authStatus === STATUS.AUTHORIZED)
       router.push(`/${userData?.studioId || DEFAULT_STUDIO_ID}/booktype`)
     if (!isPublicPage && authStatus === STATUS.UNAUTHORIZED) router.push(`/${DEFAULT_STUDIO_ID}`)
     // eslint-disable-next-line react-hooks/exhaustive-deps

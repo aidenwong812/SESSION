@@ -30,7 +30,7 @@ const RequestDetailModal = ({ request, isVisible, toggleModal }) => {
       <Modal
         isVisible={isVisible}
         onClose={toggleModal}
-        modalClassName="bg-[#121211cc] backdrop-blur-[20px] px-[20px]"
+        modalClassName="bg-[#121211cc] backdrop-blur-[20px] px-[20px] z-20"
         containerClassName="h-full flex flex-col items-center justify-center overflow-hidden py-[20px]"
       >
         <div
