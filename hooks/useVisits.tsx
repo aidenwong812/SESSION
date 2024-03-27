@@ -24,6 +24,7 @@ const useVisits = () => {
 
   const getTodayVisitCount = async () => {
     const totalTodayCount = await getVisitsCount(today12AM, tomorrow12AM)
+    if (totalTodayCount.error) return
     setTodayVisitsCount(totalTodayCount)
   }
 
@@ -32,6 +33,7 @@ const useVisits = () => {
     const nextSunday12AM = today12AM + (TOTAL_DAYS_PER_WEEK - currentWeekDay) * ONE_DAY_MILLISECONDS
 
     const totalWeekCount = await getVisitsCount(sunday12AM, nextSunday12AM)
+    if (totalWeekCount.error) return
     setWeekVisitsCount(totalWeekCount)
   }
 
@@ -39,7 +41,7 @@ const useVisits = () => {
     const past30DayTime = tomorrow12AM - 30 * ONE_DAY_MILLISECONDS
 
     const totalMonthCount = await getVisitsCount(past30DayTime, tomorrow12AM)
-
+    if (totalMonthCount.error) return
     setMonthVisitsCount(totalMonthCount)
   }
 

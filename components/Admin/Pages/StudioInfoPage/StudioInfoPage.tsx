@@ -8,7 +8,6 @@ import Card from "@/components/ui/Card"
 import StudioRoomCard from "@/components/StudioRoomCard"
 import StudioRoomPopup from "@/components/StudioRoomPopup"
 import { useStudioInfo } from "@/providers/StudioInfoProvider"
-import { services } from "./data"
 
 export default function StudioInfoPage() {
   const [roomDetailsId, setRoomDetailsId] = useState(null)
@@ -45,7 +44,7 @@ export default function StudioInfoPage() {
                   <p className="font-urwgeometric_light text-sm text-gray_1">{studio?.location}</p>
                 </div>
                 <div className="mt-8 space-x-2">
-                  {services.map((service) => (
+                  {studio?.services.map((service) => (
                     <Badge
                       key={service}
                       className="text-session drop-shadow-xl drop-shadow-session"
@@ -58,7 +57,12 @@ export default function StudioInfoPage() {
 
               <div className="w-1/2 pl-10">
                 <div className="relative aspect-video overflow-hidden rounded-3xl">
-                  <Image src={studio?.photo} alt="" layout="fill" objectFit="cover" />
+                  <Image
+                    src={studio?.photo || "/images/StudioInfo/Studio Image.jpg"}
+                    alt=""
+                    layout="fill"
+                    objectFit="cover"
+                  />
                 </div>
               </div>
             </div>

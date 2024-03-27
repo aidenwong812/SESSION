@@ -1,10 +1,12 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import convertTimeFormat from "@/lib/convertTimeFormat"
 import getMonthName from "@/lib/getMonthName"
 
 const LocalDateTime = () => {
   const [date, setDate] = useState(new Date())
-  setInterval(() => setDate(new Date()), 10000)
+  useEffect(() => {
+    setInterval(() => setDate(new Date()), 10000)
+  }, [])
 
   return (
     <div className="flex items-center gap-x-[10px]">
