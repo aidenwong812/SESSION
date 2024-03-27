@@ -3,7 +3,7 @@ import { DeclineProjectDTO } from "@/DTO/declineproject.dto"
 import sendEmail from "@/lib/sendEmail"
 import deleteRequest from "@/lib/firebase/deleteRequest"
 import { SESSION_EMAIL, declineProjectMail } from "@/lib/consts/mail"
-import getStudioImageFromURL from "@/lib/getStudioImagefromURL"
+import getStudioImageFromURL from "@/lib/getStudioImageFromURL"
 
 class sendDeclinedProject {
   @Post()

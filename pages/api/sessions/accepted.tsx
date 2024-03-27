@@ -6,7 +6,7 @@ import getMonthName from "@/lib/getMonthName"
 import getWeekDay from "@/lib/getWeekDay"
 import convertTimeFormat from "@/lib/convertTimeFormat"
 import convertCalendarEventDateTime from "@/lib/convertCalendarEventDateTime"
-import getStudioImageFromURL from "@/lib/getStudioImagefromURL"
+import getStudioImageFromURL from "@/lib/getStudioImageFromURL"
 
 class sendAcceptedSession {
   @Post()
