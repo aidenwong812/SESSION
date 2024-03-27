@@ -2,7 +2,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["cdn.sanity.io", "pbs.twimg.com", "f005.backblazeb2.com"],
+    domains: ["cdn.sanity.io", "pbs.twimg.com", "f005.backblazeb2.com", "nftstorage.link"],
   },
   webpack: (config) => {
     config.resolve.fallback = { fs: false, net: false, tls: false }

@@ -31,6 +31,7 @@ const useTotalRevenueData = () => {
       today12AM,
       tomorrow12AM,
     )
+    if (!totalTodayAmount || totalTodayAmount.error) return
     setTodayRevenueAmount(totalTodayAmount)
   }
 
@@ -43,6 +44,7 @@ const useTotalRevenueData = () => {
       sunday12AM,
       nextSunday12AM,
     )
+    if (!totalWeekAmount || totalWeekAmount.error) return
     setWeekRevenueAmount(totalWeekAmount)
   }
 
@@ -54,7 +56,7 @@ const useTotalRevenueData = () => {
       past30DayTime,
       tomorrow12AM,
     )
-
+    if (!totalMonthAmount || totalMonthAmount.error) return
     setMonthRevenueAmount(totalMonthAmount)
   }
 
