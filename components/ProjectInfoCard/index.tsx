@@ -2,11 +2,13 @@ import { useState } from "react"
 import Button from "@/shared/Button"
 import Media from "@/shared/Media"
 import { useProjectRequest } from "@/providers/ProjectRequestProvider"
+import checkPayment from "@/lib/checkPayment"
 import ProjectDetailModal from "../Admin/Pages/ProjectRequestsPage/ProjectDetailModal"
 
 export default function ProjectInfoCard({ project }) {
   const [isOpenDetailModal, setIsOpenDetailModal] = useState(false)
   const { setSelectedRequest } = useProjectRequest()
+  const pendingPayment = checkPayment(project)
 
   return (
     <>
@@ -44,7 +46,7 @@ export default function ProjectInfoCard({ project }) {
             </div>
           </div>
         </div>
-        <div className="flex h-full w-52 items-center justify-center bg-gray_overlay_3 p-4">
+        <div className="flex h-full w-52 flex-col items-center justify-center gap-[4px] bg-gray_overlay_3 p-4">
           <Button
             id="see-details"
             type="button"
@@ -58,6 +60,9 @@ export default function ProjectInfoCard({ project }) {
           >
             <p className="font-urwgeometric_semibold text-xs leading-4 text-black_0">See Details</p>
           </Button>
+          {pendingPayment && (
+            <p className="font-urwgeometric text-base leading-none text-gray_1">Pending Payment</p>
+          )}
         </div>
       </div>
       <ProjectDetailModal

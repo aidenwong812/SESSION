@@ -19,11 +19,15 @@ export default function SessionRequestsPage() {
 
   const filteredSessionRequests = useMemo(() => {
     if (selectedDuration === "all") {
-      return sessionRequests
+      return sessionRequests.filter((session) => session.booked === false)
     }
     return sessionRequests.filter((request) => {
       const eventStart = dayjs(request.event.start.dateTime)
-      return eventStart.isAfter(selectedDuration[0]) && eventStart.isBefore(selectedDuration[1])
+      return (
+        eventStart.isAfter(selectedDuration[0]) &&
+        eventStart.isBefore(selectedDuration[1]) &&
+        sessionRequests.booked === false
+      )
     })
   }, [sessionRequests, selectedDuration])
 

@@ -44,6 +44,7 @@ const ProjectRequestProvider = ({ children }) => {
       id: request.id,
       projectPrice,
       studioNotes,
+      booked: false,
     })
 
     const response: any = await sendProjectAccepted({ request: selectedRequest, studioNotes })
@@ -54,8 +55,10 @@ const ProjectRequestProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    fetchProjectRequests()
-  }, [])
+    if (userData) {
+      fetchProjectRequests()
+    }
+  }, [userData])
 
   const value = useMemo(
     () => ({

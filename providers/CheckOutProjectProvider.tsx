@@ -5,6 +5,7 @@ import { DEFAULT_STUDIO_ID, PAYMENTS } from "@/lib/consts/global"
 import { STEPS } from "@/lib/consts/checkout"
 import getProjectByRequestId from "@/lib/firebase/getProjectByRequestId"
 import deleteRequest from "@/lib/firebase/deleteRequest"
+import updateProjectRequest from "@/lib/firebase/updateProjectRequest"
 
 const CheckOutProjectContext = createContext(null)
 
@@ -18,6 +19,16 @@ const CheckOutProjectProvider = ({ children }) => {
   const projectId = router.query.id
 
   const startProject = async () => {
+    setLoading(true)
+
+    updateProjectRequest({
+      id: projectData.id,
+      projectPrice: projectData.projectPrice,
+      studioNotes: projectData.studioNotes,
+      booked: true,
+    })
+
+    setLoading(false)
     setCurStep(STEPS.BOOKED_SUCCESS)
   }
 

@@ -67,8 +67,16 @@ const MenuList = () => {
         <div className={activeProjectsActive ? iconActiveClasses : iconClasses}>
           <Media
             type="image"
-            link={activeProjectsActive ? "/icons/project.svg" : "/images/Admin/sparkle.svg"}
-            blurLink="/images/Admin/sparkle.png"
+            link={
+              activeProjectsActive
+                ? "/images/Admin/sparkle-active.svg"
+                : "/images/Admin/sparkle.svg"
+            }
+            blurLink={
+              activeProjectsActive
+                ? "/images/Admin/sparkle-active.png"
+                : "/images/Admin/sparkle.png"
+            }
             containerClasses={activeProjectsActive ? "w-7 h-7" : "w-5 h-5"}
           />
         </div>

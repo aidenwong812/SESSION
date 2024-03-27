@@ -1,13 +1,15 @@
 import { Elements } from "@stripe/react-stripe-js"
 import { useCheckOutProject } from "@/providers/CheckOutProjectProvider"
 import { usePayment } from "@/providers/PaymentProvider"
+import { useLayout } from "@/providers/LayoutProvider"
 import { STEPS } from "@/lib/consts/checkout"
 import getSessionFee from "@/lib/getSessionFee"
-import BackwardButton from "../../../BackwardButton"
+import BackwardButton from "@/components/BackwardButton"
 import StripeCheckOutForm from "../StripeCheckOutForm"
 
 const StripeDetail = () => {
   const { projectData, setCurStep } = useCheckOutProject()
+  const { studio } = useLayout()
   const { stripePromise, stripeOption, stripePaymentId, stripeClientSecret } = usePayment()
   const sessionFee = getSessionFee(projectData.projectPrice, 0)
 
@@ -23,7 +25,9 @@ const StripeDetail = () => {
       <div
         className="aspect-[1/1] rounded-[24px] bg-cover bg-center"
         style={{
-          backgroundImage: `url('/images/BookProject/lady-studio-opacity.png')`,
+          backgroundImage: `url('${
+            studio?.photo || "/images/BookProject/lady-studio-opacity.png"
+          }')`,
         }}
       />
       <div className="col-span-1 flex flex-col justify-center">
