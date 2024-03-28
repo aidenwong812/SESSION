@@ -21,7 +21,7 @@ export default function ProjectRequestsPage() {
       return projectRequests.filter((project) => project.booked === false)
     }
     return projectRequests.filter(
-      (project) => project.timeframe.value === selectedDuration && project.booked === false
+      (project) => project.timeframe.value === selectedDuration && project.booked === false,
     )
   }, [projectRequests, selectedDuration])
 
