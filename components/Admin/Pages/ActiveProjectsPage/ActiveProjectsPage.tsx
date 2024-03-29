@@ -8,7 +8,7 @@ import ViewSwitch, { ViewType } from "@/components/ui/ViewSwitch"
 import ProjectInfoCard from "@/components/ProjectInfoCard"
 import ProjectDurationSelect from "@/components/ui/ProjectDurationSelect"
 import { useProjectRequest } from "@/providers/ProjectRequestProvider"
-import Notification from "../Notification"
+import TimeBar from "../TimeBar"
 
 export default function ActiveProjectPage() {
   const [view, setView] = useState<ViewType>("list")
@@ -27,7 +27,7 @@ export default function ActiveProjectPage() {
   return (
     <Layout type="admin">
       <div className="px-5">
-        <Notification />
+        <TimeBar />
         <div className="mt-8 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <Icon name="Sparkle" size={40} weight="fill" className="text-project" />

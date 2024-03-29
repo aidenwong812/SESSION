@@ -12,10 +12,10 @@ export default function Genre() {
         {selectedRequest.genre?.length > 0 &&
           selectedRequest.genre.map((one) => (
             <div
-              key={one.value}
+              key={one}
               className="rounded-full bg-gradient_s_1 px-[16px] py-[4px] font-urwgeometric_semibold"
             >
-              {one.label}
+              {one}
             </div>
           ))}
       </div>

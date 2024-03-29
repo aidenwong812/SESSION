@@ -23,7 +23,7 @@ const InputBandInstrument = () => {
         onChange={onChangeInstrument}
         placeholder="Choose instruments"
         label="Instruments you will be recording"
-        options={selectedRoom?.instruments}
+        options={selectedRoom?.instruments || []}
         multiple
         dropDownLabel="Choose up to 7."
         hookToForm={false}

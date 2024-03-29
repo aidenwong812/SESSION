@@ -1,7 +1,7 @@
 import UpcomingCalendarProvider from "@/providers/UpcomingCalendarProvider"
 import Layout from "../../../Layout"
 import GuestSection from "./GuestSection"
-import Notification from "../Notification"
+import TimeBar from "../TimeBar"
 import PageVisits from "./PageVisits"
 import Percentages from "./Percentages"
 import Revenue from "./Revenue"
@@ -11,7 +11,7 @@ import UpcomingCalendar from "./UpcomingCalendar"
 const DashboardPage = () => (
   <Layout type="admin">
     <div className="px-[20px]">
-      <Notification />
+      <TimeBar />
       <GuestSection />
       <div className="mt-[40px] grid grid-cols-2 gap-x-[40px]">
         <div className="grid grid-cols-2 gap-x-[40px]">

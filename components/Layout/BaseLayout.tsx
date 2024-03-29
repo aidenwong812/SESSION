@@ -14,7 +14,7 @@ const BaseLayout = ({ children }: ILayout) => {
     h-screen w-screen
     overflow-x-hidden"
     >
-      <Image src={studio?.photo} alt="" layout="fill" objectFit="cover" />
+      <Image src={studio?.photo} alt="" layout="fill" objectFit="cover" className="opacity-15" />
       <SeoHead
         title="SESSION"
         description="Book your next studio session today"

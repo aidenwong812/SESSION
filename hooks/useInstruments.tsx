@@ -6,7 +6,7 @@ const useInstruments = () => {
   const onChangeInstrument = (option) => {
     const temp = [...instruments]
 
-    const findIndex = temp.findIndex((item) => item.value === option.value) + 1
+    const findIndex = temp.findIndex((item) => item === option) + 1
 
     if (findIndex) {
       temp.splice(findIndex - 1, 1)

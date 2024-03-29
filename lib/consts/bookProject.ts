@@ -56,84 +56,12 @@ export const timeframeOptions = [
 ]
 
 export const genreOptions = [
-  {
-    value: "pop",
-    label: "Pop",
-  },
-  {
-    value: "rock",
-    label: "Rock",
-  },
-  {
-    value: "hip-hop",
-    label: "Hip-Hop/Rap",
-  },
-  {
-    value: "electronic-dance",
-    label: "Electronic Dance",
-  },
-  {
-    value: "randb",
-    label: "R&B/Soul",
-  },
-  {
-    value: "classical",
-    label: "Classical",
-  },
-  {
-    value: "acoustic",
-    label: "Acoustic",
-  },
-  {
-    value: "singer-song",
-    label: "Singer-Songwriter",
-  },
-  {
-    value: "indie",
-    label: "Indie",
-  },
-  {
-    value: "alternative",
-    label: "Alternative",
-  },
-  {
-    value: "jazz",
-    label: "Jazz",
-  },
-  {
-    value: "blues",
-    label: "Blues",
-  },
-  {
-    value: "country",
-    label: "Country",
-  },
-  {
-    value: "folk",
-    label: "Folk",
-  },
-  {
-    value: "metal",
-    label: "Metal",
-  },
-  {
-    value: "punk",
-    label: "Punk",
-  },
-  {
-    value: "reggae",
-    label: "Reggae",
-  },
-  {
-    value: "funk",
-    label: "Funk",
-  },
-  {
-    value: "latin",
-    label: "Latin",
-  },
-  {
-    value: "world-music",
-    label: "World Music",
-  },
+  "Pop",
+  "Rock",
+  "Hip-Hop/Rap",
+  "Electronic Dance",
+  "R&B/Soul",
+  "Classical",
+  "Acoustic",
+  "Singer-Songwriter",
 ]

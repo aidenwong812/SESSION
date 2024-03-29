@@ -25,7 +25,7 @@ const Header = () => {
         </div>
       </Link>
       <div className="flex gap-x-[10px]">
-        {pathname.includes("booksession") && (
+        {pathname.includes("booksession") && activeProject.projectName && (
           <ProjectHeaderButton projectName={activeProject.projectName} />
         )}
         <Button

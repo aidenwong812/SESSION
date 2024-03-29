@@ -4,9 +4,9 @@ import ClipSpan from "../../../ClipSpan"
 const TrackAttribute = ({ data }) => (
   <div className="flex items-center gap-x-[5px] pl-[10px] md:pl-[18px] lg:pl-[24px] xl:pl-[30px]">
     <div
-      className="flex aspect-[1/1] w-[16px] items-center justify-center bg-gradient_s_1
-      shadow-[0px_0px_12px_0px_#a1ea0499] md:w-[10.8px] lg:w-[14.4px]
-      xl:w-[18px]"
+      className="flex aspect-[1/1] w-[16px] items-center justify-center rounded-full
+      bg-gradient_s_1 shadow-[0px_0px_12px_0px_#a1ea0499] md:w-[10.8px]
+      lg:w-[14.4px] xl:w-[18px]"
     >
       <Media
         type="image"

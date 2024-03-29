@@ -31,7 +31,7 @@ const useCalendarEvents = () => {
     )}-01T00:00:00${timeZonePrefix}`
 
     const response = await getCalendarEvents(calendarId, startDateTime, endDateTime)
-    setStudioEventsList(response)
+    if (!response?.error) setStudioEventsList(response)
   }
 
   useEffect(() => {
