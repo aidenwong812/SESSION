@@ -1,24 +1,7 @@
-import { loadConnectAndInitialize } from "@stripe/connect-js"
-import { ConnectAccountOnboarding, ConnectComponentsProvider } from "@stripe/react-connect-js"
-import Button from "@/shared/Button"
-import { createPaymentIntent } from "@/lib/stripe/createPaymentIntent"
 import axios from "axios"
+import Button from "@/shared/Button"
 
 const StripeConnectForm = () => {
-  const fetchClientSecret = async () => {
-    // Fetch the AccountSession client secret by making an API call to your service
-    const response = await createPaymentIntent(1)
-    return response.client_secret
-  }
-  const connectInstance = loadConnectAndInitialize({
-    publishableKey: process.env.NEXT_PUBLIC_STRIPE_PK,
-    fetchClientSecret: fetchClientSecret,
-    appearance: {
-      variables: {
-        colorPrimary: "#228403", // Optional appearance parameter
-      },
-    }
-  })
   const handleClick = async () => {
     const res = await axios({
       method: "post",
@@ -54,9 +37,6 @@ const StripeConnectForm = () => {
     >
       Connect Stripe
     </Button>
-    // <ConnectComponentsProvider connectInstance={connectInstance}>
-    //   <ConnectAccountOnboarding onExit={() => { }} />
-    // </ConnectComponentsProvider>
   )
 }
 
