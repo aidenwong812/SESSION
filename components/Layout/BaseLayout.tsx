@@ -22,7 +22,7 @@ const BaseLayout = ({ children }: ILayout) => {
       />
       <BaseHeader />
       <div
-        className="no-scrollbar absolute z-[1] flex
+        className="no-scrollbar absolute flex
       min-h-screen w-screen justify-center overflow-y-auto
       overflow-x-hidden bg-[#121211cc]"
       >

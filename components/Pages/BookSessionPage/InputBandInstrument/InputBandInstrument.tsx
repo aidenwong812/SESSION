@@ -1,10 +1,9 @@
 import { useBookSession } from "@/providers/BookSessionProvider"
-import { instrumentsOptions } from "@/lib/consts/global"
-import SelectBox from "../../../SelectBox"
-import TextInput from "../../../TextInput"
+import SelectBox from "@/components/SelectBox"
+import TextInput from "@/components/TextInput"
 
 const InputBandInstrument = () => {
-  const { bandName, setBandName, instruments, onChangeInstrument } = useBookSession()
+  const { bandName, setBandName, instruments, onChangeInstrument, selectedRoom } = useBookSession()
 
   return (
     <div className="flex flex-col gap-y-[20px] md:pb-[24px] lg:pb-[32px] xl:pb-[40px]">
@@ -24,7 +23,7 @@ const InputBandInstrument = () => {
         onChange={onChangeInstrument}
         placeholder="Choose instruments"
         label="Instruments you will be recording"
-        options={instrumentsOptions}
+        options={selectedRoom?.instruments}
         multiple
         dropDownLabel="Choose up to 7."
         hookToForm={false}

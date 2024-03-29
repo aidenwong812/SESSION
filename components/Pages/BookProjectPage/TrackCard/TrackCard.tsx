@@ -4,7 +4,7 @@ import Media from "@/shared/Media"
 import TrackItem from "../TrackItem"
 
 const TrackCard = ({ trackNumber, hasRemoveButton = false, editable = true }) => {
-  const { setTrackList, trackList, openDelTrackModal } = useBookProject()
+  const { setTrackList, trackList, openDelTrackModal, selectedStudio } = useBookProject()
 
   const trackData = useMemo(() => trackList[trackNumber - 1] || {}, [trackList, trackNumber])
 
@@ -72,31 +72,15 @@ const TrackCard = ({ trackNumber, hasRemoveButton = false, editable = true }) =>
         className="absolute bottom-[-10px] flex w-full justify-center gap-x-[10px]
             md:bottom-[-12px] md:gap-x-[19.2px] lg:bottom-[-16px] lg:gap-x-[25.6px] xl:bottom-[-20px] xl:gap-x-[32px]"
       >
-        <TrackItem
-          label="Writing"
-          selected={trackData?.writing}
-          toggleItem={() => toggleTrack("writing")}
-        />
-        <TrackItem
-          label="Recording"
-          selected={trackData?.recording}
-          toggleItem={() => toggleTrack("recording")}
-        />
-        <TrackItem
-          label="Production"
-          selected={trackData?.production}
-          toggleItem={() => toggleTrack("production")}
-        />
-        <TrackItem
-          label="Mixing"
-          selected={trackData?.mixing}
-          toggleItem={() => toggleTrack("mixing")}
-        />
-        <TrackItem
-          label="Mastering"
-          selected={trackData?.mastering}
-          toggleItem={() => toggleTrack("mastering")}
-        />
+        {selectedStudio?.services &&
+          selectedStudio.services.map((service) => (
+            <TrackItem
+              key={service}
+              label={service}
+              selected={trackData[service]}
+              toggleItem={() => toggleTrack(service)}
+            />
+          ))}
       </div>
     </div>
   )

@@ -1073,6 +1073,16 @@
     on-change "^4.0.0"
     semver-compare "^1.0.0"
 
+"@stripe/connect-js@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@stripe/connect-js/-/connect-js-3.3.1.tgz#ba2c4750bc33b47ded9170693941aa30d29784e0"
+  integrity sha512-+WVKHkGgtMjfV35R89lAJoG2louQLzIG+VsGRBMiLWSLuaqt9YMUgChLmhIYq1LWh6+dyRXze1qKP4udg+bGKw==
+
+"@stripe/react-connect-js@^3.3.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@stripe/react-connect-js/-/react-connect-js-3.3.3.tgz#9b09a3acb43a03eb6e98b7da6045c747fdba4446"
+  integrity sha512-2A7H/mPsKloxLjOJFUk6tjLaf9A5e15H8XyRuXqHA0uwZL+gdLKARa3Q+a9eNwo07NCGNllzmQNSO57E7BtyAA==
+
 "@stripe/react-stripe-js@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@stripe/react-stripe-js/-/react-stripe-js-2.4.0.tgz#b69d383a2b13e1104c5766695e7a865899cc84fb"

@@ -20,6 +20,8 @@
     "@react-three/fiber": "^8.15.12",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.518",
+    "@stripe/connect-js": "^3.3.1",
+    "@stripe/react-connect-js": "^3.3.3",
     "@stripe/react-stripe-js": "^2.4.0",
     "@stripe/stripe-js": "^2.2.2",
     "@tailwindcss/forms": "^0.5.3",
