@@ -3,10 +3,10 @@ import Modal from "@/shared/Modal"
 import Media from "@/shared/Media"
 import Button from "@/shared/Button"
 import useIsMobile from "@/hooks/useIsMobile"
+import Container from "@/components/Container"
+import EquipmentDetail from "@/components/EquipmentDetail"
+import ClipSpan from "@/components/ClipSpan"
 import SingleStudio from "../SingleStudio"
-import Container from "../../../Container"
-import EquipmentDetail from "../../../EquipmentDetail"
-import ClipSpan from "../../../ClipSpan"
 
 const EquipmentModal = () => {
   const { isOpenEquipmentModal, setIsOpenEquipmentModal, studioOnModal } = useBookSession()

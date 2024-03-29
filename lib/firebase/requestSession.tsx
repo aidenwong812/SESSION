@@ -13,7 +13,7 @@ const requestSession = async ({
   studioId,
   roomName,
   pfp,
-  projectId,
+  projectId = "",
 }) => {
   try {
     const sessionDocRef = await addDoc(collection(db, "requests"), {

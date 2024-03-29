@@ -14,7 +14,7 @@ const BaseLayout = ({ children }: ILayout) => {
     h-screen w-screen
     overflow-x-hidden"
     >
-      <Image src={studio?.photo} alt="" layout="fill" objectFit="cover" />
+      <Image src={studio?.photo} alt="" layout="fill" objectFit="cover" className="opacity-15" />
       <SeoHead
         title="SESSION"
         description="Book your next studio session today"
@@ -22,7 +22,7 @@ const BaseLayout = ({ children }: ILayout) => {
       />
       <BaseHeader />
       <div
-        className="no-scrollbar absolute z-[1] flex
+        className="no-scrollbar absolute flex
       min-h-screen w-screen justify-center overflow-y-auto
       overflow-x-hidden bg-[#121211cc]"
       >

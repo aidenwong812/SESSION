@@ -57,7 +57,7 @@ const ProjectSummary = () => {
           />
         )}
         <TextView label="Project Name" text={projectName} />
-        <TextView label="Genre" text={genre.map((item) => item.label).join(", ")} />
+        <TextView label="Genre" text={genre.map((item) => item).join(", ")} />
         <TextView
           label="Project Description"
           text={projectDesc}
@@ -65,7 +65,7 @@ const ProjectSummary = () => {
         />
         <TextView
           label="Instruments you will be recording"
-          text={instruments.map((item) => item.label).join(", ")}
+          text={instruments.map((item) => item).join(", ")}
         />
         {!isMobile && <TimeframeView />}
       </div>

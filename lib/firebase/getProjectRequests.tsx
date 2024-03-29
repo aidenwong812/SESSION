@@ -7,6 +7,7 @@ const getProjectRequests = async (studioId) => {
       collection(db, "requests"),
       and(where("type", "==", "project"), where("studioId", "==", studioId)),
     )
+    const studio = await getDoc(doc(db, "studios", studioId))
 
     const requestSnapshot = await getDocs(requestQuery)
 
@@ -19,20 +20,10 @@ const getProjectRequests = async (studioId) => {
       return {
         id: data.id,
         studioId: data.data().studioId,
-        studio: {},
+        studio: studio.data(),
         tracks,
         ...data.data(),
       }
-    })
-    const studioIdsSet = new Set()
-    requestData.forEach((data) => studioIdsSet.add(data.studioId))
-    const studioIds = Array.from(studioIdsSet)
-    const studioDocs = await Promise.all(
-      studioIds.map(async (id: string) => getDoc(doc(db, "studios", id))),
-    )
-    requestData.forEach((request) => {
-      const studio = studioDocs.find((studioDoc) => studioDoc.id === request.studioId)
-      request.studio = studio.data()
     })
 
     return requestData

@@ -3,18 +3,18 @@ const MultipleList = ({ options, onChange, value, label }) => (
     <p className="pb-[20px] text-[16px] text-[#A1EA04]">{label}</p>
     <div className="flex flex-wrap items-start gap-[10px]">
       {options.map((option) => {
-        const isActive = value.find((item) => item.value === option.value) + 1
+        const isActive = value.find((item) => item === option) + 1
 
         return (
           <button
-            key={option.value}
+            key={option}
             type="button"
             onClick={() => onChange(option)}
             className={`rounded-full px-[30px] py-[10px] ${
               isActive ? "bg-gradient_s_1 text-black_0" : "bg-gray_overlay_6 text-gray_1"
             }`}
           >
-            <p className="font-urwgeometric_medium text-[16px]">{option.label}</p>
+            <p className="font-urwgeometric_medium text-[16px]">{option}</p>
           </button>
         )
       })}

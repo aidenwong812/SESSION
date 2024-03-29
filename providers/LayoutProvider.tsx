@@ -26,7 +26,7 @@ const LayoutProvider = ({ children }) => {
         if (!res.error) setStudio(res)
       }
 
-      if (userData) {
+      if (projectId === undefined && userData) {
         const project = await getProjectByUser({ studioId, email: userData.email })
         if (project.length > 0) setActiveProject(project[0])
         const res = await getStudioByStudioId(userData.studioId)

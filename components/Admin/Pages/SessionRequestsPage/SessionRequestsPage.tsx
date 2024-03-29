@@ -7,9 +7,9 @@ import ViewSwitch, { ViewType } from "@/components/ui/ViewSwitch"
 import Search from "@/components/ui/Search"
 import SessionDurationSelect from "@/components/ui/SessionDurationSelect"
 import { useSessionRequest } from "@/providers/SessionRequestProvider"
-import Notification from "../Notification"
 import Layout from "../../../Layout"
 import Request from "./Request"
+import TimeBar from "../TimeBar"
 
 export default function SessionRequestsPage() {
   const [view, setView] = useState<ViewType>("list")
@@ -34,7 +34,7 @@ export default function SessionRequestsPage() {
   return (
     <Layout type="admin">
       <div className="flex h-screen flex-col px-5">
-        <Notification />
+        <TimeBar />
         <div className="mt-8 flex items-center justify-between">
           <div className="flex items-center">
             <Media

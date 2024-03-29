@@ -50,10 +50,10 @@ const Select: FC<ISelect> = ({
 
   const label = useMemo(() => {
     if (!multiple) {
-      return options.filter((option) => option.value === value)?.[0]?.label
+      return options.filter((option) => option === value)?.[0]
     }
 
-    return value.map((item) => item.label).join(", ")
+    return value.map((item) => item).join(", ")
   }, [options, value])
 
   useEffect(() => {

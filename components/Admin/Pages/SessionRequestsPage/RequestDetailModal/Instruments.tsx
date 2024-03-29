@@ -8,10 +8,10 @@ export default function Instruments({ request }) {
         {request.instruments?.length > 0 &&
           request.instruments.map((instrument) => (
             <div
-              key={instrument.value}
+              key={instrument}
               className="rounded-full bg-gradient_s_1 px-[16px] py-[4px] font-urwgeometric_semibold"
             >
-              {instrument.label}
+              {instrument}
             </div>
           ))}
       </div>

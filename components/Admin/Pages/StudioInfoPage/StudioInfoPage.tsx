@@ -44,14 +44,17 @@ export default function StudioInfoPage() {
                   <p className="font-urwgeometric_light text-sm text-gray_1">{studio?.location}</p>
                 </div>
                 <div className="mt-8 space-x-2">
-                  {studio?.services.map((service) => (
-                    <Badge
-                      key={service}
-                      className="text-session drop-shadow-xl drop-shadow-session"
-                    >
-                      {service}
-                    </Badge>
-                  ))}
+                  <div className="mt-8 space-x-2">
+                    {studio?.services &&
+                      studio.services.map((service) => (
+                        <Badge
+                          key={service}
+                          className="text-session drop-shadow-xl drop-shadow-session"
+                        >
+                          {service}
+                        </Badge>
+                      ))}
+                  </div>
                 </div>
               </div>
 
@@ -71,7 +74,7 @@ export default function StudioInfoPage() {
               <div className="flex flex-col gap-10">
                 <Card heading="Opening Hours">
                   <ul className="space-y-2">
-                    {studio &&
+                    {studio?.openingHours &&
                       studio.openingHours.map((item) => (
                         <li key={item.day} className="flex justify-between gap-12">
                           <span className="font-urwgeometric_light text-xs text-gray_2">
